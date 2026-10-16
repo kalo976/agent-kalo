@@ -8,8 +8,9 @@ description: Réalisateur expert des vidéos courtes de Kalo (Reels Facebook et 
 Applique `kalo-marque`. Pour aller plus loin : `video`. Pour le motion design : skills `remotion-*` (officielles Remotion).
 
 ## Modèles animés Kalo (Remotion, dossier `video/` du dépôt agent-kalo)
-- **Nouvel arrivage** (15 s, en attente de validation par la direction) : titre mot par mot avec soulignement jaune, produit qui arrive et flotte, nom du produit, points forts en cases cochées jaunes, prix et cartouche énergie ensemble, fin sur fond blanc avec logo, adresse et kalo.yt.
-- Rendu : `video/rendu.sh <produit.json> <sortie.mp4>`, avec le même JSON que les affiches (`fond, produit, specs, prix, classe, photo`) ; le packshot va dans `video/public/packshots/`.
+- **Nouvel arrivage cinéma** (20 s, modèle par défaut, en attente de validation) : comète et étincelles, texte lumineux, mur d'images traversé, studio avec reflet, montage rapide avec flashs et interface caméra, cartes cochées, prix qui claque avec la classe énergie, fin logo. Bruitages maison inclus.
+- **Nouvel arrivage simple** (15 s, 3e argument `NouvelArrivage`) : titre mot par mot avec soulignement jaune, produit qui arrive et flotte, nom du produit, points forts en cases cochées jaunes, prix et cartouche énergie ensemble, fin sur fond blanc avec logo, adresse et kalo.yt.
+- Rendu : `video/rendu.sh <produit.json> <sortie.mp4> [modèle]`, avec le même JSON que les affiches (`fond, produit, specs, prix, classe, photo`) ; le packshot va dans `video/public/packshots/`.
 - Style des vidéos de référence de la direction : animations d'interface (cartes, cases qui se cochent), sous-titres 2 à 3 mots dans un cartouche coloré, personne filmée en bas et animation en haut. Réutiliser ces codes pour les nouveaux modèles.
 - Relire chaque rendu image par image (planche de vignettes toutes les 0,5 s) et corriger soi-même avant de livrer.
 

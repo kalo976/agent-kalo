@@ -1,5 +1,23 @@
 # Vidéos Kalo (Remotion)
 
+## Modèle « Nouvel arrivage cinéma » (20 s, par défaut)
+
+Repris des 4 vidéos de référence de la direction : comète et étincelles, texte qui sort du flou avec une lueur, mur d'images traversé par la caméra, plateau studio avec projecteur et reflet au sol, montage rapide de détails avec flashs de lumière et interface caméra (REC), écran partagé, cartes cochées « POINTS FORTS », prix qui claque avec onde de choc et classe énergie en même temps, fin sur le logo. Grain de film, vignettage et bruitages maison libres de droits (`public/sons/`).
+
+| Temps | Scène |
+| --- | --- |
+| 0 à 2,3 s | Comète, étincelles, « NOUVEL ARRIVAGE » lumineux |
+| 2,3 à 4,3 s | Mur d'images en profondeur, la caméra plonge vers le produit |
+| 4,3 à 7,7 s | Studio : produit sous projecteur, reflet, nom du produit |
+| 7,7 à 10,7 s | Montage rapide de détails, flashs, écran partagé |
+| 10,7 à 14 s | Points forts en cartes cochées |
+| 14 à 17,3 s | Prix et classe énergie |
+| 17,3 à 20 s | Logo, magasin, Kalo.976, kalo.yt |
+
+Champ en plus dans le JSON : `galerie` (liste de packshots pour le mur d'images, facultatif).
+
+## Modèle « Nouvel arrivage » simple (15 s)
+
 Modèle animé « Nouvel arrivage », vertical 1080 × 1920, 30 i/s, 15 s, aux couleurs de la charte Kalo.
 
 | Temps | Ce qu'on voit |
@@ -16,7 +34,8 @@ Zones de sécurité Reels/TikTok respectées : rien d'important dans les 250 px 
 
 ```bash
 npm install
-./rendu.sh /mnt/project-files/kalo/visuels/produits/hisense-7kg-blanc.json out/hisense-7kg-blanc.mp4
+./rendu.sh /mnt/project-files/kalo/visuels/produits/hisense-7kg-blanc.json out/hisense-7kg-blanc.mp4            # version cinéma
+./rendu.sh <produit.json> <sortie.mp4> NouvelArrivage                        # version simple
 ```
 
 Le JSON produit est le même que pour les affiches. Le packshot doit être copié dans `public/packshots/`.
