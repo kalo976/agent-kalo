@@ -10,6 +10,13 @@ L'équipe communication de Kalo (électroménager, Mamoudzou), sous forme de ski
 | `kalo-post-facebook` | Textes des posts |
 | `kalo-visuel-produit` | Affiches « Nouvel arrivage » (format validé) |
 | `kalo-community-manager` | Réponses aux commentaires et messages |
+| `kalo-operations-commerciales` | Black Friday, soldes, fêtes : prix barrés légaux, plan, affiches |
+| `kalo-video-courte` | Vidéos courtes : Reels, TikTok, statuts WhatsApp |
+| `kalo-statistiques` | Bilan des statistiques Facebook et Instagram |
+| `kalo-avis-clients` | Réponses aux avis et demandes d'avis |
+| `kalo-whatsapp-sms` | Messages WhatsApp et SMS |
+| `kalo-fiches-produits` | Fiches produits du site kalo.yt |
+| `kalo-veille-concurrence` | Veille des prix et promos des concurrents |
 
 ## Installer
 
@@ -21,7 +28,7 @@ Ensuite, demande simplement : « Fais l'affiche du lave-linge Hyundai 7 kg à 36
 
 ## Skills de communication ajoutées (sources GitHub)
 
-Sélectionnées pour un commerce comme Kalo (Facebook, WhatsApp, pub locale, affiches). Les skills pensées pour les logiciels SaaS ont été écartées. Ces skills sont en anglais, mais elles répondent en français si on leur parle en français.
+Elles viennent des deux dépôts de skills les plus étoilés de GitHub (anthropics/skills ≈ 181 k ★, marketingskills ≈ 43,6 k ★, n° 1 du marketing). Sélectionnées pour un commerce comme Kalo (Facebook, WhatsApp, pub locale, affiches). Les skills pensées pour les logiciels SaaS ont été écartées. Ces skills sont en anglais, mais elles répondent en français si on leur parle en français.
 
 | Skill | À quoi elle sert | Source |
 | --- | --- | --- |
