@@ -1,23 +1,32 @@
 ---
 name: kalo-avis-clients
-description: Rédige les réponses de Kalo aux avis Google et Facebook (positifs, neutres, négatifs) et prépare les messages pour demander un avis aux clients satisfaits, dans le respect des règles.
+description: Expert e-réputation de Kalo : réponses aux avis Google et Facebook (positifs, neutres, négatifs, faux avis), collecte d'avis auprès des clients satisfaits et optimisation de la fiche Google de Kalo, dans le respect des règles.
 ---
 
-# Avis clients Kalo
+# Avis clients et e-réputation Kalo
 
-Applique d'abord `kalo-marque`.
+Applique `kalo-marque`.
 
-## Répondre à un avis
-Répondre à chaque avis, dans les 48 h, en vouvoyant, signé « L'équipe Kalo ».
-- **Positif (4-5 ★)** : remercier en citant un détail de l'avis (produit, livraison, vendeur), 1 à 2 phrases. Pas de copier-coller identique d'un avis à l'autre.
-- **Neutre (3 ★)** : remercier, reconnaître le point à améliorer, dire ce qui est fait.
-- **Négatif (1-2 ★)** : s'excuser sans se justifier ni contredire en public, ne donner aucune information personnelle, proposer de régler en privé (téléphone du magasin ou message privé). Marquer « À REMONTER » à la direction.
-- **Faux avis, insulte ou spam** : ne pas répondre sur le fond, proposer de le signaler à Google ou Facebook.
+## Pourquoi c'est clé
+Avant de se déplacer, beaucoup de clients regardent la note Google et les derniers avis. Un avis négatif bien répondu rassure souvent plus qu'il n'inquiète.
 
-## Demander des avis
-- Moments : après la livraison ou l'installation, après une réparation SAV réussie.
-- Message court par SMS ou WhatsApp, seulement aux clients qui ont accepté d'être contactés (voir `kalo-whatsapp-sms`), avec le lien direct vers la fiche Google de Kalo.
-- Interdit : offrir une remise ou un cadeau contre un avis, demander seulement les avis positifs, écrire de faux avis ou en faire écrire.
+## Répondre à un avis (sous 48 h, signé « L'équipe Kalo »)
+- **5 ★ et 4 ★** : remercier par le prénom, citer un détail précis (produit, livraison, vendeur), une phrase d'invitation. 2 à 3 phrases. Jamais deux réponses identiques.
+- **3 ★** : remercier, reconnaître le point faible sans se justifier, dire ce qui change.
+- **1 ★ et 2 ★** : excuses sincères, aucun détail personnel, aucune contradiction publique, proposition de régler en privé (« Appelez-nous au magasin ou écrivez-nous en message privé »), marquer « À REMONTER ». Une seule réponse publique, puis on continue en privé.
+- **Faux avis, insulte, concurrent** : réponse neutre et courte (« Nous ne retrouvons pas votre achat ; contactez-nous pour en parler ») et signalement à Google ou Facebook.
+Mots-clés naturels dans les réponses positives (« lave-linge », « livraison à Mamoudzou ») : ils aident la fiche Google, sans forcer.
+
+## Obtenir plus d'avis (légalement)
+- Moments : 2 à 5 jours après la livraison ou l'installation, après une réparation réussie, à la caisse quand le client est content.
+- Supports : SMS ou WhatsApp (clients d'accord pour être contactés, voir `kalo-whatsapp-sms`), carte avec QR code vers la fiche Google en caisse et dans les livraisons.
+- Message : court, personnel, lien direct. « Merci pour votre confiance ! Votre avis aide d'autres familles à choisir : <lien>. L'équipe Kalo »
+- **Interdit** : offrir une remise ou un cadeau contre un avis, ne demander qu'aux clients contents en filtrant, écrire ou acheter de faux avis, faire écrire des avis par l'équipe ou la famille.
+
+## Fiche Google (Google Business Profile) : à vérifier chaque mois
+Horaires exacts (y compris jours fériés et Ramadan), téléphone, site kalo.yt, catégories (magasin d'électroménager), photos récentes (façade, intérieur, équipe, produits), posts Google pour les arrivages et les opérations, questions-réponses.
 
 ## Livrable
-Un tableau : avis (étoiles et texte), type, réponse proposée, À REMONTER (oui/non). Plus, si demandé, le modèle de message de demande d'avis. Rien n'est publié sans validation.
+1. Tableau : avis (étoiles et texte), type, réponse proposée, À REMONTER (oui/non).
+2. Chaque mois : note moyenne, nombre de nouveaux avis, sujets qui reviennent (positifs et négatifs), 3 actions.
+Rien n'est publié sans validation.

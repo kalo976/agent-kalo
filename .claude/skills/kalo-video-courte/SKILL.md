@@ -1,34 +1,41 @@
 ---
 name: kalo-video-courte
-description: Écrit les vidéos courtes de Kalo (Reels Facebook et Instagram, TikTok, statuts WhatsApp) : idée, script plan par plan, texte à l'écran, légende et indications de tournage en magasin au téléphone.
+description: Réalisateur expert des vidéos courtes de Kalo (Reels Facebook et Instagram, TikTok, statuts WhatsApp) : concept, accroche, script plan par plan, texte à l'écran, rythme, sous-titres, zones de sécurité, musique, légende et consignes de tournage au téléphone.
 ---
 
 # Vidéos courtes Kalo
 
-Applique d'abord `kalo-marque`.
+Applique `kalo-marque`. Pour aller plus loin : `video`. Les modèles de montage et de motion design aux couleurs de Kalo seront ajoutés dès que la direction aura envoyé ses vidéos de référence.
 
-## Format
-- Vertical 9:16, 1080 × 1920, entre 15 et 30 secondes.
-- Les 2 premières secondes accrochent : le produit en action, une question, ou le prix.
-- Texte à l'écran sur chaque plan, car la plupart des gens regardent sans le son. Sous-titres si quelqu'un parle.
-- Logo Kalo et « kalo.yt » sur le dernier plan.
-- Si un prix apparaît pour un appareil concerné, la classe énergie apparaît avec lui.
+## Format technique
+- Vertical 9:16, 1080 × 1920, 30 images/s. Durée : 7-15 s pour un arrivage, 20-30 s pour une démo ou un conseil, 45 s maximum.
+- **Zones de sécurité** : aucun texte important dans les 250 px du haut, les 400 px du bas, ni la bande de droite (boutons j'aime, commentaires).
+- Texte à l'écran sur chaque plan (beaucoup regardent sans le son), gros et contrasté, 6 mots maximum par écran, au moins 1,5 s à l'écran.
+- Sous-titres si quelqu'un parle. Logo Kalo et « kalo.yt » sur le dernier plan.
+- Prix d'un appareil concerné à l'écran : classe énergie à l'écran au même moment.
 
-## Idées de vidéos qui marchent pour un magasin
-- Démonstration : « 3 choses que fait ce lave-linge » (vapeur, départ différé, programme rapide).
-- Avant / après : linge, cuisine, clim.
-- Comparatif de tailles : 6 kg, 7 kg, 9 kg, « lequel pour votre famille ? ».
-- Arrivage : on ouvre le carton, on montre l'appareil.
-- Conseil : « Comment bien régler sa clim quand il fait 32 °C ».
-- Coulisses : livraison, installation, équipe SAV. Montrer une personne seulement avec son accord.
+## Structure qui retient
+1. **Accroche (0-2 s)** : mouvement + texte fort. Exemples : la porte du frigo s'ouvre sur « 500 L pour toute la famille » ; « Votre clim consomme trop ? » ; le prix qui tombe.
+2. **Preuve (2-12 s)** : 3 plans qui montrent, pas qui racontent (fonction, détail, en situation).
+3. **Valeur (12-20 s)** : prix, classe énergie, pour qui c'est fait.
+4. **Appel à l'action (dernières 2-3 s)** : « En magasin au 53 rue du Commerce », logo.
+Changer de plan toutes les 1,5 à 3 s. Boucler si possible (la fin renvoie au début).
+
+## Concepts qui marchent pour un magasin
+Démonstration « 3 choses que fait… » · Avant / après · Comparatif de tailles « lequel pour votre famille ? » · Déballage d'arrivage · Conseil d'usage (clim à 26 °C, dégivrage) · Coulisses (conteneur, livraison, SAV) · Question de client en réponse vidéo · Série récurrente (« Le conseil du vendredi »).
+
+## Tournage au téléphone (consignes à donner à l'équipe)
+Téléphone vertical, objectif nettoyé, lumière du jour ou magasin bien éclairé, fond rangé, plans fixes de 3 à 5 s (on coupera), quelques gros plans de détails, son ambiant propre. Une personne reconnaissable : son accord avant.
 
 ## Livrable pour chaque vidéo
-| Plan | Durée | Ce qu'on filme | Texte à l'écran | Voix ou son |
-| --- | --- | --- | --- | --- |
+| Plan | Durée | Ce qu'on filme | Texte à l'écran | Son / voix | Transition |
+| --- | --- | --- | --- | --- | --- |
+Puis : la liste des plans à tourner, la légende du post (avec `kalo-post-facebook`), 3 accroches alternatives à tester, et la musique (bibliothèque libre de droits de Facebook, Instagram ou TikTok, jamais un morceau protégé ajouté soi-même).
 
-Ajouter ensuite :
-- les conseils de tournage : téléphone à la verticale, lumière du jour ou du magasin, fond rangé, plans de 2 à 4 secondes ;
-- la légende du post avec les hashtags de `kalo-marque` ;
-- une musique libre de droits proposée par l'application (Facebook ou TikTok), jamais un morceau protégé ajouté soi-même.
-
+## Contrôle qualité
+- [ ] On comprend le sujet en coupant le son
+- [ ] L'accroche tient dans les 2 premières secondes
+- [ ] Aucun texte dans les zones masquées par l'interface
+- [ ] Prix et classe énergie ensemble, dates si promo
+- [ ] Logo et appel à l'action à la fin
 Aucune vidéo n'est publiée sans validation de la direction.

@@ -1,44 +1,52 @@
 ---
 name: kalo-operations-commerciales
-description: Prépare les opérations commerciales de Kalo (Black Friday, soldes, fête des mères, rentrée, fêtes de fin d'année, anniversaire du magasin) : calendrier, prix barrés légaux, série d'affiches, posts et compte à rebours.
+description: Chef de campagne expert des opérations commerciales de Kalo (Black Friday, soldes, Ramadan, fête des mères, rentrée, fêtes de fin d'année, anniversaire du magasin) : mécanique d'offre, prix barrés légaux, rétroplanning, série d'affiches, posts, vidéos, WhatsApp et bilan.
 ---
 
 # Opérations commerciales Kalo
 
-Applique d'abord `kalo-marque`. Pour les affiches, utilise `kalo-visuel-produit`. Pour les textes, utilise `kalo-post-facebook`.
+Applique `kalo-marque`. Affiches : `kalo-visuel-produit`. Textes : `kalo-post-facebook`. Vidéos : `kalo-video-courte`. Messages : `kalo-whatsapp-sms`. Pour construire l'offre : `offers` et `marketing-psychology`.
 
-## Entrées
-- L'opération, ses dates, et le choix des produits par la direction.
-- Pour chaque produit : prix TTC actuel, prix promo, classe énergie, et l'historique des prix des 30 derniers jours (export Sage).
-- Les produits doivent être en stock en quantité suffisante. Le stock reste interne.
+## 1. Choisir la mécanique d'offre
+| Mécanique | Quand | Attention |
+| --- | --- | --- |
+| Prix barré / remise % | Black Friday, soldes | Règle des 30 jours ci-dessous |
+| Produit d'appel | Faire venir en magasin | Stock suffisant, sinon c'est trompeur |
+| Lot ou pack (lave-linge + sèche-linge) | Panier moyen | Prix du lot inférieur à la somme, détail visible |
+| Livraison ou installation offerte | Gros électroménager | Zone et conditions écrites |
+| Reprise de l'ancien appareil | Frigo, lave-linge | Conditions de reprise écrites |
+| Paiement en plusieurs fois | Gros montants | Mention crédit obligatoire (`kalo-marque`) |
+| Jeu concours | Visibilité | Règlement ; jamais « partagez » ou « identifiez » comme condition |
+Une opération = une mécanique principale, facile à comprendre en 3 secondes.
 
-## Prix barré : règle légale (à respecter sans exception)
-- Le prix de référence barré est le prix le plus bas pratiqué pendant les 30 jours avant le début de la promo.
-- Si l'historique manque, ne pas barrer de prix : écrire [historique à fournir] et afficher seulement le prix promo.
-- Une baisse en plusieurs étapes garde le prix de référence de départ.
-- Afficher la remise en euros ou en %, calculée sur ce prix de référence. Arrondir au centime, jamais vers le haut.
-- Dates de l'offre visibles sur chaque post et chaque affiche (« du 24 au 30 novembre »). Si l'offre est dans la limite des stocks, l'écrire.
+## 2. Prix barré : règle légale (sans exception)
+- Prix de référence barré = prix le plus bas pratiqué pendant les 30 jours avant le début de la promo.
+- Historique manquant : pas de prix barré, écrire [historique à fournir], afficher le prix promo seul.
+- Baisses successives : on garde le prix de référence de départ.
+- Remise en € ou en %, calculée sur ce prix de référence, arrondie au centime vers le bas.
+- Dates de l'offre sur chaque post, affiche, vidéo et message. « Dans la limite des stocks disponibles » si c'est le cas.
+- Jamais de fausse urgence : pas de faux compte à rebours, pas de « plus que 2 » inventé.
 
-## Plan type (exemple Black Friday)
+## 3. Rétroplanning type (Black Friday)
 | Quand | Quoi |
 | --- | --- |
-| J-30 | Figer les prix de référence et choisir 6 à 10 produits phares |
-| J-10 | Post teasing : « Le Black Friday arrive chez Kalo » |
-| J-3 à J-1 | Compte à rebours : 1 post ou story par jour |
-| Jour J | Post d'ouverture avec toutes les offres et affiches produits |
-| Pendant | 1 post produit par jour, rappel des dates |
-| Dernier jour | « Derniers jours / dernières heures » |
-| Après | Remerciement et retour aux prix normaux |
+| J-30 | Figer les prix de référence, choisir 6 à 10 produits phares avec la direction, vérifier le stock |
+| J-21 | Valider la mécanique, la maquette d'affiche « BLACK FRIDAY » et le prix barré |
+| J-14 | Produire affiches, vidéos, textes, messages WhatsApp ; préparer la vitrine et l'équipe |
+| J-10 | Teasing : « Le Black Friday arrive chez Kalo » |
+| J-3 à J-1 | Compte à rebours réel : 1 post ou statut par jour, liste WhatsApp |
+| Jour J | Post d'ouverture avec toutes les offres, affiches produits, vidéo |
+| Pendant | 1 produit mis en avant par jour, réponses rapides aux messages |
+| Dernier jour | « Derniers jours », vrai horaire de fin |
+| J+1 | Remerciement, retour aux prix normaux, bilan |
+Adapter la durée aux autres opérations (Ramadan : démarrer 3 semaines avant).
 
-Adapter la durée à l'opération. Ne jamais inventer d'urgence : pas de « plus que 2 en stock » ni de faux compte à rebours.
-
-## Affiches
-- Même mise en page que l'affiche validée. Le titre devient « BLACK FRIDAY », « PRIX CHOC », « SOLDES » selon l'opération.
-- Le prix barré se met dans le cartouche prix, plus petit et barré, au-dessus ou à gauche du prix promo en rouge.
-- Classe énergie toujours présente sur les appareils concernés.
+## 4. Bilan (avec `kalo-statistiques`)
+Couverture et messages reçus par post, produits qui ont le plus fait réagir, questions fréquentes, ce qu'on garde et ce qu'on change. Les chiffres de vente restent internes.
 
 ## Livrable
-1. Le calendrier de l'opération (tableau date, heure, contenu).
-2. Le tableau des prix : produit, prix de référence sur 30 jours, prix promo, remise, classe énergie, ⚠ éventuels.
-3. Les textes prêts à copier et les briefs ou fichiers d'affiches.
-4. La liste des points à valider par la direction avant publication.
+1. Fiche opération : nom, dates, mécanique, produits, message principal.
+2. Tableau des prix : produit, prix de référence 30 jours, prix promo, remise, classe énergie, ⚠.
+3. Rétroplanning daté.
+4. Tous les contenus prêts : textes, affiches ou briefs, scripts vidéo, messages WhatsApp et SMS.
+5. Points à valider par la direction avant publication.

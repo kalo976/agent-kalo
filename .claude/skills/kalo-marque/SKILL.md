@@ -1,47 +1,68 @@
 ---
 name: kalo-marque
-description: Fiche marque Kalo (électroménager, Mayotte) : couleurs, polices, logo, ton et règles. À lire avant toute communication, tout post ou toute affiche pour Kalo.
+description: Fiche marque experte de Kalo (électroménager, Mayotte) : identité, couleurs, polices, logo, voix, vocabulaire, calendrier local et règles légales de la publicité. À lire avant toute communication, tout post, toute affiche ou toute réponse client pour Kalo.
 ---
 
-# Fiche marque Kalo
+# Fiche marque Kalo (référence de toute l'équipe)
 
 Kalo : enseigne d'électroménager, TV, multimédia et climatisation, 53 rue du Commerce, 97600 Mamoudzou (Mayotte). Slogan : « La Qualité pour votre maison ». Site : kalo.yt. Facebook : Kalo.976. Cette fiche ne sert QUE pour Kalo, jamais pour Meubles & Déco.
 
+## Positionnement
+- **Promesse** : le bon appareil, au bon prix, livré et suivi à Mayotte (magasin, livraison à domicile, SAV local).
+- **Ce qui nous distingue** : conseil en magasin, SAV sur place, appareils choisis pour le climat (chaleur, humidité, coupures de courant).
+- **Clientèle** : familles nombreuses, jeunes ménages, professionnels (snacks, épiceries, restaurants). Achat souvent préparé sur Facebook puis conclu en magasin.
+
 ## Couleurs (charte 2017)
-| Rôle | Hex |
-| --- | --- |
-| Rouge principal (logo, prix) | #E2231A |
-| Jaune | #FFD700 |
-| Violet | #752F8A |
-| Bleu | #009BDE |
-| Noir profond | #0E0F0E |
-| Gris (slogan) | #6B605B |
+| Rôle | Hex | Usage |
+| --- | --- | --- |
+| Rouge principal | #E2231A | logo, prix, appels à l'action |
+| Jaune | #FFD700 | promos (texte noir dessus) |
+| Violet | #752F8A | gammes, saisons |
+| Bleu | #009BDE | nouveautés, froid, lavage |
+| Noir profond | #0E0F0E | texte sur fond clair |
+| Gris | #6B605B | slogan, mentions |
+Contraste : texte blanc seulement sur rouge, violet ou bleu ; sur jaune, texte noir.
 
 ## Polices
-- Titres : Fedra Sans Bold, en capitales (remplacement : Arial, ou Open Sans ExtraBold condensée pour les affiches).
-- Texte : Caviar Dreams (remplacement : Arimo).
+Titres : Fedra Sans Bold en capitales (sinon Open Sans ExtraBold condensée). Texte : Caviar Dreams (sinon Arimo).
 
 ## Logo
-- Logo couleur (rouge) sur fond blanc ou clair ; version blanche sur fond sombre.
-- Zone de protection = moitié de la hauteur du logo. Taille mini 20 × 33 mm.
-- Ne pas déformer, recolorer ou séparer le nom et les pictogrammes sans accord de la direction.
+Rouge sur fond clair, blanc sur fond sombre. Zone de protection = moitié de sa hauteur. Taille mini 20 × 33 mm. Jamais déformé, recoloré ou découpé.
 
-## Ton
-- Vouvoiement, phrases courtes, orientées usage (« pour une ou deux personnes », « jamais de dégivrage »).
-- Ancrage local : Mayotte, chaleur, saison cyclonique, grandes tablées.
-- Style d'annonce de grande enseigne (type Darty) : prix bien visibles, gros titres. Jamais le nom ni le logo Darty. Discours 100 % Kalo.
+## Voix de Kalo
+- Vouvoiement, phrases courtes (15 mots en moyenne), un message par phrase.
+- On parle d'usage, pas de fiche technique : « 7 kg, c'est le linge d'une famille de 4 en une seule fois ».
+- Chaleureux et local, jamais familier. Un mot de bienvenue en shimaoré est possible (« Karibu ! »).
+- Style grande enseigne (type Darty) : gros titres, prix bien visibles. Jamais le nom ni le logo Darty.
 
-## Règles
-1. Tout prix d'appareil soumis à l'étiquette énergie s'accompagne de sa classe et de l'échelle A à G. Classe inconnue : [à compléter] et pas de publication.
-2. Prix TTC, format 379 € (25,90 € pour les centimes).
-3. Stocks, ventes et données internes ne sortent jamais dans un post, une affiche ou un commentaire.
-4. Black Friday : prix de référence barré = prix le plus bas des 30 jours précédents.
-5. Saison cyclonique : ton de prévention, pas d'images de dégâts.
-6. Affiches : utiliser le format validé de la skill `kalo-visuel-produit`.
+| On écrit | On évite |
+| --- | --- |
+| « Livré chez vous » | « Livraison offerte » si ce n'est pas vrai |
+| « Économe en énergie, classe A » | « Écolo », « vert » sans preuve |
+| « Disponible en magasin » | Un nombre d'unités en stock |
+| « Profitez-en jusqu'au 30/11 » | « Dernière chance ! » sans date de fin réelle |
+| Chiffres précis | « Le meilleur », « n°1 » sans preuve |
+Pas de tics d'IA : pas de « ce n'est pas X, c'est Y », pas de listes de trois slogans creux, pas de points d'exclamation à chaque phrase (un au maximum par post).
+
+## Calendrier local à connaître (dates à vérifier chaque année)
+- Saison chaude et des pluies (novembre à avril) : clim, ventilateurs, frigos, congélateurs. Saison cyclonique : ton de prévention, jamais d'images de dégâts.
+- Ramadan et Aïd : cuisine, congélation, grandes tablées. Ton respectueux, pas de promo moqueuse ou décalée.
+- Grands mariages (saison sèche, surtout juillet-août pendant les vacances) : gros électroménager, cadeaux.
+- 27 avril (abolition de l'esclavage à Mayotte), fête des mères, rentrée scolaire (mi-août), Black Friday, fêtes de fin d'année.
+
+## Règles légales et maison
+1. Tout prix d'appareil soumis à l'étiquette énergie est accompagné de sa classe et de l'échelle A à G. Classe inconnue : [à compléter], pas de publication.
+2. Prix TTC, format 379 € (25,90 € avec centimes).
+3. Prix barré = prix le plus bas des 30 jours avant la promo. Dates de l'offre toujours indiquées.
+4. Paiement en plusieurs fois ou crédit : mention obligatoire « Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager. » et conditions fournies par l'organisme.
+5. Jeu concours : règlement écrit, et sur Facebook jamais « partagez pour participer » ni « identifiez vos amis » (interdit par Meta).
+6. Stocks, ventes, marges et données clients ne sortent jamais.
+7. Personne reconnaissable sur une photo ou une vidéo : son accord est nécessaire.
+8. Affiches : format validé de `kalo-visuel-produit`.
 
 ## Signature et hashtags
-- 📍 En magasin Kalo · 🚚 Livraison à domicile · 🛠 SAV Kalo
-- #Kalo #Mayotte #Électroménager + 1 ou 2 liés au produit.
+📍 En magasin Kalo · 🚚 Livraison à domicile · 🛠 SAV Kalo
+#Kalo #Mayotte #Électroménager + 1 ou 2 liés au produit.
 
 ## Rythme Facebook
-Lundi 12 h, mercredi 18 h 30, vendredi 17 h 30 (à ajuster avec les statistiques Meta).
+Lundi 12 h, mercredi 18 h 30, vendredi 17 h 30, à ajuster avec `kalo-statistiques`.
