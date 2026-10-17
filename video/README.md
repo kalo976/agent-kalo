@@ -16,6 +16,14 @@ Repris des 4 vidéos de référence de la direction : comète et étincelles, te
 
 Champ en plus dans le JSON : `galerie` (liste de packshots pour le mur d'images, facultatif).
 
+## Démo « Le cerveau Kalo » (22 s)
+
+Composition `CerveauKalo`, au style des vidéos de référence du 17/10/2026 (@zeyneb_madi) : accroche plein cadre qui sort du flou, écran partagé (graphe du cerveau en haut, post écrit par l'agent en bas), sous-titres serif mot à mot (Instrument Serif, romain et italique, lettres pixelisées Silkscreen qui se décodent), liste en escalier, une seule couleur d'accent, fin sur voile sombre et logo. Sans voix ni musique.
+
+```bash
+npx remotion render src/index.ts CerveauKalo out/kalo-cerveau-demo.mp4
+```
+
 ## Modèle « Nouvel arrivage » simple (15 s)
 
 Modèle animé « Nouvel arrivage », vertical 1080 × 1920, 30 i/s, 15 s, aux couleurs de la charte Kalo.

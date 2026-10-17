@@ -1,6 +1,7 @@
 import { Composition } from "remotion";
 import { NouvelArrivage, produitSchema } from "./NouvelArrivage";
 import { NouvelArrivageCinema, cinemaSchema } from "./NouvelArrivageCinema";
+import { CerveauKalo } from "./CerveauKalo";
 
 // Modèle vidéo Kalo « Nouvel arrivage » : vertical 1080 × 1920, 30 i/s, 15 s.
 // Les données produit ont le même format que les affiches (visuels/produits/*.json).
@@ -46,6 +47,14 @@ export const RemotionRoot = () => {
           "packshots/hisense-WF1I7022BWJ.png",
         ],
       }}
+    />
+    <Composition
+      id="CerveauKalo"
+      component={CerveauKalo}
+      durationInFrames={660}
+      fps={30}
+      width={1080}
+      height={1920}
     />
     </>
   );
