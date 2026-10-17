@@ -83,20 +83,27 @@ for f in sorted(glob.glob(P+"/references/*/00_*.md")):
 refs=[os.path.basename(x)[:-3] for x in glob.glob(V+"/Références/*.md") if "Style vidéo" not in x]
 w("Références/Style vidéo de référence.md","---\ntags: [références]\n---\n# Références (#enregistre)\nIndex complet : `references/INDEX.md`.\n\n"+"\n".join(f"- [[{r}]]" for r in sorted(refs)))
 
-# Agents
-ag=["---\ntags: [agents]\n---\n# Équipe d'agents Kalo\n","Tous les agents sont branchés sur ce cerveau : **avant d'écrire une seule ligne, ils lisent [[00 Cerveau Kalo]] puis les notes liées à leur métier.** Le gardien est [[kalo-cerveau]].\n","| Agent | Métier | Lit d'abord |","|---|---|---|"]
+# Agents : prénom et île de chaque agent (archipel Kalo)
+PRENOMS={"kalo-cerveau":("Baraka","Centre"),"kalo-chef-com":("Nadia","Pilotage"),"kalo-calendrier":("Inès","Pilotage"),"kalo-operations-commerciales":("Karim","Pilotage"),
+"kalo-marque":("Hugo","Marque"),"kalo-post-facebook":("Zaïna","Écriture"),"kalo-whatsapp-sms":("Anli","Écriture"),"kalo-fiches-produits":("Thomas","Écriture"),
+"kalo-visuel-produit":("Maël","Création"),"kalo-video-courte":("Sofiane","Création"),"kalo-community-manager":("Fatima","Clients"),"kalo-avis-clients":("Julie","Clients"),
+"kalo-statistiques":("Rachid","Analyse"),"kalo-veille-concurrence":("Chloé","Analyse")}
+ag=["---\ntags: [agents]\n---\n# Équipe d'agents Kalo\n","Tous les agents sont branchés sur ce cerveau : **avant d'écrire une seule ligne, ils lisent [[00 Cerveau Kalo]] puis les notes liées à leur métier.** Le gardien est [[kalo-cerveau]].\n","| Prénom | Île | Agent | Métier | Lit d'abord |","|---|---|---|---|---|"]
 lit={"kalo-marque":"[[Identité Kalo]]","kalo-calendrier":"[[Calendrier et temps forts]]","kalo-operations-commerciales":"[[Calendrier et temps forts]], [[Catalogue kalo.yt]]",
 "kalo-post-facebook":"[[Identité Kalo]], [[Index des contenus]], [[Catalogue kalo.yt]]","kalo-visuel-produit":"[[Packshots]], [[Style vidéo de référence]]","kalo-video-courte":"[[Style vidéo de référence]], [[Packshots]]",
 "kalo-whatsapp-sms":"[[Index des contenus]]","kalo-community-manager":"[[Questions et réponses clients]], [[Magasin Kalo]]","kalo-avis-clients":"[[Questions et réponses clients]]",
 "kalo-fiches-produits":"[[Catalogue kalo.yt]], [[Packshots]]","kalo-statistiques":"[[Index des contenus]]","kalo-veille-concurrence":"[[Catalogue kalo.yt]]","kalo-chef-com":"[[00 Cerveau Kalo]] en entier"}
 for d in sorted(glob.glob(SK+"/kalo-*")):
-    n=os.path.basename(d); desc=front(d+"/SKILL.md")
-    ag.append(f"| [[{n}]] | {desc[:110]}… | {lit.get(n,'[[Identité Kalo]]')} |")
-    w(f"Agents/{n}.md",f"---\ntags: [agents]\n---\n# {n}\n{desc}\n\n**Avant chaque tâche, lire :** {lit.get(n,'[[Identité Kalo]]')} et [[Règles à ne jamais enfreindre]].\n\nRetour : [[Équipe d'agents]]")
+    n=os.path.basename(d); desc=front(d+"/SKILL.md"); p,ile=PRENOMS.get(n,("?","?"))
+    if n=="kalo-cerveau": continue
+    ag.append(f"| {p} | {ile} | [[{n}]] | {desc[:110]}… | {lit.get(n,'[[Identité Kalo]]')} |")
+    w(f"Agents/{n}.md",f"---\ntags: [agents]\nprenom: {p}\nile: {ile}\n---\n# {p} ({n})\nÎle : {ile}\n\n{desc}\n\n**Avant chaque tâche, lire :** {lit.get(n,'[[Identité Kalo]]')} et [[Règles à ne jamais enfreindre]].\n\nRetour : [[Équipe d'agents]]")
 w("Agents/kalo-cerveau.md","""---
 tags: [agents]
+prenom: Baraka
+ile: Centre
 ---
-# kalo-cerveau (le gardien)
+# Baraka (kalo-cerveau), le gardien
 Tient ce coffre à jour. Après chaque livrable validé, chaque #enregistre, chaque nouveau fichier de yakesh : il crée ou met à jour la note, la relie ([[...]]) aux notes voisines et met à jour [[00 Cerveau Kalo]].
 Il retire ce qui est faux ou périmé (avec la date), et ne range jamais de stock, de vente ni de donnée client.
 Retour : [[Équipe d'agents]]""")

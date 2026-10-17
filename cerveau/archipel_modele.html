@@ -1,0 +1,419 @@
+<title>Archipel Kalo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Silkscreen&family=Open+Sans:wght@400;600;700;800&display=swap">
+<style>
+/* Mise en page : carte isométrique de nuit en pleine largeur, fiche de l'agent à droite (dessous sur téléphone). */
+:root {
+  --nuit: #15163A;
+  --nuit-2: #20214F;
+  --panneau: #1C1D45;
+  --trait: #34366E;
+  --texte: #F3F1FA;
+  --texte-2: #A9A8D0;
+  --rose: #FF8FD8;
+  --rouge: #E2231A;
+  --serif: "Instrument Serif", Georgia, serif;
+  --pixel: "Silkscreen", "Courier New", monospace;
+  --sans: "Open Sans", Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--nuit); color: var(--texte); }
+body {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 32px;
+}
+.page { max-width: 1320px; margin: 0 auto; display: grid; gap: 18px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px; }
+h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 5vw, 54px); line-height: 1; margin: 0; text-wrap: balance; }
+h1 em { color: var(--rose); }
+.sous { color: var(--texte-2); margin: 0; max-width: 62ch; }
+.etiquette { font-family: var(--pixel); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--texte-2); }
+.corps { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 18px; align-items: start; }
+@media (max-width: 960px) { .corps { grid-template-columns: minmax(0, 1fr); } }
+.carte { position: relative; border-radius: 22px; overflow: hidden; background: radial-gradient(ellipse at 50% 48%, var(--nuit-2), var(--nuit) 72%); border: 1px solid var(--trait); }
+#carte { display: block; width: 100%; height: auto; aspect-ratio: 1000 / 640; max-width: 100%; cursor: pointer; touch-action: manipulation; }
+.legende { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 14px 12px; }
+.puce { font-family: var(--pixel); font-size: 10px; padding: 4px 8px; border-radius: 6px; background: var(--nuit); border: 1px solid var(--trait); color: var(--texte-2); }
+aside { background: var(--panneau); border: 1px solid var(--trait); border-radius: 22px; padding: 20px; display: grid; gap: 14px; min-width: 0; }
+.qui { display: flex; gap: 14px; align-items: center; }
+#portrait { width: 64px; height: 64px; image-rendering: pixelated; background: var(--nuit-2); border-radius: 14px; flex: none; }
+.prenom { font-family: var(--serif); font-size: 40px; line-height: 1; margin: 0; }
+.role { margin: 2px 0 0; color: var(--texte-2); }
+.bloc { display: grid; gap: 6px; }
+.lit { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.lit li { font-size: 13px; padding: 4px 10px; border-radius: 999px; background: var(--nuit-2); border: 1px solid var(--trait); }
+.lit li::before { content: "▸ "; color: var(--rose); }
+.fil { display: grid; gap: 8px; max-height: 340px; overflow-y: auto; padding-right: 4px; }
+.msg { padding: 10px 12px; border-radius: 14px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; }
+.msg.moi { background: var(--rouge); color: #fff; justify-self: end; max-width: 88%; }
+.msg.agent { background: var(--nuit-2); border: 1px solid var(--trait); max-width: 96%; }
+.msg.info { color: var(--texte-2); font-size: 13px; padding: 0; }
+form { display: flex; gap: 8px; }
+textarea { flex: 1; min-width: 0; resize: vertical; min-height: 46px; max-height: 160px; font: inherit; color: var(--texte); background: var(--nuit); border: 1px solid var(--trait); border-radius: 12px; padding: 10px 12px; }
+textarea:focus-visible, button:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+button { font: 700 14px var(--sans); border: 0; border-radius: 12px; padding: 0 16px; background: var(--rose); color: var(--nuit); cursor: pointer; }
+button:disabled { opacity: 0.5; cursor: default; }
+.agents { display: flex; flex-wrap: wrap; gap: 6px; }
+.agents button { background: var(--nuit-2); color: var(--texte); border: 1px solid var(--trait); padding: 6px 10px; font-weight: 600; font-size: 13px; }
+.agents button[aria-pressed="true"] { background: var(--rose); color: var(--nuit); border-color: var(--rose); }
+.note { color: var(--texte-2); font-size: 12px; margin: 0; }
+</style>
+
+<div class="page">
+  <header>
+    <div>
+      <div class="etiquette">Kalo · communication · Mamoudzou</div>
+      <h1>L'archipel <em>Kalo</em></h1>
+    </div>
+    <p class="sous">Quatorze agents répartis sur six îles autour du cerveau commun. Avant d'écrire une seule ligne, chaque agent lit le cerveau. Clique sur un agent pour voir ce qu'il lit et lui parler.</p>
+  </header>
+
+  <div class="corps">
+    <div class="carte">
+      <canvas id="carte" width="1000" height="640" aria-label="Carte isométrique des îles des agents Kalo autour du cerveau"></canvas>
+      <div class="legende" id="legende"></div>
+    </div>
+
+    <aside aria-live="polite">
+      <div class="qui">
+        <canvas id="portrait" width="16" height="16" aria-hidden="true"></canvas>
+        <div>
+          <p class="prenom" id="prenom">Zaïna</p>
+          <p class="role" id="role"></p>
+        </div>
+      </div>
+      <div class="bloc">
+        <span class="etiquette" id="ile">Île</span>
+        <span class="etiquette">Lit d'abord dans le cerveau</span>
+        <ul class="lit" id="lit"></ul>
+      </div>
+      <div class="bloc">
+        <span class="etiquette" id="parle">Parle à Zaïna</span>
+        <div class="fil" id="fil"></div>
+        <form id="formulaire">
+          <textarea id="question" rows="2" placeholder="Ex. : un post pour le lave-linge Hisense 7 kg"></textarea>
+          <button type="submit" id="envoyer">Envoyer</button>
+        </form>
+        <p class="note" id="etat">Réponses rédigées avec les consignes de l'agent, la fiche marque et le catalogue kalo.yt. Rien n'est publié.</p>
+      </div>
+      <div class="bloc">
+        <span class="etiquette">Toute l'équipe</span>
+        <div class="agents" id="liste"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+const DONNEES = __DATA__;
+
+// ---------- Archipel : îles, couleurs, places ----------
+const ILES = {
+  "Centre":   { x: 500, y: 318, r: 4, toit: "#FF8FD8" },
+  "Pilotage": { x: 500, y: 112, r: 3, toit: "#E2231A" },
+  "Marque":   { x: 812, y: 214, r: 2, toit: "#752F8A" },
+  "Écriture": { x: 812, y: 432, r: 3, toit: "#009BDE" },
+  "Création": { x: 500, y: 540, r: 3, toit: "#FFD700" },
+  "Clients":  { x: 188, y: 432, r: 3, toit: "#2BB673" },
+  "Analyse":  { x: 188, y: 214, r: 3, toit: "#6B605B" },
+};
+const TW = 34, TH = 17; // demi-largeur et demi-hauteur d'une tuile
+const HABITS = ["#E2231A", "#009BDE", "#FFD700", "#752F8A", "#2BB673", "#F37021", "#FF8FD8"];
+const CHEVEUX = ["#2A1A10", "#4A2C1A", "#111111", "#6B3B1E", "#1E1410"];
+const PEAUX = ["#8D5524", "#C68642", "#A86B3C", "#6F4321", "#E0AC69"];
+
+const agents = DONNEES.agents.map((a, i) => {
+  const ile = ILES[a.ile];
+  const memes = DONNEES.agents.filter(b => b.ile === a.ile);
+  const k = memes.indexOf(a), n = memes.length;
+  const ang = n === 1 ? Math.PI / 2 : Math.PI * (0.15 + 0.7 * (k / (n - 1)));
+  return {
+    ...a,
+    x: ile.x + (a.ile === "Centre" ? 62 : Math.cos(ang) * 54),
+    y: ile.y + (a.ile === "Centre" ? 26 : Math.sin(ang) * 20 + 6),
+    habit: HABITS[i % HABITS.length],
+    cheveux: CHEVEUX[(i * 3) % CHEVEUX.length],
+    peau: PEAUX[(i * 2) % PEAUX.length],
+    phase: i * 0.7,
+  };
+});
+
+// ---------- Dessin ----------
+const carte = document.getElementById("carte");
+const ctx = carte.getContext("2d");
+let choisi = agents.find(a => a.id === "kalo-post-facebook") || agents[0];
+let survol = null;
+let particules = [];
+const calme = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function taille() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const w = carte.clientWidth || 1000;
+  carte.width = Math.round(w * dpr);
+  carte.height = Math.round(w * 0.64 * dpr);
+  ctx.setTransform(carte.width / 1000, 0, 0, carte.height / 640, 0, 0);
+  ctx.imageSmoothingEnabled = false;
+  if (calme) requestAnimationFrame(image);
+}
+
+function ombre(c, f) {
+  const n = parseInt(c.slice(1), 16);
+  const r = Math.round(((n >> 16) & 255) * f), g = Math.round(((n >> 8) & 255) * f), b = Math.round((n & 255) * f);
+  return `rgb(${r},${g},${b})`;
+}
+
+function tuile(x, y, haut, cote) {
+  ctx.beginPath(); ctx.moveTo(x - TW, y); ctx.lineTo(x, y + TH); ctx.lineTo(x, y + TH + 14); ctx.lineTo(x - TW, y + 14); ctx.closePath();
+  ctx.fillStyle = cote; ctx.fill();
+  ctx.beginPath(); ctx.moveTo(x + TW, y); ctx.lineTo(x, y + TH); ctx.lineTo(x, y + TH + 14); ctx.lineTo(x + TW, y + 14); ctx.closePath();
+  ctx.fillStyle = ombre(cote, 0.78); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(x, y - TH); ctx.lineTo(x + TW, y); ctx.lineTo(x, y + TH); ctx.lineTo(x - TW, y); ctx.closePath();
+  ctx.fillStyle = haut; ctx.fill();
+}
+
+function maison(x, y, toit) {
+  ctx.fillStyle = "#EDE6D6"; ctx.fillRect(x - 12, y - 22, 24, 18);
+  ctx.fillStyle = ombre("#EDE6D6", 0.75); ctx.fillRect(x, y - 22, 12, 18);
+  ctx.fillStyle = toit;
+  ctx.beginPath(); ctx.moveTo(x - 15, y - 22); ctx.lineTo(x, y - 34); ctx.lineTo(x + 15, y - 22); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = "#FFE9A8"; ctx.fillRect(x - 7, y - 16, 5, 5);
+}
+
+function arbre(x, y) {
+  ctx.fillStyle = "#5B3A1E"; ctx.fillRect(x - 2, y - 10, 4, 10);
+  ctx.fillStyle = "#2F8F4E"; ctx.fillRect(x - 8, y - 24, 16, 14);
+  ctx.fillStyle = "#3DAA5E"; ctx.fillRect(x - 5, y - 28, 10, 6);
+}
+
+// Île en losange de tuiles, dessinée de l'arrière vers l'avant
+function ile(nom, t) {
+  const r = t.r, cases = [];
+  for (let gx = -r; gx <= r; gx++) for (let gy = -r; gy <= r; gy++) {
+    if (Math.abs(gx) + Math.abs(gy) > r + 1) continue;
+    cases.push([gx, gy]);
+  }
+  cases.sort((a, b) => (a[0] + a[1]) - (b[0] + b[1]));
+  for (const [gx, gy] of cases) {
+    const x = t.x + (gx - gy) * TW * 0.5, y = t.y + (gx + gy) * TH * 0.5;
+    const centre = nom === "Centre" && Math.abs(gx) + Math.abs(gy) <= 1;
+    const pave = centre ? "#F4C7E6" : ((gx + gy) & 1 ? "#3E8E4E" : "#459A55");
+    tuile(x, y, pave, nom === "Centre" ? "#5B3A70" : "#2B5F38");
+  }
+  if (nom !== "Centre") {
+    maison(t.x - TW * 0.5, t.y - TH * (r - 0.6), t.toit);
+    arbre(t.x + TW * 0.7, t.y - TH * (r - 0.8));
+    ctx.font = "700 13px 'Open Sans', Arial";
+    const w = ctx.measureText(nom).width + 18;
+    const hy = t.y - TH * (r + 1) * 0.5 - 40;
+    ctx.fillStyle = t.toit; ctx.fillRect(t.x - w / 2, hy, w, 22);
+    ctx.fillStyle = t.toit === "#FFD700" ? "#0E0F0E" : "#FFFFFF";
+    ctx.textAlign = "center"; ctx.fillText(nom, t.x, hy + 16);
+  }
+}
+
+function cerveau(temps) {
+  const t = ILES.Centre, p = 1 + Math.sin(temps / 400) * 0.06;
+  const g = ctx.createLinearGradient(0, 0, 0, t.y);
+  g.addColorStop(0, "rgba(255,143,216,0)"); g.addColorStop(1, "rgba(255,143,216,0.5)");
+  ctx.fillStyle = g; ctx.fillRect(t.x - 5, 0, 10, t.y - 40);
+  const h = ctx.createRadialGradient(t.x, t.y - 30, 4, t.x, t.y - 30, 80 * p);
+  h.addColorStop(0, "rgba(255,143,216,0.85)"); h.addColorStop(1, "rgba(255,143,216,0)");
+  ctx.fillStyle = h; ctx.beginPath(); ctx.arc(t.x, t.y - 30, 80 * p, 0, Math.PI * 2); ctx.fill();
+  for (let k = 0; k < 3; k++) {
+    const u = ((temps / 1600) + k / 3) % 1;
+    ctx.strokeStyle = `rgba(255,143,216,${(1 - u) * 0.6})`; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.ellipse(t.x, t.y - 4, 30 + u * 70, (30 + u * 70) * 0.5, 0, 0, Math.PI * 2); ctx.stroke();
+  }
+  const cy = t.y - 36 + (calme ? 0 : Math.sin(temps / 500) * 3);
+  ctx.fillStyle = "#FF8FD8"; ctx.beginPath(); ctx.moveTo(t.x, cy - 26); ctx.lineTo(t.x + 16, cy); ctx.lineTo(t.x, cy + 22); ctx.lineTo(t.x - 16, cy); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = "#FFD3F0"; ctx.beginPath(); ctx.moveTo(t.x, cy - 26); ctx.lineTo(t.x, cy + 22); ctx.lineTo(t.x - 16, cy); ctx.closePath(); ctx.fill();
+  ctx.font = "italic 24px 'Instrument Serif', Georgia"; ctx.fillStyle = "#FFFFFF"; ctx.textAlign = "center";
+  ctx.fillText("le cerveau", t.x, t.y + 70);
+  ctx.font = "10px 'Silkscreen', monospace"; ctx.fillStyle = "#A9A8D0";
+  ctx.fillText(DONNEES.notes.length + " NOTES RELIÉES", t.x, t.y + 86);
+}
+
+// Petit personnage en pixel art (8 × 12 pixels)
+function personnage(c, a, x, y, px) {
+  const P = (cx, cy, w, h, col) => { c.fillStyle = col; c.fillRect(x + cx * px, y + cy * px, w * px, h * px); };
+  P(2, 0, 4, 2, a.cheveux); P(1, 1, 1, 3, a.cheveux); P(6, 1, 1, 3, a.cheveux);
+  P(2, 2, 4, 3, a.peau); P(3, 3, 1, 1, "#111111"); P(5, 3, 1, 1, "#111111");
+  P(1, 5, 6, 4, a.habit); P(0, 6, 1, 3, a.peau); P(7, 6, 1, 3, a.peau);
+  P(2, 9, 2, 3, "#2A2A4A"); P(4, 9, 2, 3, "#2A2A4A");
+}
+
+function dessinerAgent(a, temps) {
+  const bob = calme ? 0 : Math.sin(temps / 300 + a.phase) * 1.5;
+  const x = a.x - 12, y = a.y - 36 + bob;
+  const actif = a === choisi, dessus = a === survol;
+  ctx.fillStyle = "rgba(0,0,0,0.35)"; ctx.beginPath(); ctx.ellipse(a.x, a.y, 11, 4, 0, 0, Math.PI * 2); ctx.fill();
+  if (actif) { ctx.strokeStyle = "#FF8FD8"; ctx.lineWidth = 2; ctx.beginPath(); ctx.ellipse(a.x, a.y, 17, 7, 0, 0, Math.PI * 2); ctx.stroke(); }
+  personnage(ctx, a, x, y, 3);
+  ctx.font = (actif || dessus ? "700 " : "600 ") + "12px 'Open Sans', Arial";
+  const w = ctx.measureText(a.prenom).width + 12;
+  ctx.fillStyle = actif ? "#FF8FD8" : "rgba(21,22,58,0.88)";
+  ctx.fillRect(a.x - w / 2, y - 20, w, 17);
+  ctx.fillStyle = actif ? "#15163A" : "#FFFFFF"; ctx.textAlign = "center";
+  ctx.fillText(a.prenom, a.x, y - 7);
+}
+
+function ponts() {
+  const c = ILES.Centre;
+  ctx.setLineDash([4, 6]); ctx.lineWidth = 2; ctx.strokeStyle = "rgba(140,140,216,0.35)";
+  for (const [nom, t] of Object.entries(ILES)) {
+    if (nom === "Centre") continue;
+    ctx.beginPath(); ctx.moveTo(c.x, c.y); ctx.lineTo(t.x, t.y); ctx.stroke();
+  }
+  ctx.setLineDash([]);
+}
+
+function lancerParticules() {
+  if (calme) return;
+  const c = ILES.Centre;
+  for (let k = 0; k < 18; k++) particules.push({ t: -k * 0.05, dev: (Math.random() - 0.5) * 80, couleur: k % 2 ? "#FF8FD8" : "#FFD700", depart: { x: c.x, y: c.y - 36 } });
+}
+
+function dessinerParticules() {
+  particules = particules.filter(p => p.t < 1);
+  for (const p of particules) {
+    p.t += 0.018;
+    if (p.t < 0) continue;
+    const s = Math.sin(p.t * Math.PI);
+    const x = p.depart.x + (choisi.x - p.depart.x) * p.t + s * p.dev;
+    const y = p.depart.y + (choisi.y - 30 - p.depart.y) * p.t - s * 40;
+    ctx.globalAlpha = s; ctx.fillStyle = p.couleur; ctx.fillRect(x - 3, y - 3, 6, 6); ctx.globalAlpha = 1;
+  }
+}
+
+const etoiles = Array.from({ length: 70 }, () => ({ x: Math.random() * 1000, y: Math.random() * 640, r: Math.random() * 1.6 + 0.4, p: Math.random() * 6 }));
+
+function image(temps = 0) {
+  ctx.clearRect(0, 0, 1000, 640);
+  for (const e of etoiles) { ctx.fillStyle = `rgba(255,255,255,${0.2 + 0.25 * Math.sin(temps / 900 + e.p)})`; ctx.fillRect(e.x, e.y, e.r, e.r); }
+  ponts();
+  const ordre = Object.entries(ILES).sort((a, b) => a[1].y - b[1].y);
+  for (const [nom, t] of ordre) {
+    ile(nom, t);
+    if (nom === "Centre") cerveau(temps);
+    agents.filter(a => a.ile === nom).sort((a, b) => a.y - b.y).forEach(a => dessinerAgent(a, temps));
+  }
+  dessinerParticules();
+  if (!calme) requestAnimationFrame(image);
+}
+
+// ---------- Interaction ----------
+function point(ev) {
+  const r = carte.getBoundingClientRect();
+  return { x: (ev.clientX - r.left) / r.width * 1000, y: (ev.clientY - r.top) / r.height * 640 };
+}
+function agentSous(p) {
+  let mieux = null, d0 = 30;
+  for (const a of agents) { const d = Math.hypot(a.x - p.x, a.y - 22 - p.y); if (d < d0) { d0 = d; mieux = a; } }
+  return mieux;
+}
+carte.addEventListener("pointermove", ev => {
+  survol = agentSous(point(ev)); carte.style.cursor = survol ? "pointer" : "default";
+  if (calme) requestAnimationFrame(image);
+});
+carte.addEventListener("click", ev => { const a = agentSous(point(ev)); if (a) choisir(a); });
+
+const conversations = {};
+function choisir(a) {
+  choisi = a;
+  lancerParticules();
+  if (calme) requestAnimationFrame(image);
+  document.getElementById("prenom").textContent = a.prenom;
+  document.getElementById("role").textContent = a.court;
+  document.getElementById("ile").textContent = a.ile === "Centre" ? "Au centre de l'archipel" : "Île " + a.ile;
+  document.getElementById("parle").textContent = "Parle à " + a.prenom;
+  const lit = document.getElementById("lit"); lit.replaceChildren();
+  for (const n of [...a.lit, "Règles à ne jamais enfreindre"]) { const li = document.createElement("li"); li.textContent = n; lit.append(li); }
+  const pc = document.getElementById("portrait").getContext("2d");
+  pc.clearRect(0, 0, 16, 16); personnage(pc, a, 4, 2, 1);
+  for (const b of document.querySelectorAll("#liste button")) b.setAttribute("aria-pressed", String(b.dataset.id === a.id));
+  afficherFil();
+}
+
+function afficherFil() {
+  const fil = document.getElementById("fil"); fil.replaceChildren();
+  const msgs = conversations[choisi.id] || [];
+  if (!msgs.length) {
+    const d = document.createElement("div"); d.className = "msg info";
+    d.textContent = `Bonjour, je suis ${choisi.prenom}. ${choisi.court} Demande-moi un travail : je lis le cerveau avant de répondre.`;
+    fil.append(d);
+  }
+  for (const m of msgs) {
+    const d = document.createElement("div"); d.className = "msg " + (m.role === "user" ? "moi" : "agent");
+    d.textContent = m.content || "…"; fil.append(d);
+  }
+  fil.scrollTop = fil.scrollHeight;
+}
+
+const liste = document.getElementById("liste");
+for (const a of agents) {
+  const b = document.createElement("button"); b.type = "button"; b.dataset.id = a.id; b.textContent = a.prenom; b.title = a.court;
+  b.addEventListener("click", () => choisir(a)); liste.append(b);
+}
+const legende = document.getElementById("legende");
+for (const nom of Object.keys(ILES)) {
+  const s = document.createElement("span"); s.className = "puce";
+  s.textContent = (nom === "Centre" ? "Cerveau" : nom) + " · " + agents.filter(a => a.ile === nom).map(a => a.prenom).join(", ");
+  legende.append(s);
+}
+
+// ---------- « Parle à … » : Claude répond avec les consignes de l'agent et le cerveau ----------
+function instructions(a) {
+  const marque = DONNEES.agents.find(b => b.id === "kalo-marque").consignes;
+  return `Tu es ${a.prenom}, agent de l'équipe communication de Kalo (île ${a.ile} de l'archipel Kalo). Réponds en français à yakesh, le patron, simplement et directement. Présente-toi par ton prénom au premier message.\n\nRÈGLE D'OR : tu as lu le cerveau Kalo ci-dessous avant d'écrire. Prix, références et formulations viennent du cerveau. Ce qui n'y est pas : écris [à compléter], n'invente jamais un prix, une classe énergie ou une caractéristique. Rien n'est publié sans validation de yakesh.\n\n=== TES CONSIGNES (${a.id}) ===\n${a.consignes}\n\n=== CERVEAU : FICHE MARQUE ===\n${a.id === "kalo-marque" ? "(ce sont tes consignes ci-dessus)" : marque}\n\n=== CERVEAU : CATALOGUE KALO.YT (nom | référence | prix TTC, relevé du 16/10/2026) ===\n${DONNEES.catalogue.join("\n")}`;
+}
+
+let sample = null, enCours = null;
+const etat = document.getElementById("etat");
+const envoyer = document.getElementById("envoyer");
+(window.claude && window.claude.use ? window.claude.use("sample") : Promise.resolve(null)).then(s => {
+  sample = s;
+  if (!s) { etat.textContent = "La discussion avec les agents n'est pas disponible dans cette vue. La carte et les fiches restent consultables."; envoyer.disabled = true; }
+}).catch(() => { envoyer.disabled = true; });
+
+document.getElementById("formulaire").addEventListener("submit", async ev => {
+  ev.preventDefault();
+  const champ = document.getElementById("question");
+  const texte = champ.value.trim();
+  if (!texte || !sample || enCours) return;
+  const a = choisi;
+  const msgs = conversations[a.id] = conversations[a.id] || [];
+  msgs.push({ role: "user", content: texte });
+  const reponse = { role: "assistant", content: "" };
+  const entree = msgs.map((m, i) => ({ role: m.role, content: i === 0 ? instructions(a) + "\n\n=== DEMANDE ===\n" + m.content : m.content }));
+  msgs.push(reponse);
+  champ.value = ""; afficherFil(); lancerParticules();
+  envoyer.disabled = true; enCours = new AbortController();
+  try {
+    const r = await sample(entree, { signal: enCours.signal, cache: false, onText: ({ text }) => { reponse.content = text; if (choisi === a) afficherFil(); } });
+    reponse.content = r.text;
+  } catch (e) {
+    reponse.content = e && e.code === "rate_limited" ? "Trop de demandes d'un coup. Réessaie dans un moment."
+      : e && e.code === "not_granted" ? "La discussion n'a pas été autorisée pour cette page."
+      : ((e && e.text) || "La réponse n'a pas pu être obtenue. Réessaie.");
+  } finally {
+    enCours = null; envoyer.disabled = false;
+    if (choisi === a) afficherFil();
+  }
+});
+document.getElementById("question").addEventListener("keydown", ev => {
+  if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); document.getElementById("formulaire").requestSubmit(); }
+});
+
+addEventListener("resize", taille);
+taille();
+choisir(choisi);
+particules = [];
+requestAnimationFrame(image);
+if (document.fonts) document.fonts.ready.then(() => { if (calme) requestAnimationFrame(image); });
+</script>
