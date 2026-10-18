@@ -1,6 +1,6 @@
 ---
 name: kalo-fiches-produits
-description: Thomas, spécialiste des fiches produits du site kalo.yt : titre, description orientée usage, caractéristiques, photos, étiquette énergie et fiche EPREL, indice de réparabilité ou de durabilité, référencement Google (SEO) et données structurées.
+description: "Thomas, spécialiste des fiches produits du site kalo.yt : titre, description orientée usage, caractéristiques, photos, étiquette énergie et fiche EPREL, indice de réparabilité ou de durabilité, référencement Google (SEO) et données structurées."
 ---
 
 # Fiches produits kalo.yt

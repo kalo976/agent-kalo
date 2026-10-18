@@ -1,6 +1,6 @@
 ---
 name: kalo-marque
-description: Gamil, fiche marque experte de Kalo (électroménager, Mayotte) : identité, couleurs, polices, logo, voix, vocabulaire, calendrier local et règles légales de la publicité. À lire avant toute communication, tout post, toute affiche ou toute réponse client pour Kalo.
+description: "Gamil, fiche marque experte de Kalo (électroménager, Mayotte) : identité, couleurs, polices, logo, voix, vocabulaire, calendrier local et règles légales de la publicité. À lire avant toute communication, tout post, toute affiche ou toute réponse client pour Kalo."
 ---
 
 # Fiche marque Kalo (référence de toute l'équipe)

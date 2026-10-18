@@ -7,7 +7,7 @@ def body(path):
     t=open(path).read()
     return re.sub(r"^---.*?---\s*","",t,flags=re.S)
 def front(path):
-    m=re.search(r"description:\s*(.*)",open(path).read()); return m.group(1).strip() if m else ""
+    m=re.search(r"description:\s*(.*)",open(path).read()); return m.group(1).strip().strip('"') if m else ""
 
 # Marque
 w("Marque/Identité Kalo.md","---\ntags: [marque]\n---\n"+body(SK+"/kalo-marque/SKILL.md")+"\n\nVoir aussi [[Règles à ne jamais enfreindre]], [[Magasin Kalo]], [[Style vidéo de référence]].")
@@ -54,7 +54,7 @@ w("Produits/Catalogue kalo.yt.md","\n".join(idx))
 w("Produits/Packshots.md","---\ntags: [produits, visuels]\n---\nDossier des images : `kalo/packshots/` et `kalo/visuels/packshots/`.\n\n"+open(P+"/kalo/packshots/RECAPITULATIF.md").read())
 
 # Contenus déjà produits (journal)
-jl=["---\ntags: [contenus]\n---\n# Contenus produits par l'équipe\n","Chaque nouveau contenu validé ajoute une note ici (le gardien s'en charge).\n"]
+jl=["---\ntags: [contenus]\n---\n# Contenus produits par l'équipe\n","Chaque nouveau contenu validé ajoute une note ici (David s'en charge).\n"]
 for f in sorted(glob.glob(P+"/kalo/journal/*/*.md")):
     day=f.split("/")[-2]; name=os.path.basename(f)[:-3]
     title=f"{day} {name}"
@@ -74,7 +74,7 @@ tags: [clients]
 ---
 # Questions et réponses clients
 Réponses types validées ou à valider : [[2026-10-17 community-manager_reponses-types-P05-P07]], [[2026-10-17 avis-clients_modeles-reponses]].
-À compléter par le gardien avec chaque nouvelle question fréquente (horaires, zones de livraison, SAV, paiement). Aucune donnée personnelle de client ici.""")
+À compléter par David avec chaque nouvelle question fréquente (horaires, zones de livraison, SAV, paiement). Aucune donnée personnelle de client ici.""")
 
 # Références de style
 for f in sorted(glob.glob(P+"/references/*/00_*.md")):
@@ -88,7 +88,7 @@ PRENOMS={"kalo-cerveau":("David","Centre"),"kalo-chef-com":("Chimène","Pilotage
 "kalo-marque":("Gamil","Marque"),"kalo-post-facebook":("Zaïna","Écriture"),"kalo-whatsapp-sms":("Anli","Écriture"),"kalo-fiches-produits":("Thomas","Écriture"),
 "kalo-visuel-produit":("Sahel","Création"),"kalo-video-courte":("Kamil","Création"),"kalo-community-manager":("Charza","Clients"),"kalo-avis-clients":("Nasser","Clients"),
 "kalo-statistiques":("Nahim","Analyse"),"kalo-veille-concurrence":("Chloé","Analyse")}
-ag=["---\ntags: [agents]\n---\n# Équipe d'agents Kalo\n","Tous les agents sont branchés sur ce cerveau : **avant d'écrire une seule ligne, ils lisent [[00 Cerveau Kalo]] puis les notes liées à leur métier.** Le gardien est [[kalo-cerveau]].\n","| Prénom | Île | Agent | Métier | Lit d'abord |","|---|---|---|---|---|"]
+ag=["---\ntags: [agents]\n---\n# Équipe d'agents Kalo\n","Tous les agents sont branchés sur ce cerveau : **avant d'écrire une seule ligne, ils lisent [[00 Cerveau Kalo]] puis les notes liées à leur métier.** David ([[kalo-cerveau]]) tient le cerveau.\n","| Prénom | Île | Agent | Métier | Lit d'abord |","|---|---|---|---|---|"]
 lit={"kalo-marque":"[[Identité Kalo]]","kalo-calendrier":"[[Calendrier et temps forts]]","kalo-operations-commerciales":"[[Calendrier et temps forts]], [[Catalogue kalo.yt]]",
 "kalo-post-facebook":"[[Identité Kalo]], [[Index des contenus]], [[Catalogue kalo.yt]]","kalo-visuel-produit":"[[Packshots]], [[Style vidéo de référence]]","kalo-video-courte":"[[Style vidéo de référence]], [[Packshots]]",
 "kalo-whatsapp-sms":"[[Index des contenus]]","kalo-community-manager":"[[Questions et réponses clients]], [[Magasin Kalo]]","kalo-avis-clients":"[[Questions et réponses clients]]",
@@ -104,8 +104,8 @@ prenom: David
 ile: Centre
 ---
 # David (kalo-cerveau), au centre
-Tient ce coffre à jour. Après chaque livrable validé, chaque #enregistre, chaque nouveau fichier de yakesh : il crée ou met à jour la note, la relie ([[...]]) aux notes voisines et met à jour [[00 Cerveau Kalo]].
-Il retire ce qui est faux ou périmé (avec la date), et ne range jamais de stock, de vente ni de donnée client.
+Tient ce coffre à jour. Après chaque livrable validé, chaque #enregistre, chaque nouveau fichier de yakesh : crée ou met à jour la note, la relie ([[...]]) aux notes voisines et met à jour [[00 Cerveau Kalo]].
+Retire ce qui est faux ou périmé (avec la date), et ne range jamais de stock, de vente ni de donnée client.
 Retour : [[Équipe d'agents]]""")
 w("Agents/Équipe d'agents.md","\n".join(ag))
 
@@ -115,7 +115,7 @@ tags: [accueil]
 # 🧠 Cerveau Kalo
 La mémoire commune de toute l'équipe com Kalo (coffre Obsidian : ouvrir le dossier `kalo/cerveau/` dans Obsidian puis la vue Graphe).
 
-**Règle d'or : avant d'écrire une seule ligne, chaque agent lit cette note puis les notes de son métier.** Le gardien [[kalo-cerveau]] la tient à jour.
+**Règle d'or : avant d'écrire une seule ligne, chaque agent lit cette note puis les notes de son métier.** David ([[kalo-cerveau]]) la tient à jour.
 
 ## Les îles
 - **Marque** : [[Identité Kalo]] · [[Règles à ne jamais enfreindre]]

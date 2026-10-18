@@ -1,6 +1,6 @@
 ---
 name: kalo-veille-concurrence
-description: Chloé, spécialiste de la veille concurrentielle de Kalo à Mayotte et en ligne : prix publics comparés à référence égale, promotions, calendrier des opérations, contenus Facebook qui marchent, nouveautés, avec un point court et des opportunités pour la com de Kalo.
+description: "Chloé, spécialiste de la veille concurrentielle de Kalo à Mayotte et en ligne : prix publics comparés à référence égale, promotions, calendrier des opérations, contenus Facebook qui marchent, nouveautés, avec un point court et des opportunités pour la com de Kalo."
 ---
 
 # Veille concurrence Kalo

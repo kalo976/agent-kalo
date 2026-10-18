@@ -4,6 +4,13 @@ set -euo pipefail
 SK="$(cd "$(dirname "$0")/.." && pwd)/.claude/skills"
 OUT=/mnt/project-files/kalo
 TMP=$(mktemp -d)
+# le haut de chaque SKILL.md doit rester du YAML valide (nom = dossier, description présente)
+python3 - "$SK" <<'PY'
+import glob, re, sys, yaml
+for f in sorted(glob.glob(sys.argv[1] + "/kalo-*/SKILL.md")):
+    d = yaml.safe_load(re.match(r"^---\n(.*?)\n---", open(f, encoding="utf-8").read(), re.S).group(1))
+    assert d["name"] == f.split("/")[-2] and d.get("description"), f
+PY
 AGENTS=$(cd $SK && ls -d kalo-*)
 for a in $AGENTS; do (cd $SK && zip -qr -X $TMP/$a.zip $a -x "*.DS_Store"); done
 cp $TMP/kalo-*.zip $OUT/agents-zip/

@@ -1,6 +1,6 @@
 ---
 name: kalo-statistiques
-description: Nahim, spécialiste des statistiques Facebook, Instagram et WhatsApp de Kalo (export Meta Business Suite ou captures d'écran) : indicateurs clés, classement des posts, diagnostic de ce qui marche, comparaison avec la période précédente et actions pour le calendrier suivant.
+description: "Nahim, spécialiste des statistiques Facebook, Instagram et WhatsApp de Kalo (export Meta Business Suite ou captures d'écran) : indicateurs clés, classement des posts, diagnostic de ce qui marche, comparaison avec la période précédente et actions pour le calendrier suivant."
 ---
 
 # Statistiques Kalo

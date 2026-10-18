@@ -32,6 +32,7 @@ body {
   padding: 20px max(16px, env(safe-area-inset-right, 0px)) 32px max(16px, env(safe-area-inset-left, 0px));
 }
 button, input, textarea { font: inherit; color: inherit; }
+input, textarea { font-size: 16px; }
 button { cursor: pointer; }
 :focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
 .page { max-width: 1380px; margin: 0 auto; display: grid; gap: 16px; }
@@ -125,8 +126,8 @@ h1 em { color: var(--rose); }
   .fil { max-height: 380px; }
   .notes { max-height: 380px; }
 }
+.carte.etroite .mission { position: static; width: auto; margin: 10px; }
 @media (max-width: 640px) {
-  input, textarea { font-size: 16px; }
   .mission { position: static; width: auto; margin: 10px; }
   .compte { margin-left: 0; }
 }
@@ -670,6 +671,7 @@ const CERVEAU = [
   ".......###..###.....",
   "........##..##......",
 ];
+const SOMBRE = { "#": "#4A1040", "+": "#4A1040", "*": "#4A1040" };
 
 function piece(f, d, nom, I) {
   const S = STYLES[nom], [x0, y0] = I.g, L = (lx, ly, z = 0) => iso(x0 + lx, y0 + ly, z);
@@ -839,7 +841,7 @@ function construireDecor() {
 }
 
 // ---------- Nuages, étoiles ----------
-const etoiles = Array.from({ length: 150 }, () => ({ x: hasard() * 640 - 60, y: hasard() * 430 - 10, r: hasard() < 0.15 ? 1.4 : 0.8, p: hasard() * 6 }));
+const etoiles = Array.from({ length: 170 }, () => ({ x: hasard() * 640 - 60, y: hasard() * 470 - 10, r: hasard() < 0.15 ? 1.4 : 0.8, p: hasard() * 6 }));
 const nuages = Array.from({ length: 6 }, () => ({ x: hasard() * 600 - 40, y: 20 + hasard() * 330, l: 20 + Math.round(hasard() * 26), v: 0.004 + hasard() * 0.006 }));
 function nuage(c, x, y, l) {
   x = Math.round(x); y = Math.round(y);
@@ -856,8 +858,9 @@ function cristal(c, t) {
   // contour sombre, corps profond, lueur rose et cerveau à l'intérieur
   poly(c, [[x, y - H1 - 1], [x + W + 1, y - M], [x + W + 1, y + M], [x, y + H2 + 1], [x - W - 1, y + M], [x - W - 1, y - M]], "#24145A");
   poly(c, [haut, hd, bd, bas, bg, hg], "rgba(40,22,96,0.78)");
-  ovale(c, x, y, 12, 9, "rgba(255,111,207,0.40)"); ovale(c, x, y - 1, 7, 5, "rgba(255,200,240,0.45)");
-  motif(c, x - 10, y - 8, CERVEAU, { "#": "#FF6FCF", "+": "#B8338A", "*": "#FFE3F5" });
+  ovale(c, x, y, 14, 11, "rgba(255,111,207,0.22)");
+  for (const [dx, dy] of [[-1, 0], [1, 0], [0, -1], [0, 1]]) motif(c, x - 10 + dx, y - 8 + dy, CERVEAU, SOMBRE);
+  motif(c, x - 10, y - 8, CERVEAU, { "#": "#FF8FD8", "+": "#C2368F", "*": "#FFF0FA" });
   // facettes : claires à gauche, profondes à droite, très légères devant le cerveau
   poly(c, [haut, ah, hg], "rgba(230,250,255,0.42)");
   poly(c, [haut, hd, ah], "rgba(170,200,255,0.20)");
@@ -867,7 +870,7 @@ function cristal(c, t) {
   poly(c, [ab, bd, bas], "rgba(70,50,190,0.50)");
   for (const [a, b] of [[hg, haut], [hg, bg], [bg, bas]]) ligne(c, a, b, "rgba(235,252,255,0.95)");
   for (const [a, b] of [[haut, hd], [hd, bd], [bd, bas]]) ligne(c, a, b, "rgba(170,195,255,0.75)");
-  for (const [a, b] of [[haut, ah], [ah, ab], [ab, bas]]) ligne(c, a, b, "rgba(255,255,255,0.45)");
+  for (const [a, b] of [[haut, ah], [ab, bas]]) ligne(c, a, b, "rgba(255,255,255,0.45)");
   for (const [a, b] of [[hg, ah], [ah, hd], [bg, ab], [ab, bd]]) ligne(c, a, b, "rgba(220,240,255,0.3)");
   px(c, x - W + 3, y - M - 2, 1, 7, "rgba(255,255,255,0.9)");
   if (!calme && Math.sin(t / 450) > 0.85) { px(c, x - 6, y - 19, 1, 5, "#FFFFFF"); px(c, x - 8, y - 17, 5, 1, "#FFFFFF"); }
@@ -886,7 +889,7 @@ function notesEnOrbite(c, t, devantSeulement) {
 
 // ---------- Activité : arcs de lumière et étiquettes d'action ----------
 let choisi = parId("kalo-post-facebook") || agents[0];
-let survol = null, survolCristal = false, reponseEnCours = null, posees = [];
+let survol = null, survolCristal = false, reponseEnCours = null, posees = [], cartes = [];
 const etiquettes = new Map();  // id → {texte, fin}
 let arcs = [], prochain = 1200;
 const tete = a => [a.fx, a.fy - 29];
@@ -900,7 +903,7 @@ function activite(t) {
       const e = etiquettes.get(arc.a.id);
       if (e && e.tient) continue;
       if (arc.sens === "lit") etiquettes.set(arc.a.id, { texte: "lit le cerveau", fin: t + 2200, ensuite: true });
-      else if (!etiquettes.get("kalo-cerveau")?.tient) etiquettes.set("kalo-cerveau", { texte: "range la note", fin: t + 2600 });
+      else { const ec = etiquettes.get("kalo-cerveau"); if (!ec?.tient && !ec?.repondu) etiquettes.set("kalo-cerveau", { texte: "range la note", fin: t + 2600 }); }
     }
   }
   for (const [id, e] of [...etiquettes]) {
@@ -925,12 +928,13 @@ const enCours = a => etiquettes.has(a.id) || arcs.some(arc => arc.a === a && !ar
 // ---------- Affichage ----------
 const carte = document.getElementById("carte");
 const ctx = carte.getContext("2d");
-let VUE = { w: 560, h: 404, ox: 20, oy: 8 }, k = 1, kCss = 1, etroit = false, ciel = null, lueurs = null;
+let VUE = { w: 560, h: 456, ox: 20, oy: 8 }, k = 1, kCss = 1, etroit = false, ciel = null, lueurs = null;
 
 function taille() {
   const w = carte.clientWidth || 900;
   etroit = w < 640;
-  VUE = etroit ? { w: 410, h: 392, ox: -55, oy: 4 } : { w: 560, h: 404, ox: 20, oy: 8 };
+  VUE = etroit ? { w: 410, h: 392, ox: -55, oy: 4 } : { w: 560, h: 456, ox: 20, oy: 8 };
+  carte.parentElement.classList.toggle("etroite", etroit);
   const h = Math.round(w * VUE.h / VUE.w);
   carte.style.height = h + "px";
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -1011,9 +1015,8 @@ function dessiner(t) {
   const [kx, ky] = iso(0, 0, Z_CRISTAL);
   const pouls = calme ? 1 : 1 + Math.sin(t / 600) * 0.12;
   halo(c, CX, CY, 70, "#FF6FD0", 0.16);
-  halo(c, kx, ky, 54 * pouls, "#FF8FD8", 0.26);
+  halo(c, kx, ky + 16, 54 * pouls, "#FF8FD8", 0.16);
   halo(c, kx, ky - 18, 16, "#9FE8FF", 0.22);
-  halo(c, kx, ky, 14, "#FFFFFF", 0.18 * pouls);
   c.strokeStyle = `rgba(255,143,216,${0.55 * pouls})`; c.lineWidth = 1;
   c.beginPath(); c.ellipse(CX, CY - 14, 14.5, 7.2, 0, 0, Math.PI * 2); c.stroke();
   // éclats en orbite devant le cristal : petite lueur
@@ -1069,6 +1072,7 @@ function dessiner(t) {
   }
   c.globalCompositeOperation = "source-over";
   // étiquettes des îles
+  cartes = [];
   for (const nom of ORDRE_ILES) carteIle(c, nom, u);
   // étiquettes d'action et prénoms
   const montres = new Set();
@@ -1085,13 +1089,13 @@ function carteIle(c, nom, u) {
   const I = ILES[nom], membres = agents.filter(a => a.ile === nom), actifs = membres.filter(enCours).length;
   const titre = nom === "Centre" ? "Le cerveau" : nom;
   const sous = nom === "Centre" ? `${DONNEES.notes.length} notes · ${nbLiens} liens` : `${membres.length} agent${membres.length > 1 ? "s" : ""} · ${actifs} en cours`;
-  const compacte = etroit || nom === "Centre";
+  const compacte = etroit || nom === "Centre", sansAvatars = compacte || (nom === "Création" && kCss < 1.5);
   const H = (compacte ? 24 : 34) * u, ic = (compacte ? 16 : 22) * u, pad = 6 * u;
   c.font = `700 ${(etroit ? 10.5 : 12) * u}px "Open Sans", Arial`;
   const wt = c.measureText(titre).width;
   c.font = `${10 * u}px "Open Sans", Arial`;
   const ws = etroit ? 0 : c.measureText(sous).width + 10 * u;
-  const av = compacte ? 0 : (membres.length * 12 + 8) * u;
+  const av = sansAvatars ? 0 : (membres.length * 12 + 8) * u;
   const W = pad + ic + 7 * u + (nom === "Centre" && !etroit ? wt + 8 * u + ws : Math.max(wt, ws)) + av + pad;
   // Chaque carte flotte du côté extérieur de son île, sans couvrir les pièces voisines
   let [x, y] = iso(I.g[0] - 3, I.g[1] - 3, MURS + 14);
@@ -1100,6 +1104,7 @@ function carteIle(c, nom, u) {
   else if (nom === "Marque" || nom === "Écriture") { x -= 14 * u; y -= H; }
   else if (nom === "Création") { [x, y] = iso(I.g[0] - 5, I.g[1] + 5); x = x + 4 - W; y = y + 4 - H / 2; }
   else { x = x - W + 14 * u; y -= H; }
+  cartes.push({ x, y, w: W, h: H });
   c.fillStyle = "rgba(16,17,46,0.9)"; rondRect(c, x, y, W, H, 8 * u); c.fill();
   c.strokeStyle = "rgba(255,255,255,0.12)"; c.lineWidth = u; c.stroke();
   const ix = x + pad, iy = y + (H - ic) / 2;
@@ -1113,7 +1118,7 @@ function carteIle(c, nom, u) {
   if (!compacte) {
     c.fillStyle = actifs || nom === "Centre" ? "#3DDC84" : "#7C7BAA"; c.beginPath(); c.arc(tx + 3 * u, y + 25 * u, 2.5 * u, 0, Math.PI * 2); c.fill();
     c.fillStyle = "#A9A8D0"; c.font = `${10 * u}px "Open Sans", Arial`; c.fillText(sous, tx + 9 * u, y + 28.5 * u);
-    membres.forEach((a, n) => {
+    if (!sansAvatars) membres.forEach((a, n) => {
       const ax = x + W - pad - (membres.length - n) * 12 * u + 4 * u, ay = y + H / 2;
       c.fillStyle = a.haut; c.beginPath(); c.arc(ax, ay, 8 * u, 0, Math.PI * 2); c.fill();
       c.strokeStyle = "rgba(16,17,46,1)"; c.lineWidth = 1.5 * u; c.stroke();
@@ -1130,10 +1135,18 @@ function bulle(c, a, prenom, action, u, actif) {
   c.font = `${fs * 0.86}px Silkscreen, monospace`;
   const wa = action ? c.measureText(action).width + 7 * u : 0;
   const W = pad * 2 + wp + wa + (action ? 9 * u : 0);
-  const x = hx - W / 2;
-  let y = hy - H - 5 * u - 2;
+  let x = hx - W / 2, y = hy - H - 5 * u - 2;
+  const touche = r => x < r.x + r.w && x + W > r.x && y < r.y + r.h && y + H > r.y;
+  // cartes d'île : à côté si la carte est sur le côté, sinon juste dessous sans descendre sur la tête ; jamais au-dessus
+  for (const r of cartes) if (touche(r)) {
+    const gauche = r.x - W - 2 * u, droite = r.x + r.w + 2 * u;
+    if (r.x > hx && hx - (gauche + W / 2) < W * 0.75) x = gauche;
+    else if (r.x + r.w < hx && droite + W / 2 - hx < W * 0.75) x = droite;
+    else if (r.y + r.h + 2 * u + H <= hy + 2 * u) y = r.y + r.h + 2 * u;
+  }
+  x = Math.max(-VUE.ox + 4, Math.min(x, VUE.w - VUE.ox - W - 4));
   for (let essai = 0; essai < 4; essai++) {
-    const gene = posees.find(r => x < r.x + r.w && x + W > r.x && y < r.y + r.h && y + H > r.y);
+    const gene = posees.find(touche);
     if (!gene) break;
     y = gene.y - H - 3 * u;
   }
@@ -1277,7 +1290,7 @@ for (const [nom, col] of Object.entries(DOSSIERS)) {
   s.append(i, document.createTextNode(`${nom} ${n}`)); $("dossiers").append(s);
 }
 // Disposition du graphe : ressorts sur les liens, répulsion entre notes
-const noeuds = DONNEES.notes.map((n, i) => ({ ...n, i, x: Math.cos(i * 2.4) * (40 + i * 2), y: Math.sin(i * 2.4) * (30 + i * 1.5), vx: 0, vy: 0, deg: 0 }));
+const noeuds = DONNEES.notes.map((n, i) => ({ ...n, i, extrait: n.x, x: Math.cos(i * 2.4) * (40 + i * 2), y: Math.sin(i * 2.4) * (30 + i * 1.5), vx: 0, vy: 0, deg: 0 }));
 const liens = [];
 for (const n of noeuds) for (const j of n.l) { liens.push([n.i, j]); n.deg++; noeuds[j].deg++; }
 for (let it = 0; it < 320; it++) {
@@ -1293,7 +1306,7 @@ for (let it = 0; it < 320; it++) {
   for (const n of noeuds) { n.vx -= n.x * 0.03; n.vy -= n.y * 0.045; n.x += n.vx * 0.1; n.y += n.vy * 0.1; n.vx *= 0.6; n.vy *= 0.6; }
 }
 let filtre = "";
-const correspond = n => !filtre || (n.t + " " + n.d + " " + n.x).toLowerCase().includes(filtre.toLowerCase());
+const correspond = n => !filtre || (n.t + " " + n.d + " " + n.extrait).toLowerCase().includes(filtre.toLowerCase());
 function dessinerGraphe() {
   const cv = $("graphe"), w = cv.clientWidth || 340, h = cv.clientHeight || 170, dpr = Math.min(window.devicePixelRatio || 1, 2);
   cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
@@ -1326,7 +1339,7 @@ function listerNotes() {
     b.type = "button"; b.setAttribute("aria-expanded", "false");
     const t = document.createElement("b"); t.textContent = n.t;
     const s = document.createElement("small"); s.textContent = `${n.d} · ${n.deg} lien${n.deg > 1 ? "s" : ""}`; s.style.color = DOSSIERS[n.d];
-    const x = document.createElement("span"); x.textContent = n.x || "Tableau de produits du catalogue kalo.yt.";
+    const x = document.createElement("span"); x.textContent = n.extrait || "Tableau de produits du catalogue kalo.yt.";
     b.append(t, s, x);
     b.addEventListener("click", () => b.setAttribute("aria-expanded", String(b.getAttribute("aria-expanded") !== "true")));
     li.append(b); ul.append(li);
@@ -1374,11 +1387,12 @@ async function envoyer(texte) {
   reponseEnCours = a; bouton.disabled = true; boutonMission.disabled = true;
   if (!calme) lancerArc(a, performance.now());
   etiquettes.set(a.id, { texte: "lit le cerveau", tient: true }); majStatut();
+  if (calme) dessiner(0);
   let definitif = false;
   try {
     const r = await sample(entree, { cache: false, onText: ({ text }) => {
       reponse.content = text;
-      etiquettes.set(a.id, { texte: "écrit…", tient: true });
+      if (etiquettes.get(a.id)?.texte !== "écrit…") { etiquettes.set(a.id, { texte: "écrit…", tient: true }); if (calme) dessiner(0); }
       if (choisi === a) afficherFil();
     } });
     reponse.content = r.text;
@@ -1397,7 +1411,7 @@ async function envoyer(texte) {
     if (definitif) couperDiscussion(); else { bouton.disabled = false; boutonMission.disabled = false; }
     // l'arc de lecture encore en vol ne doit pas relancer une fausse action après la réponse
     for (const r of arcs) if (r.a === a) r.fini = true;
-    if (calme) etiquettes.delete(a.id); else etiquettes.set(a.id, { texte: "a répondu", fin: performance.now() + 2500 });
+    if (calme) etiquettes.delete(a.id); else etiquettes.set(a.id, { texte: "a répondu", fin: performance.now() + 2500, repondu: true });
     $("annonce").textContent = reponse.erreur ? `${a.prenom} n'a pas pu répondre.` : `${a.prenom} a répondu.`;
     majStatut();
     if (choisi === a) afficherFil();

@@ -1,6 +1,6 @@
 ---
 name: kalo-visuel-produit
-description: Sahel, direction artistique experte des affiches Kalo « Nouvel arrivage » (1734×907, haute définition) au format validé par la direction : carte couleur, gros titre, prix rouge, cartouche classe énergie, packshot détouré, logo. Fabrique, contrôle et corrige l'affiche jusqu'à la qualité finale.
+description: "Sahel, direction artistique experte des affiches Kalo « Nouvel arrivage » (1734×907, haute définition) au format validé par la direction : carte couleur, gros titre, prix rouge, cartouche classe énergie, packshot détouré, logo. Fabrique, contrôle et corrige l'affiche jusqu'à la qualité finale."
 ---
 
 # Affiche produit Kalo (format validé le 16/10/2026)

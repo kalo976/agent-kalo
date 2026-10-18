@@ -1,6 +1,6 @@
 ---
 name: kalo-avis-clients
-description: Nasser, spécialiste e-réputation de Kalo : réponses aux avis Google et Facebook (positifs, neutres, négatifs, faux avis), collecte d'avis auprès des clients satisfaits et optimisation de la fiche Google de Kalo, dans le respect des règles.
+description: "Nasser, spécialiste e-réputation de Kalo : réponses aux avis Google et Facebook (positifs, neutres, négatifs, faux avis), collecte d'avis auprès des clients satisfaits et optimisation de la fiche Google de Kalo, dans le respect des règles."
 ---
 
 # Avis clients et e-réputation Kalo

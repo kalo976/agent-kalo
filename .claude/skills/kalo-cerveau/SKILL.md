@@ -1,6 +1,6 @@
 ---
 name: kalo-cerveau
-description: David, au centre de l'archipel, tient le cerveau Kalo (coffre Obsidian commun des agents com Kalo) : à lire avant toute tâche com Kalo, et à utiliser après chaque livrable validé, chaque #enregistre ou nouveau fichier reçu pour ranger et relier les notes du cerveau.
+description: "David, au centre de l'archipel, tient le cerveau Kalo (coffre Obsidian commun des agents com Kalo) : à lire avant toute tâche com Kalo, et à utiliser après chaque livrable validé, chaque #enregistre ou nouveau fichier reçu pour ranger et relier les notes du cerveau."
 ---
 
 # David, au centre du cerveau Kalo

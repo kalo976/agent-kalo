@@ -1,6 +1,6 @@
 ---
 name: kalo-video-courte
-description: Kamil, réalisation experte des vidéos courtes de Kalo (Reels Facebook et Instagram, TikTok, statuts WhatsApp) : concept, accroche, script plan par plan, texte à l'écran, rythme, sous-titres, zones de sécurité, musique, légende et consignes de tournage au téléphone.
+description: "Kamil, réalisation experte des vidéos courtes de Kalo (Reels Facebook et Instagram, TikTok, statuts WhatsApp) : concept, accroche, script plan par plan, texte à l'écran, rythme, sous-titres, zones de sécurité, musique, légende et consignes de tournage au téléphone."
 ---
 
 # Vidéos courtes Kalo

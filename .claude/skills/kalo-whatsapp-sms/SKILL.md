@@ -1,6 +1,6 @@
 ---
 name: kalo-whatsapp-sms
-description: Anli, spécialiste WhatsApp Business et SMS de Kalo : messages promo, arrivages, opérations, rappels de livraison et SAV, statuts, catalogue et réponses rapides, avec consentement des clients, mentions obligatoires et bons horaires d'envoi.
+description: "Anli, spécialiste WhatsApp Business et SMS de Kalo : messages promo, arrivages, opérations, rappels de livraison et SAV, statuts, catalogue et réponses rapides, avec consentement des clients, mentions obligatoires et bons horaires d'envoi."
 ---
 
 # WhatsApp et SMS Kalo

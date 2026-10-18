@@ -1,6 +1,6 @@
 ---
 name: kalo-calendrier
-description: Chanisse, spécialiste du calendrier Facebook et Instagram mensuel de Kalo : piliers de contenu, saisons et temps forts de Mayotte, choix des produits selon le stock, rythme de publication, avec texte et brief d'affiche ou de vidéo pour chaque post.
+description: "Chanisse, spécialiste du calendrier Facebook et Instagram mensuel de Kalo : piliers de contenu, saisons et temps forts de Mayotte, choix des produits selon le stock, rythme de publication, avec texte et brief d'affiche ou de vidéo pour chaque post."
 ---
 
 # Calendrier éditorial Kalo

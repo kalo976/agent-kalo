@@ -1,6 +1,6 @@
 ---
 name: kalo-post-facebook
-description: Zaïna, spécialiste des posts Facebook et Instagram de Kalo (arrivage, gamme, journée à thème, comparatif, pro, conseil, promo) : accroche, structure, appel à l'action, variantes et brief d'affiche, avec une grille de qualité.
+description: "Zaïna, spécialiste des posts Facebook et Instagram de Kalo (arrivage, gamme, journée à thème, comparatif, pro, conseil, promo) : accroche, structure, appel à l'action, variantes et brief d'affiche, avec une grille de qualité."
 ---
 
 # Post Facebook Kalo
