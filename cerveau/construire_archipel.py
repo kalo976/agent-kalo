@@ -22,6 +22,11 @@ COURT = {
     "kalo-avis-clients": "Les avis Google et Facebook.",
     "kalo-statistiques": "Les bilans de performance.",
     "kalo-veille-concurrence": "Les prix et promos des concurrents.",
+    "kalo-challenger-affiches": "Challenge les affiches de Sahel.",
+    "kalo-challenger-videos": "Challenge les vidéos de Kamil.",
+    "kalo-challenger-posts": "Challenge les posts de Zaïna.",
+    "kalo-challenger-operations": "Challenge les opérations de Zayeb.",
+    "kalo-challenger-calendrier": "Challenge le calendrier de Chanisse.",
 }
 from construire import lit as LIT  # noqa: E402
 agents = []
