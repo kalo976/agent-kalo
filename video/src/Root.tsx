@@ -2,6 +2,7 @@ import { Composition } from "remotion";
 import { NouvelArrivage, produitSchema } from "./NouvelArrivage";
 import { NouvelArrivageCinema, cinemaSchema } from "./NouvelArrivageCinema";
 import { CerveauKalo } from "./CerveauKalo";
+import { VitrineEcran } from "./VitrineEcran";
 
 // Modèle vidéo Kalo « Nouvel arrivage » : vertical 1080 × 1920, 30 i/s, 15 s.
 // Les données produit ont le même format que les affiches (visuels/produits/*.json).
@@ -52,6 +53,14 @@ export const RemotionRoot = () => {
       id="CerveauKalo"
       component={CerveauKalo}
       durationInFrames={660}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="VitrineEcran"
+      component={VitrineEcran}
+      durationInFrames={450}
       fps={30}
       width={1080}
       height={1920}
