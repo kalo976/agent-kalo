@@ -36,7 +36,7 @@ Applique `kalo-marque`. Pour aller plus loin : `video`. Pour le motion design : 
 1. **Accroche (0-2 s)** : mouvement + texte fort. Exemples : la porte du frigo s'ouvre sur « 500 L pour toute la famille » ; « Votre clim consomme trop ? » ; le prix qui tombe.
 2. **Preuve (2-12 s)** : 3 plans qui montrent, pas qui racontent (fonction, détail, en situation).
 3. **Valeur (12-20 s)** : prix, classe énergie, pour qui c'est fait.
-4. **Appel à l'action (dernières 2-3 s)** : « En magasin au 53 rue du Commerce », logo.
+4. **Appel à l'action (dernières 2-3 s)** : « Chez Kalo à Kawéni et dans 5 autres magasins », logo et kalo.yt.
 Changer de plan toutes les 1,5 à 3 s. Boucler si possible (la fin renvoie au début).
 
 ## Concepts qui marchent pour un magasin

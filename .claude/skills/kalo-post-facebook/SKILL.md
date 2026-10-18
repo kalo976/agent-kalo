@@ -40,7 +40,7 @@ Formules d'accroche éprouvées :
 (répéter pour chaque produit, du plus petit au plus grand)
 💡 <un conseil pratique ou un produit complémentaire avec son prix>
 👉 <appel à l'action : passer en magasin, écrire en message privé, appeler>
-📍 En magasin Kalo · 🚚 Livraison à domicile · 🛠 SAV Kalo
+📍 6 magasins : Kawéni, Mamoudzou, Combani, Dzoumogné, Labattoir, Tsararano · 🚚 Livraison à domicile · 🛠 SAV Kalo
 #Kalo #Mayotte #Électroménager #<produit>
 ```
 
@@ -56,7 +56,7 @@ Formules d'accroche éprouvées :
 | Promo | Vendre vite | Dates, prix barré légal, fin réelle |
 
 ## Appels à l'action (un seul par post)
-« Passez nous voir au 53 rue du Commerce », « Écrivez-nous en message privé pour réserver », « Demandez conseil à nos vendeurs ». Le message privé est souvent le meilleur choix : il crée une conversation.
+« Passez nous voir à Kawéni (RN1, parking de la SNIE) ou dans nos 5 autres magasins », « Écrivez-nous en message privé pour réserver », « Demandez conseil à nos vendeurs ». Le message privé est souvent le meilleur choix : il crée une conversation.
 
 ## Livrable
 1. Le post prêt à copier.

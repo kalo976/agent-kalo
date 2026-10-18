@@ -41,7 +41,7 @@ Un commentaire public est lu par des dizaines de clients. On répond d'abord pou
 Jamais : se justifier en public, accuser le client, promettre un remboursement ou un geste commercial sans accord de la direction, supprimer un avis négatif légitime.
 
 ## Exemples
-- Prix : « Bonjour Fatima, ce lave-linge Hisense 7 kg est à 379 € (classe E), disponible en magasin au 53 rue du Commerce. Nous livrons aussi à domicile. L'équipe Kalo »
+- Prix : « Bonjour Fatima, ce lave-linge Hisense 7 kg est à 379 € (classe E), disponible dans nos magasins, dont Kawéni sur la RN1. Nous livrons aussi à domicile. L'équipe Kalo »
 - SAV : « Bonjour Ali, nous sommes désolés pour ce souci. Pouvez-vous nous envoyer en message privé la référence de l'appareil, la date d'achat et une photo ? Notre SAV revient vers vous rapidement. L'équipe Kalo »
 
 ## Cas à remonter immédiatement (crise)

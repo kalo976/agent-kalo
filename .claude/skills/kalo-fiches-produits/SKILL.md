@@ -32,7 +32,7 @@ Désignation, référence exacte, prix TTC, fiche technique ou page du construct
 ## Référencement Google (SEO)
 - **Balise titre** (≤ 60 caractères) : « Lave-linge Hisense 7 kg WF1I7022BWJ | Kalo Mayotte ».
 - **Méta-description** (≤ 155 caractères) : bénéfice, prix, « livraison à Mayotte ».
-- Mots que les clients tapent : type d'appareil, marque, capacité, « Mayotte », « Mamoudzou ».
+- Mots que les clients tapent : type d'appareil, marque, capacité, « Mayotte », « Mamoudzou », « Kawéni ».
 - **Données structurées** schema.org `Product` avec `offers` (prix, devise EUR, disponibilité), `brand`, `sku`, `image`. Les fournir en JSON-LD si le site le permet.
 - Adresse de la page courte et lisible : `/lave-linge-hisense-7kg-wf1i7022bwj`.
 
@@ -40,6 +40,7 @@ Désignation, référence exacte, prix TTC, fiche technique ou page du construct
 - Uniquement les informations du constructeur ; aucune exagération (« le plus silencieux » seulement si c'est prouvé).
 - Pas de texte copié d'un autre revendeur (Google pénalise le contenu dupliqué).
 - Si deux sources diffèrent, prendre celle du constructeur et le signaler par ⚠.
+- Toujours comparer la désignation Sage, la fiche kalo.yt existante et le fabricant : Sage se trompe parfois (sets Tefal Ingenio annoncés « poêles » alors que ce sont des casseroles).
 
 ## Livrable
 La fiche prête à coller (blocs dans l'ordre ci-dessus), le titre et la méta-description SEO, le JSON-LD si demandé, la liste des ⚠ et des photos ou documents à récupérer.

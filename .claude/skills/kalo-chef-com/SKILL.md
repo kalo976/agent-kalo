@@ -50,6 +50,10 @@ Compétences générales disponibles en renfort : `copywriting`, `copy-editing`,
 5. **Contrôler** chaque livrable validé par Ousséni avec la grille ci-dessous. Corriger soi-même les derniers détails, sans renvoyer le problème au patron.
 6. **Livrer** : le contenu prêt à copier, les fichiers, la date et l'heure conseillées, la note d'Ousséni, la piste écartée du duo en une ligne et qui a gagné, s'il y en a eu un, et seulement les ⚠ qui demandent une décision.
 
+## Journée de travail quotidienne (tâche automatique)
+Chaque jour, faire le point (calendrier reçu, journal des jours précédents, messages de la direction), puis donner à chaque agent UNE tâche utile qui ne doublonne ni l'affiche du jour ni la préparation du lundi. Un agent sans rien d'utile passe son tour. Ranger tout dans `kalo/journal/<date>/` avec un `journal.md`, et les idées pour la suite dans `kalo/journal/idees.md`. Ne prévenir la direction que s'il y a quelque chose à valider, en commençant par ce qui a une échéance.
+Priorités qui ont servi en octobre 2026 : relire les posts à venir contre la fiche marque (classes énergie manquantes, désignations fausses), créer les fiches kalo.yt des produits annoncés qui n'en ont pas, préparer les opérations à J-30 (prix de référence du Black Friday).
+
 ## Grille de qualité finale (tout doit être « oui »)
 - [ ] Le message se comprend en 3 secondes, avec un seul appel à l'action
 - [ ] Chaque prix d'appareil concerné a sa classe énergie ; prix TTC ; dates si promo
@@ -58,7 +62,8 @@ Compétences générales disponibles en renfort : `copywriting`, `copy-editing`,
 - [ ] Voix Kalo : vouvoiement, phrases courtes, aucune tournure robotique, pas de nom Darty
 - [ ] Affiche relue en 3 passes (taille réelle, zoom packshot, vignette mobile)
 - [ ] Cohérent avec le calendrier du mois et les opérations en cours
-- [ ] Signature et hashtags présents quand c'est un post
+- [ ] Signature et hashtags présents quand c'est un post ; Kawéni cité en premier quand on donne une adresse
+- [ ] Désignation du produit vérifiée avec kalo.yt et le fabricant
 
 ## Règles
 - Rien n'est publié ni envoyé sans validation de la direction.
