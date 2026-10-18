@@ -42,3 +42,17 @@ Le JSON produit est le même que pour les affiches. Le packshot doit être copi�
 Prévisualiser et ajuster dans le navigateur : `npx remotion studio src/index.ts`.
 
 Pas de musique dans le fichier : l'ajouter dans Facebook, Instagram ou TikTok depuis leur bibliothèque libre de droits.
+
+## Modèle « Vitrine écran » (15 s)
+
+Inspiré du Reel @textura.eu / Getlayers (#enregistre du 18/10/2026, fiche `references/2026-10-18/03_video.style.md`) :
+un ordinateur portable devant un mur crépi dont la lumière passe du bleu au violet puis au rouge Kalo,
+une page sombre « La qualité *pour votre maison.* », une page claire « NOS FAVORIS DU MOMENT » (4 lave-linge numérotés avec prix),
+puis un mur flou d'affiches et la pastille jaune « Kalo.976 ».
+
+```bash
+npx remotion render src/index.ts VitrineEcran out/kalo-vitrine-ecran.mp4 --codec=h264 --crf=18
+```
+
+Produits et affiches se changent en haut de `src/VitrineEcran.tsx` (`PRODUITS`, `AFFICHES`, fichiers dans `public/`).
+Polices locales : Instrument Serif italique et JetBrains Mono (`public/*.woff2`, licence OFL).
