@@ -1,0 +1,19 @@
+# Journal de l'équipe com Kalo – dimanche 18 octobre 2026
+
+Point de départ : aucun nouveau message de yakesh depuis hier, donc les points à valider du 17/10 restent ouverts (classes énergie Fromatic et vitrine, sets Ingenio, Black Friday avant le 28/10). Les tâches du jour ont été prises dans `../idees.md`.
+
+| Agent | Tâche du jour | Fichier | À valider par yakesh |
+|---|---|---|---|
+| chef-com | Point, répartition, relecture | journal.md | – |
+| fiches-produits | 7 fiches kalo.yt des posts P08 et P09, absentes du site | fiches-produits_P08-P09.md | Oui : infos à relever sur les boîtes ; commandes du micro-ondes 42 L |
+| marque | Règles de ton pour la saison cyclonique, avant le post P10 du 30/10 | marque_guide-saison-cyclonique.md | **Oui** : surtout la règle « pendant une alerte » |
+| community-manager | Réponses rapides Messenger et WhatsApp | community-manager_faq-messenger.md | Oui : horaires, zones de livraison, réservation, paiement |
+| whatsapp-sms | Affichette de caisse « Enregistrez notre numéro » | whatsapp_affichette-caisse.md | Oui : numéro WhatsApp Business |
+| video-courte | Script « Le conseil du vendredi : clim à 26 °C » | video-courte_script-conseil-clim.md | Oui : le lancer en novembre ? |
+| operations-commerciales | Idée d'opération « Les idées cadeaux Kalo » en décembre | operations-commerciales_liste-cadeaux-decembre.md | Oui |
+| visuel-produit | Passe son tour : les stories P08-P10 attendent les classes énergie manquantes | – | – |
+| post-facebook | Passe son tour : textes de la semaine prêts dans le calendrier | – | – |
+| avis-clients | Passe son tour : attend le lien de la fiche Google | – | – |
+| calendrier | Passe son tour : temps forts de novembre faits hier | – | – |
+| statistiques | Passe son tour : aucune statistique reçue | – | – |
+| veille-concurrence | Passe son tour : aucun post de concurrent collé | – | – |
