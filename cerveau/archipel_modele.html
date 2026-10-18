@@ -139,7 +139,7 @@ h1 em { color: var(--rose); }
       <div class="sur">Kalo · équipe communication · Mamoudzou</div>
       <h1>L'archipel <em>Kalo</em></h1>
     </div>
-    <p class="sous">Quatorze agents, une pièce par île, et le cerveau dans son cristal au centre. Avant d'écrire une seule ligne, chaque agent lit le cerveau. Clique sur un agent pour lui parler, ou sur le cristal pour ouvrir le cerveau.</p>
+    <p class="sous">Quinze agents, une pièce par île, et le cerveau dans son cristal au centre. Avant d'écrire une seule ligne, chaque agent lit le cerveau. Clique sur un agent pour lui parler, ou sur le cristal pour ouvrir le cerveau.</p>
   </header>
 
   <div class="fenetre">
@@ -149,7 +149,7 @@ h1 em { color: var(--rose); }
         <button type="button" role="tab" id="onglet-equipe" aria-selected="true" aria-controls="vue-agent">Équipe</button>
         <button type="button" role="tab" id="onglet-cerveau" aria-selected="false" aria-controls="vue-cerveau" tabindex="-1">Cerveau</button>
       </div>
-      <div class="compte"><span class="point"></span><span id="compte">14 agents</span></div>
+      <div class="compte"><span class="point"></span><span id="compte">15 agents</span></div>
     </div>
 
     <div class="scene">
@@ -326,6 +326,7 @@ const ALLURE = {
   "kalo-calendrier":              { peau: "#6F4321", cheveux: "#151010", coiffure: "foulard", foulard: "#F2A83B", haut: "#FFFFFF", bas: "#262844" },
   "kalo-operations-commerciales": { peau: "#8D5524", cheveux: "#111111", coiffure: "casquette", casquette: "#E2231A", haut: "#23304F", bas: "#3A3A3A" },
   "kalo-marque":                  { peau: "#C68642", cheveux: "#2A1A10", coiffure: "court", haut: "#8E5BD0", bas: "#262844", lunettes: true },
+  "kalo-critique":                { peau: "#6F4321", cheveux: "#151010", coiffure: "ras", haut: "#15163A", bas: "#3A3A3A" },
   "kalo-post-facebook":           { peau: "#8D5524", cheveux: "#151010", coiffure: "afro", haut: "#1E9BE0", bas: "#262844" },
   "kalo-whatsapp-sms":            { peau: "#6F4321", cheveux: "#151010", coiffure: "ras", haut: "#25D366", bas: "#262844" },
   "kalo-fiches-produits":         { peau: "#E0AC69", cheveux: "#6B3B1E", coiffure: "court", haut: "#F4F1E8", bas: "#36506B", lunettes: true },
@@ -342,6 +343,7 @@ const ACTIONS = {
   "kalo-calendrier": ["planifie novembre", "place les temps forts"],
   "kalo-operations-commerciales": ["prépare Black Friday", "fait le rétroplanning"],
   "kalo-marque": ["relit la voix Kalo", "vérifie les mentions"],
+  "kalo-critique": ["renvoie une affiche", "arbitre un duo", "cherche la faille"],
   "kalo-post-facebook": ["écrit un post", "cherche une accroche"],
   "kalo-whatsapp-sms": ["écrit un statut", "prépare un SMS"],
   "kalo-fiches-produits": ["rédige une fiche", "vérifie l'étiquette énergie"],
@@ -358,6 +360,7 @@ const IDEES = {
   "kalo-calendrier": ["Quels temps forts en novembre à Mayotte ?", "Comment équilibrer les posts du mois ?"],
   "kalo-operations-commerciales": ["Prépare l'opération Black Friday", "Un rétroplanning pour les fêtes"],
   "kalo-marque": ["Relis ce post avec la voix Kalo", "Les mentions d'un prix barré ?"],
+  "kalo-critique": ["Démolis ce post avant que je le publie", "Note cette affiche sur ta grille"],
   "kalo-post-facebook": ["Un post pour le lave-linge Hisense 6 kg", "Trois accroches pour un arrivage"],
   "kalo-whatsapp-sms": ["Un statut WhatsApp pour un arrivage", "Un SMS de rappel de livraison"],
   "kalo-fiches-produits": ["La fiche du robot Moulinex FP544111", "Que doit contenir une bonne fiche ?"],
@@ -688,7 +691,7 @@ function piece(f, d, nom, I) {
   }
   // les agents de la pièce et leurs bureaux
   const membres = agents.filter(a => a.ile === nom);
-  const objets = { "kalo-whatsapp-sms": "telephone", "kalo-fiches-produits": "papiers", "kalo-video-courte": "clap", "kalo-chef-com": "dossier", "kalo-statistiques": "ecrans", "kalo-veille-concurrence": "ecrans", "kalo-marque": "cafe", "kalo-avis-clients": "cafe" };
+  const objets = { "kalo-whatsapp-sms": "telephone", "kalo-fiches-produits": "papiers", "kalo-video-courte": "clap", "kalo-chef-com": "dossier", "kalo-statistiques": "ecrans", "kalo-veille-concurrence": "ecrans", "kalo-marque": "cafe", "kalo-critique": "papiers", "kalo-avis-clients": "cafe" };
   // décor propre à chaque pièce
   if (nom === "Pilotage") {
     fenetre(f, I, "B", 2.4);

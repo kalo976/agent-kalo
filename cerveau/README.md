@@ -7,6 +7,6 @@ Mémoire commune des agents com Kalo, reprise de la méthode vue dans les vidéo
 - Le catalogue ne contient que les prix publics du site, jamais de stock.
 
 ## L'archipel (prénoms et îles)
-- `construire_archipel.py` produit `archipel.html` (carte isométrique des 14 agents autour du cerveau, fiche de chaque agent, bouton « Parle à … ») à partir de `archipel_modele.html`. Il reconstruit aussi le cerveau.
+- `construire_archipel.py` produit `archipel.html` (carte isométrique des 15 agents autour du cerveau, fiche de chaque agent, bouton « Parle à … ») à partir de `archipel_modele.html`. Il reconstruit aussi le cerveau.
 - Prénoms et îles : table `PRENOMS` dans `construire.py` (et section « Qui je suis » de chaque skill).
 - Page publiée : https://claude.ai/artifact/Y1oSpU6Lt4Xv5V3LCdThxj
