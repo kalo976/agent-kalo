@@ -12,6 +12,7 @@ COURT = {
     "kalo-calendrier": "Le planning du mois et les saisons de Mayotte.",
     "kalo-operations-commerciales": "Black Friday, soldes, Ramadan, fêtes.",
     "kalo-marque": "La voix de Kalo et les règles légales.",
+    "kalo-critique": "Avocat du diable : renvoie tout ce qui n'est pas assez solide.",
     "kalo-post-facebook": "Les posts Facebook et Instagram.",
     "kalo-whatsapp-sms": "Les statuts WhatsApp et les SMS.",
     "kalo-fiches-produits": "Les fiches du site kalo.yt.",
