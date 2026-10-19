@@ -1,0 +1,6 @@
+mont-fort.com/assets/models/mountains.glb : 9 maillages, 3 matériaux, 0 animations, extensions ['EXT_mesh_gpu_instancing'], noms ['Mesh', 'Mesh', 'Cylinder', 'Mesh', 'Mesh', 'Mesher (1).001', 'Mesh', 'Cloud.Foreground', 'Cloud.Middleground']
+mont-fort.com/assets/models/homepage/WhatWeDo.glb : 1 maillages, 1 matériaux, 0 animations, extensions [], noms ['Plane.011']
+mont-fort.com/assets/models/homepage/Homepage.glb : 1 maillages, 1 matériaux, 0 animations, extensions [], noms ['BabyMountain']
+mont-fort.com/assets/models/homepage/earth-min.glb : 1 maillages, 1 matériaux, 0 animations, extensions ['KHR_texture_basisu'], noms ['Plane']
+mont-fort.com/assets/models/homepage/TopChapters.glb : 2 maillages, 1 matériaux, 0 animations, extensions ['EXT_mesh_gpu_instancing'], noms ['SparseClouds', 'CloudSea.001']
+mont-fort.com/assets/models/homepage/Sustainability-min.glb : 3 maillages, 1 matériaux, 0 animations, extensions ['KHR_texture_basisu'], noms ['Plane.018', 'Plane.037', 'Plane.038']

@@ -23,7 +23,7 @@ Avant de se déplacer, beaucoup de clients regardent la note Google et les derni
 - **3 ★** : remercier, reconnaître le point faible sans se justifier, dire ce qui change.
 - **1 ★ et 2 ★** : excuses sincères, aucun détail personnel, aucune contradiction publique, proposition de régler en privé (« Appelez-nous au magasin ou écrivez-nous en message privé »), marquer « À REMONTER ». Une seule réponse publique, puis on continue en privé.
 - **Faux avis, insulte, concurrent** : réponse neutre et courte (« Nous ne retrouvons pas votre achat ; contactez-nous pour en parler ») et signalement à Google ou Facebook.
-Mots-clés naturels dans les réponses positives (« lave-linge », « livraison à Mamoudzou ») : ils aident la fiche Google, sans forcer.
+Mots-clés naturels dans les réponses positives (« lave-linge », « livraison à Mamoudzou », « magasin de Kawéni ») : ils aident la fiche Google, sans forcer.
 
 ## Obtenir plus d'avis (légalement)
 - Moments : 2 à 5 jours après la livraison ou l'installation, après une réparation réussie, à la caisse quand le client est content.

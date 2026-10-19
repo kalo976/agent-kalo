@@ -1,0 +1,18 @@
+# Index des références
+
+| Date | Entreprise | Type | Fiche | À retenir |
+|---|---|---|---|---|
+| 2026-10-17 | autre (style pour Kalo) | vidéo 9:16, 13 s | [01_video1](2026-10-17/01_video1.style.md) | Écran partagé appli/face caméra, sous-titres serif mot à mot romain+italique |
+| 2026-10-17 | autre (style pour Kalo) | vidéo 9:16, 14 s | [02_video2](2026-10-17/02_video2.style.md) | Listes empilées en escalier, chiffres mis en avant |
+| 2026-10-17 | autre (style pour Kalo) | vidéo 9:16, 12 s | [03_video3](2026-10-17/03_video3.style.md) | CTA « Commente Claude » (accent corail unique), outro voile sombre + logo |
+| 2026-10-17 | autre (style pour Kalo) | vidéo 9:16, 17 s | [04_video4](2026-10-17/04_video4.style.md) | Accroche « Je te présente » flou→net, entrée de carte en zoom radial |
+| 2026-10-17 | synthèse | 4 vidéos | [synthèse](2026-10-17/00_synthese-style-commun.md) | Recette en 8 règles + adaptation Kalo Remotion |
+| 2026-10-17 | autre → Kalo | contenu (voix) | [contenu](2026-10-17/00_contenu-transcription.md) | Méthode : un cerveau Obsidian commun que chaque agent lit avant d'écrire, tenu par un gardien. Reproduit : kalo/cerveau/ + vidéo kalo-cerveau-demo.mp4 |
+| 2026-10-18 | autre → Kalo / Meubles & Déco | vidéo 9:16, 19 s (2 sites) | [01_site](2026-10-18/01_site.style.md) | Sites belgradearbor.rs (esquisse→réel au scroll, GSAP+Lenis) et ICG Galleries (visite 3D Three.js). Modèle : 2026-10-18/modele-site-esquisse/, skill site-immersif |
+| 2026-10-18 | autre → Kalo | site (DA + 610 modèles) | [02_horizonx](2026-10-18/02_horizonx/02_horizonx.style.md) | horizonx.so : DA blanche Inter + cartes grises, 9 familles (WebGL, scroll cinéma, carrousels 3D, textures, shaders, bento). Portfolio Kalo Labo + photos/vidéo dans kalo/labo/ |
+| 2026-10-18 | autre → Kalo | vidéo 9:16, 16 s (Getlayers, @textura.eu) | [03_video](2026-10-18/03_video.style.md) | Portable devant mur éclairé qui change de couleur, sites Relay/brewns (grotesque + serif italique + mono), pastille de fin. Reproduit : kalo/videos/kalo-vitrine-ecran.mp4 (Remotion VitrineEcran) |
+| 2026-10-18 | autre → Kalo | pub Instagram 9:16, 10 s (HorizonX, @marcelodesignxh) | [04_ecran](2026-10-18/04_ecran.style.md) | Défilé de sites à 0,7 s, cartouche fixe « Stop using Claude without this library », équation emojis, « Commente library » |
+| 2026-10-18 | synthèse | DA sites cinéma | [synthèse DA](2026-10-18/00_synthese-DA-bibliotheques.md) | 6 règles + méthode « bibliothèque de modèles → prompt structuré → Claude » |
+| 2026-10-18 | autre → Kalo / Meubles & Déco | vidéo 9:16, 23 s (@w.wearebrand) + 3 sites décortiqués | [05_video](2026-10-18/05_video.style.md) · [méthode](2026-10-18/05_sites/METHODE-sites-3D.md) | « Websites in 2026 » : Montfort (montagne/nuages/globe 3D au scroll, Astro+Three+GSAP+Lenis), Viva La Labia (rideau → coquille → bague, Next+R3F), Active Theory (verre, particules, fluide, moteur Hydra). Code, shaders, modèles, scroll filmé, 67 vidéos dans 05_sites/ |
+| 2026-10-18 | autre → Kalo / Meubles & Déco | vidéo IA 9:16, 18 s (@pires.visuals) | [06_video](2026-10-18/06_video.style.md) | « Gravity build » : FPV continu, un immeuble se construit tout seul ; prompt à l'écran en 3 blocs + photo de référence. 4 prompts Kalo prêts (magasin Kawéni, cuisine, frigo, salon Gautier) |
+| 2026-10-18 | autre → Kalo | vidéo 9:16, 18 s (@keanu.visuals) | [07_video](2026-10-18/07_video.style.md) · [modèle](2026-10-18/07_modele-planche/LISEZMOI.md) | Higgsfield Genjutsu : maquette Blender → même plan dans 7 décors. Planche making-of (cadres fluo, étiquettes, flèches, vignettes 01–07, CTA « Commente »). Reproduit : kalo/videos/kalo-planche-atelier.mp4 |

@@ -37,13 +37,13 @@ Applique `kalo-marque`. Pour les séquences plus poussées : `sms`.
 - Tout prix d'appareil concerné est suivi de sa classe énergie.
 
 ## Exemples
-SMS : « Kalo : lave-linge Hisense 7 kg à 379 € (classe E) jusqu'au 30/11. 53 rue du Commerce, Mamoudzou. STOP au 36XXX »
+SMS : « Kalo : lave-linge Hisense 7 kg à 379 € (classe E) jusqu'au 30/11. Kalo Kawéni RN1 et 5 magasins. STOP au 36XXX »
 
 WhatsApp :
 « Bonjour 👋 Nouvel arrivage chez Kalo !
 Lave-linge Hisense 7 kg, 1200 tr/min, classe E : 379 €.
 Répondez RÉSERVER et on vous le met de côté.
-📍 53 rue du Commerce, Mamoudzou · 🚚 Livraison à domicile
+📍 Kalo Kawéni (RN1) et 5 autres magasins · 🚚 Livraison à domicile
 Répondez STOP pour ne plus recevoir nos offres. »
 
 Service : « Bonjour, votre livraison Kalo est prévue demain entre 9 h et 12 h. Répondez pour changer de créneau. L'équipe Kalo »

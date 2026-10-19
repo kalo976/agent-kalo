@@ -1,0 +1,303 @@
+<meta charset="utf-8">
+<title>Kalo Labo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Mise en page : DA « HorizonX » (fond blanc, encre #171717, cartes grises arrondies, titres Inter serrés, éventail de cartes en héros)
+   appliquée à Kalo, avec ses 4 couleurs de charte comme matière des textures et du shader. Un seul univers clair assumé. */
+:root{
+  --papier:#ffffff;
+  --gris:#f5f4f2;          /* fond des cartes */
+  --trait:#e9e9e9;
+  --encre:#171717;
+  --encre-douce:#6b6b6b;
+  --rouge:#e2231a;         /* Kalo : appels à l'action */
+  --jaune:#ffd700;
+  --violet:#752f8a;
+  --bleu:#009bde;
+  --noir:#0e0f0e;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:20px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--papier);color:var(--encre);font-family:var(--sans);font-size:15px;line-height:1.5;overflow-x:clip;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--noir)}
+img,canvas{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--rouge);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{letter-spacing:-.035em;line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:clamp(30px,4vw,44px);font-weight:600}
+.lead{color:var(--encre-douce);margin:8px 0 0;max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 18px;font-weight:500;font-size:13px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+.btn.noir{background:var(--encre);color:#fff}
+.btn.noir:hover{background:var(--rouge)}
+.btn.clair{background:transparent;color:var(--encre)}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;background:#fff;border-radius:999px;padding:3px 9px;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rouge)}
+
+/* Bandeau + barre */
+.ruban{background:var(--noir);color:#fff;font-size:12px;text-align:center;padding:7px 16px}
+.ruban b{color:var(--jaune);font-weight:600}
+.barre{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
+.barre img{height:34px;width:auto}
+.barre nav{display:flex;gap:22px;font-size:13px;color:var(--encre)}
+.barre nav span{cursor:default}
+@media (max-width:760px){.barre nav{display:none}}
+
+/* Héros : éventail de cartes */
+.hero{padding-block:56px 40px;text-align:center;overflow-x:clip}
+.over .chip{color:var(--encre)}
+.hero h1{font-size:clamp(38px,6vw,68px);font-weight:600;max-width:15ch;margin:0 auto}
+.fan{position:relative;height:clamp(300px,36vw,420px);margin:36px auto 0;max-width:900px}
+.fan .c{position:absolute;left:50%;top:6%;width:clamp(140px,19vw,220px);aspect-ratio:3/4;border-radius:16px;overflow:hidden;box-shadow:0 30px 50px -24px rgba(0,0,0,.45);transform-origin:50% 120%;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.fan .c canvas,.fan .c img{width:100%;height:100%;object-fit:contain}
+.fan .c span{position:absolute;left:10px;bottom:10px;font:500 10px var(--mono);color:#fff;background:rgba(0,0,0,.55);border-radius:6px;padding:3px 6px;letter-spacing:.04em}
+.hero .acts{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.hero p.lead{margin:22px auto 18px;font-size:14px}
+
+/* Grille de cartes « bibliothèque » */
+section.bloc{padding-block:64px}
+.grille{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:26px}
+@media (max-width:1000px){.grille{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.grille{grid-template-columns:1fr}}
+.carte{background:var(--gris);border-radius:var(--r);padding:6px;display:grid;gap:10px;align-content:start}
+.carte .vue{position:relative;aspect-ratio:4/5;border-radius:15px;overflow:hidden;background:#fff}
+.carte .vue canvas,.carte .vue img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.carte .vue img{opacity:0;transition:opacity .4s;background:#fff;padding:8%}
+.carte .vue:hover img,.carte .vue:focus-within img{opacity:1}
+.carte .vue .chip{position:absolute;top:10px;left:10px;z-index:2}
+.carte .txt{padding:2px 10px 12px;display:grid;gap:4px}
+.carte h3{font-size:16px;font-weight:600;letter-spacing:-.01em}
+.carte p{margin:0;font-size:12.5px;color:var(--encre-douce)}
+.carte .src{font:500 11px var(--mono);color:var(--encre-douce)}
+
+/* Shader plein cadre */
+.shader{position:relative;border-radius:28px;overflow:hidden;min-height:clamp(340px,44vw,520px);margin-top:26px;background:var(--rouge);display:grid;align-items:end}
+.shader canvas{position:absolute;inset:0;width:100%;height:100%}
+.shader .over{position:relative;padding:clamp(20px,4vw,48px);color:#fff;display:grid;gap:14px;justify-items:start}
+.shader .over h3{font-size:clamp(40px,7vw,96px);font-weight:700;letter-spacing:-.05em;line-height:.9;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.shader .over p{margin:0;max-width:44ch;font-size:14px}
+.shader .ctrl{position:absolute;top:16px;right:16px;display:flex;gap:6px;flex-wrap:wrap;justify-content:end}
+.shader .ctrl button{all:unset;cursor:pointer;font-size:12px;font-weight:500;background:rgba(255,255,255,.85);color:var(--encre);border-radius:999px;padding:6px 12px}
+.shader .ctrl button[aria-pressed="true"]{background:var(--encre);color:#fff}
+
+/* Bento */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:26px}
+.bento>div{background:var(--gris);border-radius:var(--r);padding:22px;display:grid;gap:8px;align-content:space-between;min-height:170px;min-width:0}
+.bento .k{font:500 11px var(--mono);color:var(--encre-douce);text-transform:uppercase;letter-spacing:.06em}
+.bento .v{font-size:clamp(22px,2.4vw,30px);font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.b1{grid-column:span 3;background:var(--noir)!important;color:#fff}.b1 .k{color:#bbb}
+.b2{grid-column:span 3}.b3,.b4,.b5{grid-column:span 2}
+.b3{background:var(--jaune)!important}.b3 .k{color:var(--noir)}
+@media (max-width:760px){.bento{grid-template-columns:1fr}.bento>div{grid-column:auto}}
+
+/* Idées */
+.idees{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:26px}
+@media (max-width:760px){.idees{grid-template-columns:1fr}}
+.idee{border:1px solid var(--trait);border-radius:var(--r);padding:22px;display:grid;gap:10px;align-content:start}
+.idee .tag{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.idee.v .tag{color:var(--bleu)}.idee.p .tag{color:var(--violet)}
+.idee h3{font-size:20px;font-weight:600}
+.idee p{margin:0;color:var(--encre-douce);font-size:14px}
+.idee dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:4px 0 0;font-size:13px}
+.idee dt{color:var(--encre-douce)}.idee dd{margin:0}
+
+footer{background:var(--noir);color:#fff;margin-top:40px}
+footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;gap:20px 50px;justify-content:space-between;align-items:end}
+footer .big{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.05em;line-height:.9}
+footer .big em{font-style:normal;color:var(--rouge)}
+footer p{margin:0;font-size:13px;color:#bbb;max-width:46ch}
+@media (prefers-reduced-motion:reduce){.fan .c{transition:none}}
+</style>
+
+<div class="ruban">Démo de style : DA inspirée de horizonx.so, faite pour Kalo. <b>Pas encore en ligne.</b></div>
+<div class="wrap barre">
+  <img src="img/logo-kalo-t.webp" alt="Kalo">
+  <nav aria-label="Rubriques"><span>Gros électroménager</span><span>Froid</span><span>TV &amp; son</span><span>Magasin</span><span>SAV</span></nav>
+  <a class="btn noir" href="https://kalo.yt" target="_blank" rel="noopener">kalo.yt</a>
+</div>
+
+<main>
+  <section class="wrap hero">
+    <h1>La qualité pour votre maison, vue autrement.</h1>
+    <div class="fan" id="fan" aria-label="Le même produit traité dans cinq styles">
+      <div class="c" style="--i:-2;background:#ffe45c"><canvas data-fx="riso" data-src="img/lave-linge-hisense.webp" width="330" height="440"></canvas><span>RISO</span></div>
+      <div class="c" style="--i:-1;background:#0e0f0e"><canvas data-fx="ascii" data-src="img/frigo-hyundai.webp" width="330" height="440"></canvas><span>ASCII</span></div>
+      <div class="c" style="--i:0;background:var(--rouge)"><canvas data-shader="1"></canvas><img src="img/frigo-lg.webp" alt="" style="position:absolute;inset:8% 14%;width:72%;height:84%"><span>SHADER</span></div>
+      <div class="c" style="--i:1;background:#f5f4f2"><canvas data-fx="dither" data-src="img/micro-ondes-hyundai.webp" width="330" height="440"></canvas><span>DITHER</span></div>
+      <div class="c" style="--i:2;background:#fff"><canvas data-fx="lignes" data-src="img/frigo-lg-2.webp" width="330" height="440"></canvas><span>LIGNES</span></div>
+    </div>
+    <p class="lead">Cinq traitements d'image, les produits Kalo et les quatre couleurs de la charte. Tout est calculé en direct dans la page.</p>
+    <div class="acts"><a class="btn noir" href="#textures">Voir les textures</a><a class="btn clair" href="#idees">Idées photo et vidéo →</a></div>
+  </section>
+
+  <section class="wrap bloc" id="textures">
+    <h2>Textures</h2>
+    <p class="lead">Des finitions pour les packshots. Survolez une carte pour voir la photo d'origine.</p>
+    <div class="grille">
+      <article class="carte"><div class="vue" tabindex="0"><span class="chip">Riso</span><canvas data-fx="riso" data-src="img/lave-linge-hisense.webp" width="480" height="600"></canvas><img src="img/lave-linge-hisense.webp" alt="Lave-linge Hisense 7 kg"></div>
+        <div class="txt"><h3>Riso Kalo</h3><p>Trame de points rouge et bleu, légèrement décalés, sur papier jaune.</p><span class="src">HorizonX · Riso Glow, Warm Press</span></div></article>
+      <article class="carte"><div class="vue" tabindex="0"><span class="chip">Dither</span><canvas data-fx="dither" data-src="img/frigo-lg.webp" width="480" height="600"></canvas><img src="img/frigo-lg.webp" alt="Réfrigérateur LG InstaView"></div>
+        <div class="txt"><h3>Trame 1 bit</h3><p>Noir et blanc pur en points ordonnés, façon journal ou vieil écran.</p><span class="src">HorizonX · Marble Signal, Silver Hound</span></div></article>
+      <article class="carte"><div class="vue" tabindex="0"><span class="chip">ASCII</span><canvas data-fx="ascii" data-src="img/frigo-hyundai.webp" width="480" height="600"></canvas><img src="img/frigo-hyundai.webp" alt="Réfrigérateur combiné Hyundai"></div>
+        <div class="txt"><h3>Glyphes</h3><p>Le produit dessiné en caractères bleu Kalo sur fond noir.</p><span class="src">HorizonX · Glyph Study, Arena Glyph</span></div></article>
+      <article class="carte"><div class="vue" tabindex="0"><span class="chip">Lignes</span><canvas data-fx="lignes" data-src="img/micro-ondes-hyundai.webp" width="480" height="600"></canvas><img src="img/micro-ondes-hyundai.webp" alt="Micro-ondes Hyundai"></div>
+        <div class="txt"><h3>Gravure</h3><p>Lignes violettes dont l'épaisseur suit l'ombre, comme un billet de banque.</p><span class="src">HorizonX · Contour Type, Drift Lines</span></div></article>
+    </div>
+  </section>
+
+  <section class="wrap bloc">
+    <h2>Shaders</h2>
+    <p class="lead">Un fond animé aux couleurs de Kalo, pour les bannières de temps forts et les statuts WhatsApp.</p>
+    <div class="shader" id="bigshader">
+      <canvas data-shader="2"></canvas>
+      <div class="ctrl" role="group" aria-label="Palette">
+        <button type="button" data-pal="0" aria-pressed="true">Kalo</button>
+        <button type="button" data-pal="1" aria-pressed="false">Black Friday</button>
+        <button type="button" data-pal="2" aria-pressed="false">Froid</button>
+      </div>
+      <div class="over">
+        <span class="chip">Temps fort</span>
+        <h3>Black Friday<br>Kalo</h3>
+        <p>Exemple de bannière. Les prix et la classe énergie se posent par-dessus, dans le format d'affiche validé.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap bloc">
+    <h2>Le magasin en un coup d'œil</h2>
+    <p class="lead">Une grille « bento » pour la page d'accueil du futur site.</p>
+    <div class="bento">
+      <div class="b1"><span class="k">Adresse</span><span class="v">53 rue du Commerce, Mamoudzou</span></div>
+      <div class="b2"><span class="k">Promesse</span><span class="v">Le bon appareil, au bon prix, livré et suivi à Mayotte.</span></div>
+      <div class="b3"><span class="k">Livraison</span><span class="v">Livré chez vous</span></div>
+      <div class="b4"><span class="k">Service après-vente</span><span class="v">Sur place, à Mamoudzou</span></div>
+      <div class="b5"><span class="k">En ligne</span><span class="v">kalo.yt · Kalo.976</span></div>
+    </div>
+  </section>
+
+  <section class="wrap bloc" id="idees">
+    <h2>À faire pour Kalo</h2>
+    <p class="lead">Quatre idées vidéo et quatre idées photo tirées de ces styles. Toutes se font avec un téléphone, les packshots existants et Remotion.</p>
+    <div class="idees">
+      <article class="idee v"><span class="tag">Vidéo · Reel 8 s</span><h3>Le scan</h3><p>Le produit apparaît en glyphes bleus, une ligne de scan passe et le révèle en vraie photo, puis le prix et la classe énergie arrivent.</p><dl><dt>Pour</dt><dd>Chaque nouvel arrivage</dd><dt>Outil</dt><dd>Remotion + packshot</dd></dl></article>
+      <article class="idee v"><span class="tag">Vidéo · Reel 10 s</span><h3>Le tunnel des nouveautés</h3><p>Les produits de la semaine défilent dans un tunnel de cartes qui foncent vers l'écran, le dernier s'arrête plein cadre.</p><dl><dt>Pour</dt><dd>Récap du lundi</dd><dt>Outil</dt><dd>Remotion (perspective 3D)</dd></dl></article>
+      <article class="idee v"><span class="tag">Vidéo · statut 6 s</span><h3>Fond qui coule</h3><p>Le fond animé rouge et jaune de cette page, avec un seul gros message par-dessus. Format vertical pour WhatsApp.</p><dl><dt>Pour</dt><dd>Black Friday, Aïd, rentrée</dd><dt>Outil</dt><dd>Le shader de cette page, enregistré</dd></dl></article>
+      <article class="idee v"><span class="tag">Vidéo · Reel 15 s</span><h3>Le site filmé</h3><p>Le futur site Kalo sur l'écran du magasin, une main fait défiler, titre fixe en haut. Le format de la vidéo @w.wearebrand.</p><dl><dt>Pour</dt><dd>Annoncer le site</dd><dt>Outil</dt><dd>Téléphone + écran</dd></dl></article>
+      <article class="idee p"><span class="tag">Photo · post carré</span><h3>Série Riso</h3><p>Une affiche par famille (froid, lavage, cuisine) en trame rouge et bleue sur jaune. Pour l'image de marque, jamais pour une promo à prix.</p><dl><dt>Pour</dt><dd>Posts de marque</dd><dt>Outil</dt><dd>Cette page (export image)</dd></dl></article>
+      <article class="idee p"><span class="tag">Photo · teaser</span><h3>Devinez l'appareil</h3><p>Le produit en trame 1 bit, sans nom. Réponse le lendemain avec la vraie photo. Fait commenter sans dépenser.</p><dl><dt>Pour</dt><dd>Avant un arrivage</dd><dt>Outil</dt><dd>Texture « Trame 1 bit »</dd></dl></article>
+      <article class="idee p"><span class="tag">Photo · shooting</span><h3>Lumière de bord</h3><p>Produit sur fond noir, une seule lampe LED derrière qui dessine son contour. Le rendu « premium » des modèles HorizonX, fait en magasin.</p><dl><dt>Pour</dt><dd>Haut de gamme (LG InstaView)</dd><dt>Outil</dt><dd>Téléphone + 1 lampe</dd></dl></article>
+      <article class="idee p"><span class="tag">Photo · page web</span><h3>Éventail produits</h3><p>Cinq produits d'une gamme en cartes inclinées, comme le héros de cette page. Couverture Facebook et accueil du site.</p><dl><dt>Pour</dt><dd>Couverture Facebook</dd><dt>Outil</dt><dd>Cette page</dd></dl></article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Kalo<em>.</em> Labo</div>
+    <p>Démo de style d'après la direction artistique de horizonx.so (bibliothèque de modèles payants). Rien n'est copié : textures et shader sont réécrits ici. Photos : packshots Kalo.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const RGB = h => [1,3,5].map(i => parseInt(h.slice(i,i+2),16));
+
+  // Charge une image et renvoie sa luminance sur une grille w×h (fond blanc, image contenue)
+  const cache = {};
+  function lum(src, w, h, pad){
+    return (cache[src+w+'x'+h] ||= new Promise(res => {
+      const im = new Image(); im.onload = () => {
+        const c = document.createElement('canvas'); c.width = w; c.height = h;
+        const x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0,0,w,h);
+        const s = Math.min((w*(1-pad))/im.width, (h*(1-pad))/im.height);
+        const iw = im.width*s, ih = im.height*s; x.drawImage(im,(w-iw)/2,(h-ih)/2,iw,ih);
+        const d = x.getImageData(0,0,w,h).data, L = new Float32Array(w*h);
+        for (let i=0;i<w*h;i++) L[i] = (0.299*d[i*4]+0.587*d[i*4+1]+0.114*d[i*4+2])/255;
+        res(L);
+      }; im.src = src;
+    }));
+  }
+  const at = (L,w,x,y) => L[(y|0)*w + (x|0)];
+
+  const FX = {
+    async riso(cv){
+      const W=cv.width,H=cv.height,g=cv.getContext('2d'),L=await lum(cv.dataset.src,W,H,.16),step=Math.round(W/62);
+      g.fillStyle='#ffe45c'; g.fillRect(0,0,W,H);
+      g.globalCompositeOperation='multiply';
+      [[RGB('#009bde'),2,1],[RGB('#e2231a'),0,0]].forEach(([c,dx,dy],k)=>{
+        g.fillStyle=`rgba(${c},.92)`;
+        for(let y=step/2;y<H;y+=step) for(let x=(k?0:step/2)+((y/step|0)%2?step/2:0);x<W;x+=step){
+          const v=1-at(L,W,x,y); const r=step*.62*Math.pow(v,k?0.9:1.25);
+          if(r>.4){g.beginPath();g.arc(x+dx,y+dy,r,0,7);g.fill();}
+        }
+      });
+      g.globalCompositeOperation='source-over';
+    },
+    async dither(cv){
+      const W=cv.width,H=cv.height,g=cv.getContext('2d'),s=3,w=W/s|0,h=H/s|0,L=await lum(cv.dataset.src,w,h,.14);
+      const B=[0,32,8,40,2,34,10,42,48,16,56,24,50,18,58,26,12,44,4,36,14,46,6,38,60,28,52,20,62,30,54,22,3,35,11,43,1,33,9,41,51,19,59,27,49,17,57,25,15,47,7,39,13,45,5,37,63,31,55,23,61,29,53,21];
+      g.fillStyle='#f5f4f2';g.fillRect(0,0,W,H);g.fillStyle='#0e0f0e';
+      for(let y=0;y<h;y++)for(let x=0;x<w;x++){const v=Math.pow(L[y*w+x],1.25);if(v*64<B[(y%8)*8+x%8]+.5)g.fillRect(x*s,y*s,s,s);}
+    },
+    async ascii(cv){
+      const W=cv.width,H=cv.height,g=cv.getContext('2d'),cw=Math.max(6,Math.round(W/54)),ch=cw*1.45,w=W/cw|0,h=H/ch|0,L=await lum(cv.dataset.src,w,h,.14);
+      const R=' .:-=+*#%@';g.fillStyle='#0e0f0e';g.fillRect(0,0,W,H);g.font=`500 ${cw*1.25}px "JetBrains Mono",monospace`;g.textBaseline='top';
+      for(let y=0;y<h;y++)for(let x=0;x<w;x++){const v=Math.min(1,(1-L[y*w+x])*2.4);if(v<.06)continue;const i=Math.min(R.length-1,Math.round(v*(R.length-1))+1);
+        g.fillStyle=v>.55?'#7fd3f7':'#009bde';g.fillText(R[i],x*cw,y*ch);}
+    },
+    async lignes(cv){
+      const W=cv.width,H=cv.height,g=cv.getContext('2d'),L=await lum(cv.dataset.src,W,H,.14),gap=Math.max(4,Math.round(H/110));
+      g.fillStyle='#fff';g.fillRect(0,0,W,H);g.fillStyle='#752f8a';
+      for(let y=gap/2;y<H;y+=gap)for(let x=0;x<W;x+=2){const v=1-at(L,W,x,y);const t=gap*.85*Math.pow(v,1.1);if(t>.25)g.fillRect(x,y-t/2,2,t);}
+    }
+  };
+  document.querySelectorAll('canvas[data-fx]').forEach(cv => FX[cv.dataset.fx](cv));
+
+  // Shader : soie qui coule, en couleurs Kalo
+  const PAL=[['#e2231a','#ffd700','#752f8a','#e2231a'],['#0e0f0e','#e2231a','#ffd700','#0e0f0e'],['#009bde','#ffffff','#752f8a','#009bde']];
+  const FS=`precision mediump float;uniform vec2 r;uniform float t;uniform vec3 a,b,c,d;
+  void main(){vec2 p=gl_FragCoord.xy/r*vec2(r.x/r.y,1.)*2.2;
+    for(int i=1;i<5;i++){float f=float(i);p+=vec2(.55/f*sin(f*p.y+t*.35+f*1.7),.45/f*cos(f*p.x+t*.28+f));}
+    float k=.5+.5*sin(p.x+p.y), m=.5+.5*cos(p.x*1.3-p.y*.7);
+    vec3 col=mix(mix(a,b,smoothstep(.15,.85,k)),mix(c,d,m),smoothstep(.35,.95,m*k));
+    col+=.04*sin(p.y*6.+t);gl_FragColor=vec4(col,1.);}`;
+  const shaders=[];
+  document.querySelectorAll('canvas[data-shader]').forEach(cv=>{
+    const gl=cv.getContext('webgl',{preserveDrawingBuffer:true});if(!gl)return;
+    const sh=(ty,src)=>{const s=gl.createShader(ty);gl.shaderSource(s,src);gl.compileShader(s);return s;};
+    const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,'attribute vec2 p;void main(){gl_Position=vec4(p,0,1);}'));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,FS));gl.linkProgram(pr);gl.useProgram(pr);
+    gl.bindBuffer(gl.ARRAY_BUFFER,gl.createBuffer());gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    const loc=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+    const u=n=>gl.getUniformLocation(pr,n);
+    const S={cv,gl,u,pal:0,setPal(i){this.pal=i;PAL[i].forEach((h,j)=>gl.uniform3fv(u('abcd'[j]),RGB(h).map(v=>v/255)));}};
+    S.setPal(0);shaders.push(S);
+  });
+  function frame(ms){
+    shaders.forEach(S=>{const {cv,gl,u}=S,dpr=Math.min(2,devicePixelRatio||1),w=cv.clientWidth*dpr|0,h=cv.clientHeight*dpr|0;
+      if(w&&h&&(cv.width!==w||cv.height!==h)){cv.width=w;cv.height=h;gl.viewport(0,0,w,h);}
+      gl.uniform2f(u('r'),cv.width,cv.height);gl.uniform1f(u('t'),reduce?4:ms/1000);gl.drawArrays(gl.TRIANGLES,0,3);});
+    if(!reduce)requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  document.querySelectorAll('[data-pal]').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('[data-pal]').forEach(x=>x.setAttribute('aria-pressed',x===b));
+    shaders.filter(S=>S.cv.closest('#bigshader')).forEach(S=>S.setPal(+b.dataset.pal));
+    if(reduce)requestAnimationFrame(frame);
+  }));
+
+  // Éventail : se déploie au chargement, s'ouvre plus au survol
+  const fan=document.getElementById('fan'),cards=[...fan.children];
+  const place=open=>cards.forEach(c=>{const i=+getComputedStyle(c).getPropertyValue('--i'),sp=innerWidth<600?.5:1;
+    c.style.transform=`translateX(-50%) translateX(${i*(open?150:118)*sp}px) translateY(${Math.abs(i)*(open?26:18)}px) rotate(${i*(open?12:9)}deg)`;c.style.zIndex=10-Math.abs(i);});
+  cards.forEach(c=>c.style.transform='translateX(-50%)');
+  setTimeout(()=>place(false),reduce?0:250);
+  fan.addEventListener('mouseenter',()=>place(true));fan.addEventListener('mouseleave',()=>place(false));
+  addEventListener('resize',()=>place(false));
+})();
+</script>

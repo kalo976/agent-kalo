@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,400..800&family=Carlito:wght@700&display=swap" rel="stylesheet">
+<style>
+  /* Modèle Kalo « Nouvel arrivage » 1734 × 907. Couleurs de la charte Kalo 2017. */
+  :root{--fond:#009BDE;--texte:#fff;--rouge:#E2231A}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1734px;height:907px;background:#fff;font-family:'Open Sans',Arial,sans-serif;position:relative;overflow:hidden;-webkit-font-smoothing:antialiased}
+  .carte{position:absolute;left:38px;top:30px;width:1658px;height:768px;background:var(--fond);border-radius:110px}
+  .gauche{position:absolute;left:112px;top:58px;width:820px;color:var(--texte)}
+  .titre{font-weight:800;font-stretch:75%;font-size:136px;line-height:.86;letter-spacing:-1px;text-transform:uppercase}
+  .produit{font-weight:800;font-stretch:75%;font-size:70px;line-height:.94;margin-top:20px;text-transform:uppercase}
+  .specs{font-size:35px;line-height:1.08;margin-top:8px}
+  .bas{position:absolute;left:104px;bottom:146px;display:flex;gap:18px;align-items:flex-end}
+  .cartouche{background:#fff;border-radius:22px;height:132px;display:flex;align-items:center;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+  .prix{padding:0 40px;color:var(--rouge);font-weight:800;font-stretch:75%;font-size:136px;letter-spacing:-2px;line-height:1}
+  .prix small{font-size:.78em;margin-left:12px}
+  /* Étiquette énergie conforme au règlement (UE) 2019/2014, annexe VII point 4 :
+     flèche couleur de la classe, lettre blanche Calibri Bold au moins aussi grande que le prix, gamme en noir. */
+  /* Cartouche énergie du modèle Kalo : CLASSE / lettre / A à G, trait, échelle */
+  .energie{padding:0 26px 0 22px;gap:18px;height:160px}
+  .cl{display:flex;flex-direction:column;align-items:center;color:#000;font-weight:800;font-stretch:75%;line-height:1}
+  .cl .t{font-size:32px}
+  .cl .l{font-size:80px;margin:4px 0 2px}
+  .cl .g{font-size:26px;letter-spacing:1px}
+  .trait{width:2px;align-self:stretch;margin:16px 0;background:#222}
+  /* Échelle A à G du modèle d'origine, flèche noire sur la classe */
+  .echelle{display:flex;flex-direction:column;gap:2px;padding-right:26px}
+  .echelle div{position:relative;height:18px;color:#fff;font-weight:800;font-size:16px;line-height:18px}
+  .echelle div span{display:block;height:18px;padding-left:6px;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%)}
+  .echelle div.on::after{content:'';position:absolute;top:-1px;left:calc(100% + 5px);border-top:12px solid transparent;border-bottom:12px solid transparent;border-right:20px solid #000;top:-3px}
+  .visuel{position:absolute;right:110px;top:56px;width:660px;height:712px;display:flex;align-items:flex-end;justify-content:center}
+  .visuel img{max-height:700px;max-width:640px;filter:drop-shadow(0 22px 20px rgba(0,0,0,.28))}
+  .site{position:absolute;left:96px;bottom:32px;color:#6B605B;font-weight:600;font-size:36px}
+  .logo{position:absolute;right:52px;bottom:10px;height:92px}
+</style></head><body>
+<div class="carte"></div>
+<div class="gauche">
+  <div class="titre" id="titre"></div>
+  <div class="produit" id="produit"></div>
+  <div class="specs" id="specs"></div>
+</div>
+<div class="bas">
+  <div class="cartouche prix" id="prix"></div>
+  <div class="cartouche energie" id="energie">
+    <div class="cl"><span class="t">CLASSE</span><span class="l" id="classe"></span><span class="g">A à G</span></div><div class="trait"></div>
+    <div class="echelle" id="echelle"></div>
+  </div>
+</div>
+<div class="visuel"><img id="photo" alt=""></div>
+<div class="site">kalo.yt</div>
+<img class="logo" src="logo-kalo.png" alt="Kalo">
+<script>
+// DATA est injecté par rendu.js
+const D = window.DATA || {fond:'#009BDE',produit:'Lave-linge Hisense<br>7 kg',specs:['1200 tr/min','Réf. : WF1I7022BT'],prix:'399',classe:'A',photo:'packshots/hisense-WF1I7022BT.png'};
+const fond = D.fond || '#009BDE';
+document.documentElement.style.setProperty('--fond', fond);
+// Texte blanc illisible sur le jaune : texte noir de la charte à la place
+document.documentElement.style.setProperty('--texte', D.texte || (fond.toUpperCase() === '#FFD700' ? '#0E0F0E' : '#fff'));
+titre.innerHTML = D.titre || 'Nouvel<br>arrivage';
+produit.innerHTML = D.produit;
+specs.innerHTML = (D.specs || []).join('<br>');
+prix.innerHTML = D.prix + '<small>€</small>';
+photo.src = D.photo;
+const C = {A:'#00A651',B:'#50B848',C:'#BFD730',D:'#FFF200',E:'#FDB913',F:'#F37021',G:'#ED1C24'};
+if (D.classe) {
+  classe.textContent = D.classe;
+  const w = {A:62,B:74,C:86,D:98,E:110,F:122,G:134};
+  echelle.innerHTML = Object.keys(C).map(k => `<div class="${k===D.classe?'on':''}" style="width:${w[k]}px"><span style="background:${C[k]}">${k}</span></div>`).join('');
+}
+else energie.style.display = 'none';
+</script>
+</body></html>

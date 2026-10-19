@@ -1,0 +1,4 @@
+www.vivalalabia.com/assets/models/logo/VVL_logo.glb : 1 maillages, 1 matériaux, 0 animations, extensions ['KHR_draco_mesh_compression'], noms ['Mesh.011']
+www.vivalalabia.com/assets/models/ring/muffin-ring.glb : 3 maillages, 2 matériaux, 0 animations, extensions ['KHR_draco_mesh_compression', 'KHR_materials_ior', 'KHR_materials_specular', 'KHR_materials_transmission', 'KHR_texture_transform', 'EXT_texture_webp'], noms ['Mesh', 'Mesh.001', 'Mesh.002']
+www.vivalalabia.com/assets/models/shell/shell-single.glb : 1 maillages, 1 matériaux, 0 animations, extensions ['KHR_materials_ior', 'KHR_materials_specular', 'KHR_texture_transform', 'EXT_texture_webp', 'KHR_draco_mesh_compression'], noms ['Mesh.001']
+www.vivalalabia.com/assets/models/blueberry/blueberry-single.glb : 1 maillages, 1 matériaux, 0 animations, extensions ['EXT_texture_webp', 'KHR_draco_mesh_compression'], noms ['blueberry1']

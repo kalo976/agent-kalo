@@ -20,7 +20,7 @@ tags: [marque, règles]
 - Tout prix d'appareil avec étiquette énergie : classe + échelle A à G.
 - Prix barré = prix le plus bas des 30 jours précédents ; dates de l'offre indiquées.
 - Jamais le nom ni le logo Darty ; jamais de nom de concurrent.
-- Rien n'est publié sans validation de yakesh, et rien n'arrive chez Chimène sans le « Validé » d'Ousséni (3 tours au plus).
+- Rien n'est publié sans validation de yakesh, et rien n'arrive chez Chimène sans le « Validé » d'Ousséni (3 tours au plus). Affiches, vidéos, posts, opérations et calendrier se font en duo avec un challenger de l'île Arène (3 tours au plus).
 - Kalo uniquement : ne jamais mélanger avec Meubles & Déco Mayotte.
 Source complète : [[Identité Kalo]].""")
 w("Entreprise/Magasin Kalo.md","""---
@@ -87,12 +87,18 @@ w("Références/Style vidéo de référence.md","---\ntags: [références]\n---\
 PRENOMS={"kalo-cerveau":("David","Centre"),"kalo-chef-com":("Chimène","Pilotage"),"kalo-calendrier":("Chanisse","Pilotage"),"kalo-operations-commerciales":("Zayeb","Pilotage"),
 "kalo-marque":("Gamil","Marque"),"kalo-critique":("Ousséni","Marque"),"kalo-post-facebook":("Zaïna","Écriture"),"kalo-whatsapp-sms":("Anli","Écriture"),"kalo-fiches-produits":("Thomas","Écriture"),
 "kalo-visuel-produit":("Sahel","Création"),"kalo-video-courte":("Kamil","Création"),"kalo-community-manager":("Charza","Clients"),"kalo-avis-clients":("Nasser","Clients"),
-"kalo-statistiques":("Nahim","Analyse"),"kalo-veille-concurrence":("Chloé","Analyse")}
+"kalo-statistiques":("Nahim","Analyse"),"kalo-veille-concurrence":("Chloé","Analyse"),
+"kalo-challenger-affiches":("Roukia","Arène"),"kalo-challenger-videos":("Bacar","Arène"),"kalo-challenger-posts":("Faïza","Arène"),
+"kalo-challenger-operations":("Fahardine","Arène"),"kalo-challenger-calendrier":("Mariama","Arène")}
 ag=["---\ntags: [agents]\n---\n# Équipe d'agents Kalo\n","Tous les agents sont branchés sur ce cerveau : **avant d'écrire une seule ligne, ils lisent [[00 Cerveau Kalo]] puis les notes liées à leur métier.** David ([[kalo-cerveau]]) tient le cerveau.\n","| Prénom | Île | Agent | Métier | Lit d'abord |","|---|---|---|---|---|"]
 lit={"kalo-marque":"[[Identité Kalo]]","kalo-calendrier":"[[Calendrier et temps forts]]","kalo-operations-commerciales":"[[Calendrier et temps forts]], [[Catalogue kalo.yt]]",
 "kalo-post-facebook":"[[Identité Kalo]], [[Index des contenus]], [[Catalogue kalo.yt]]","kalo-visuel-produit":"[[Packshots]], [[Style vidéo de référence]]","kalo-video-courte":"[[Style vidéo de référence]], [[Packshots]]",
 "kalo-whatsapp-sms":"[[Index des contenus]]","kalo-community-manager":"[[Questions et réponses clients]], [[Magasin Kalo]]","kalo-avis-clients":"[[Questions et réponses clients]]",
 "kalo-fiches-produits":"[[Catalogue kalo.yt]], [[Packshots]]","kalo-statistiques":"[[Index des contenus]]","kalo-veille-concurrence":"[[Catalogue kalo.yt]]","kalo-chef-com":"[[00 Cerveau Kalo]] en entier","kalo-critique":"[[Identité Kalo]], la note de l'agent relu"}
+# chaque challenger lit les mêmes notes que le créatif qu'il affronte
+for ch,cr in {"kalo-challenger-affiches":"kalo-visuel-produit","kalo-challenger-videos":"kalo-video-courte","kalo-challenger-posts":"kalo-post-facebook",
+              "kalo-challenger-operations":"kalo-operations-commerciales","kalo-challenger-calendrier":"kalo-calendrier"}.items():
+    lit[ch]=lit[cr]+f", [[{cr}]]"
 for d in sorted(glob.glob(SK+"/kalo-*")):
     n=os.path.basename(d); desc=front(d+"/SKILL.md"); p,ile=PRENOMS.get(n,("?","?"))
     if n=="kalo-cerveau": continue

@@ -1,0 +1,404 @@
+[
+ {
+  "url": "https://mont-fort.com/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://consent.cookiebot.com/uc.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 37633
+ },
+ {
+  "url": "https://mont-fort.com/_astro/_slug_.CRG2uH_C.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 19417
+ },
+ {
+  "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+  "status": 200,
+  "type": "text/javascript;charset=UTF-8",
+  "len": 0
+ },
+ {
+  "url": "https://mont-fort.com/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DcSP9LZ1.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 1687
+ },
+ {
+  "url": "https://mont-fort.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0
+ },
+ {
+  "url": "https://consentcdn.cookiebot.com/consentconfig/89edad7e-6fc5-41b7-91a2-04a65c8d6afa/settings.json",
+  "status": 200,
+  "type": "application/json",
+  "len": 287
+ },
+ {
+  "url": "https://mont-fort.com/_astro/WebGL.astro_astro_type_script_index_0_lang.wO7n4uvo.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 249
+ },
+ {
+  "url": "https://mont-fort.com/_astro/Solutions.astro_astro_type_script_index_0_lang.O1AcBC4Y.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 622
+ },
+ {
+  "url": "https://mont-fort.com/_astro/ChaptersNavigation.astro_astro_type_script_index_0_lang.CydF1g6_.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 1129
+ },
+ {
+  "url": "https://mont-fort.com/_astro/Social.astro_astro_type_script_index_0_lang.Bdo1SUjv.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 1481
+ },
+ {
+  "url": "https://mont-fort.com/assets/fonts/CenturyGothic.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "len": 56416
+ },
+ {
+  "url": "https://mont-fort.com/assets/fonts/JosefinSans-Light.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "len": 22560
+ },
+ {
+  "url": "https://consentcdn.cookiebot.com/sdk/bc-v4.min.html",
+  "status": 200,
+  "type": "text/html",
+  "len": 392
+ },
+ {
+  "url": "https://mont-fort.com/_astro/Layout.astro_astro_type_script_index_0_lang.RJ8D73Hs.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 176
+ },
+ {
+  "url": "https://consentcdn.cookiebot.com/consentconfig/89edad7e-6fc5-41b7-91a2-04a65c8d6afa/mont-fort.com/configuration.js",
+  "status": 200,
+  "type": "application/x-javascript",
+  "len": 175
+ },
+ {
+  "url": "https://mont-fort.com/assets/fonts/CenturyGothic-Bold.woff2",
+  "status": 200,
+  "type": "font/woff2",
+  "len": 50384
+ },
+ {
+  "url": "https://consent.cookiebot.com/89edad7e-6fc5-41b7-91a2-04a65c8d6afa/cc.js?renew=false&referer=mont-fort.com&dnt=false&init=false",
+  "status": 200,
+  "type": "application/x-javascript; charset=utf-8",
+  "len": 159
+ },
+ {
+  "url": "https://mont-fort.com/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DcSP9LZ1.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 1687
+ },
+ {
+  "url": "https://mont-fort.com/_astro/router.2W7FzLmj.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 4050
+ },
+ {
+  "url": "https://mont-fort.com/_astro/WebGL.astro_astro_type_script_index_0_lang.wO7n4uvo.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 249
+ },
+ {
+  "url": "https://mont-fort.com/_astro/index.D-nlVayj.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 27582
+ },
+ {
+  "url": "https://www.googletagmanager.com/gtm.js?id=GTM-5F3SQM6J",
+  "status": 200,
+  "type": "application/javascript; charset=UTF-8",
+  "len": 124411
+ },
+ {
+  "url": "https://mont-fort.com/_astro/App.ST3WWojO.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0
+ },
+ {
+  "url": "https://mont-fort.com/_astro/ScrollTrigger.CcwueB8r.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 18017
+ },
+ {
+  "url": "https://www.googletagmanager.com/gtag/js?id=G-4J9Y9ZRHPD&cx=c&gtm=4e6ae1",
+  "status": 200,
+  "type": "application/javascript; charset=UTF-8",
+  "len": 179371
+ },
+ {
+  "url": "https://mont-fort.com/_astro/visitedNews.BmN7K1ri.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 215
+ },
+ {
+  "url": "https://mont-fort.com/_astro/Solutions.astro_astro_type_script_index_0_lang.O1AcBC4Y.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 622
+ },
+ {
+  "url": "https://mont-fort.com/_astro/Social.astro_astro_type_script_index_0_lang.Bdo1SUjv.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 1481
+ },
+ {
+  "url": "https://mont-fort.com/_astro/ChaptersNavigation.astro_astro_type_script_index_0_lang.CydF1g6_.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 1129
+ },
+ {
+  "url": "https://mont-fort.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0
+ },
+ {
+  "url": "https://mont-fort.com/_astro/Layout.astro_astro_type_script_index_0_lang.RJ8D73Hs.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 176
+ },
+ {
+  "url": "https://mont-fort.com/assets/textures/noise.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 16692
+ },
+ {
+  "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-4J9Y9ZRHPD&gtm=45je6ae1v9232074741za20ozb9229014417zd9229014417xf1&_p=1792320584337&gcs=G111&gcd=13r3r3r3r5l1&npa=0&dma=0&gdid=dMWZhNz&are=1&cid=986736501.1792320585&frm=0&ngs=1&pscdl=noapi&rcb=6&sr=1440x900&uaa=x86&uab=64&uafvl=HeadlessChrome%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0%7CChromium%3B141.0.7390.37&uam=&uamb=0&uap=Linux&uapv=6.18.44&uaw=0&ul=en-us%40posix&_s=1&tag_exp=115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1792320584&sct=1&seg=0&dl=https%3A%2F%2Fmont-fort.com%2F&dt=Montfort%20Group&_tu=CA&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=2398",
+  "status": 204,
+  "type": "text/plain",
+  "len": 0
+ },
+ {
+  "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+  "status": 200,
+  "type": "text/javascript;charset=UTF-8",
+  "len": 0
+ },
+ {
+  "url": "https://mont-fort.com/assets/sounds/sound.mp3",
+  "status": 200,
+  "type": "audio/mpeg",
+  "len": 242091
+ },
+ {
+  "url": "https://mont-fort.com/assets/textures/noise-solid-normal.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 26346
+ },
+ {
+  "url": "https://mont-fort.com/cdn-cgi/rum?",
+  "status": 204,
+  "type": "text/plain",
+  "len": 0
+ },
+ {
+  "url": "https://mont-fort.com/assets/textures/perlinNoise.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 89878
+ },
+ {
+  "url": "https://mont-fort.com/assets/textures/envmap-min.exr",
+  "status": 200,
+  "type": "image/aces",
+  "len": 111970
+ },
+ {
+  "url": "https://mont-fort.com/assets/models/mountains.glb",
+  "status": 200,
+  "type": "model/gltf-binary",
+  "len": 1496440
+ },
+ {
+  "url": "https://mont-fort.com/assets/textures/rock_normal.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 169772
+ },
+ {
+  "url": "https://mont-fort.com/assets/textures/voronoi.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8330
+ },
+ {
+  "url": "https://mont-fort.com/assets/textures/snowRockMix.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 41500
+ },
+ {
+  "url": "https://mont-fort.com/assets/textures/homepage/homepage-lightmap.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 77132
+ },
+ {
+  "url": "https://mont-fort.com/assets/textures/homepage/snow_diffuse.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 46
+ },
+ {
+  "url": "https://mont-fort.com/assets/models/homepage/Homepage.glb",
+  "status": 200,
+  "type": "model/gltf-binary",
+  "len": 86904
+ },
+ {
+  "url": "https://mont-fort.com/assets/textures/rock_diffuse.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 149676
+ },
+ {
+  "url": "https://mont-fort.com/assets/models/homepage/TopChapters.glb",
+  "status": 200,
+  "type": "model/gltf-binary",
+  "len": 13052
+ },
+ {
+  "url": "https://mont-fort.com/assets/models/homepage/WhatWeDo.glb",
+  "status": 200,
+  "type": "model/gltf-binary",
+  "len": 129344
+ },
+ {
+  "url": "https://mont-fort.com/_astro/KTX2Loader.OqaxSbz7.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 23285
+ },
+ {
+  "url": "https://mont-fort.com/assets/models/homepage/earth-min.glb",
+  "status": 200,
+  "type": "model/gltf-binary",
+  "len": 6851836
+ },
+ {
+  "url": "https://mont-fort.com/libs/basis/basis_transcoder.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 15080
+ },
+ {
+  "url": "https://mont-fort.com/libs/basis/basis_transcoder.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://mont-fort.com/assets/models/homepage/Sustainability-min.glb",
+  "status": 200,
+  "type": "model/gltf-binary",
+  "len": 2226952
+ },
+ {
+  "url": "https://mont-fort.com/who-we-are/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://mont-fort.com/_astro/m_Z1P6vA3.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 38960
+ },
+ {
+  "url": "https://mont-fort.com/_astro/m_Z2a1DAc.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 23628
+ },
+ {
+  "url": "https://mont-fort.com/_astro/m_p9jca.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 36974
+ },
+ {
+  "url": "https://mont-fort.com/_astro/m_Z1MoXzC.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 9456
+ },
+ {
+  "url": "https://mont-fort.com/_astro/m_Z1BGw7L.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5184
+ },
+ {
+  "url": "https://mont-fort.com/_astro/m_Zgdy0W.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5558
+ },
+ {
+  "url": "https://mont-fort.com/_astro/m_Yinae.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3820
+ },
+ {
+  "url": "https://mont-fort.com/_astro/m_Z1nU6o9.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5436
+ },
+ {
+  "url": "https://mont-fort.com/_astro/m_ZjwA4W.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4644
+ },
+ {
+  "url": "https://mont-fort.com/_astro/m_lonL2.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5056
+ },
+ {
+  "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-4J9Y9ZRHPD&gtm=45je6ae1v9232074741za20gzb9229014417zd9229014417xf1&_p=1792320584337&gcs=G111&gcd=13r3r3r3r5l1&npa=0&dma=0&gdid=dMWZhNz&_eu=AEAAAAQ&ae=a&are=1&cid=986736501.1792320585&frm=0&ngs=1&pscdl=noapi&rcb=6&sr=1440x900&uaa=x86&uab=64&uafvl=HeadlessChrome%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0%7CChromium%3B141.0.7390.37&uam=&uamb=0&uap=Linux&uapv=6.18.44&uaw=0&ul=en-us%40posix&_s=2&tag_exp=115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1792320584&sct=1&seg=1&dl=https%3A%2F%2Fmont-fort.com%2F&dt=Montfort%20Group&_tu=CA&en=scroll&epn.percent_scrolled=90&_et=276527&tfd=283936",
+  "status": 204,
+  "type": "text/plain",
+  "len": 0
+ }
+]

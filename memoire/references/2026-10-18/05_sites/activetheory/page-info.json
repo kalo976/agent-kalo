@@ -1,0 +1,71 @@
+{
+  "url": "https://activetheory.net/",
+  "scrollHeight": 900,
+  "title": "Active Theory · Creative Digital Experiences",
+  "canvases": [
+    [
+      2160,
+      1350
+    ]
+  ],
+  "videos": [
+    "https://activetheory.net/assets/video/reel.mp4",
+    "https://activetheory.net/assets/video/reel.mp4"
+  ],
+  "globals": [
+    "scrollbars",
+    "scrollX",
+    "scrollY",
+    "onscroll",
+    "onscrollend",
+    "scroll",
+    "scrollBy",
+    "scrollTo",
+    "onscrollsnapchange",
+    "onscrollsnapchanging",
+    "_ENV_",
+    "_CMS_",
+    "_UNSUPPORTED_PAGE_",
+    "_CACHE_",
+    "UIL_STATIC_PATH",
+    "google_tag_data",
+    "google_tag_manager",
+    "NoGLPolyfill",
+    "Hydra",
+    "HydraCSS",
+    "HydraObject",
+    "__dataverse_discoveryMechanism_sharedStack",
+    "__TheatreJS_CoreBundle",
+    "UIL_ASSETS_GEOMETRIES",
+    "UIL_ASSETS_TEXTURES",
+    "FBORendererWebGL",
+    "GeometryRendererWebGL",
+    "ShaderRendererWebGL",
+    "TextureRendererWebGL",
+    "FXScroll",
+    "FXScrollUI",
+    "ScrollController",
+    "ScrollRenderManager",
+    "HydraBloom",
+    "Scroll",
+    "UIL_ID",
+    "ScrollPlayer",
+    "_MINIFIED_",
+    "_BUILT_",
+    "hydraObject",
+    "__window",
+    "__document",
+    "__body",
+    "CMS_DATA",
+    "_MODULES_",
+    "scrollDelta"
+  ],
+  "three": null,
+  "gsap": null,
+  "fonts": [
+    "nbarchitekt 400 normal",
+    "nbarchitekt 300 normal",
+    "nbarchitekt 700 normal"
+  ],
+  "text": "Toggle AudioWorkContact\n\n<<\n\nSong--ArtistSong--Artist\n\n>>"
+}
