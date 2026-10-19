@@ -18,6 +18,8 @@ Sur chaque mission de ce type, Chimène envoie le même brief à Bacar, mon chal
 
 Applique `kalo-marque`. Pour aller plus loin : `video`. Pour le motion design : skills `remotion-*` (officielles Remotion).
 
+Boîte à outils motion design (skills en anglais, liste complète dans le README du dépôt) : principes d'animation `motion-design-principles` ; goût et rythme `claude-motion-design` ; relecture image par image `claude-motion-review-loop` ; bruitages `claude-motion-sound` ou `sound-effects` ; vidéo promo produit `product-launch-motion`, `launch-video` ou `explainer-high-energy` ; format Reel/TikTok 1080 × 1920 `reel-export` ; montage de rushes et sous-titres `hyperframes`, `talking-head-recut`, `embedded-captions` ; détourage d'un produit ou d'une personne `object-separation` ; storyboard et petite histoire animée `animate`. Ces outils servent la fabrication : la charte, le ton et les prix restent ceux de `kalo-marque`.
+
 ## Modèles animés Kalo (Remotion, dossier `video/` du dépôt agent-kalo)
 - **Nouvel arrivage cinéma** (20 s, modèle par défaut, en attente de validation) : comète et étincelles, texte lumineux, mur d'images traversé, studio avec reflet, montage rapide avec flashs et interface caméra, cartes cochées, prix qui claque avec la classe énergie, fin logo. Bruitages maison inclus.
 - **Nouvel arrivage simple** (15 s, 3e argument `NouvelArrivage`) : titre mot par mot avec soulignement jaune, produit qui arrive et flotte, nom du produit, points forts en cases cochées jaunes, prix et cartouche énergie ensemble, fin sur fond blanc avec logo, adresse et kalo.yt.
