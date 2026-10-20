@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* Modèle Meubles & Déco « affiche produit », charte de juin 2024.
+     3 formats : paysage 1734 × 907, carre 1080 × 1080, story 1080 × 1920 (classe sur <body>).
+     Polices : Gotham si elle est installée, sinon Montserrat (Google Fonts), sinon Inter. */
+  :root{--rouge:#FF503F;--noir:#000;--blanc:#fff;--creme:#F6F3EE;--gris:#4A4A4A}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--creme);font-family:'Gotham','Montserrat','Inter',Arial,sans-serif;position:relative;overflow:hidden;-webkit-font-smoothing:antialiased;color:var(--noir)}
+  .photo{position:absolute;overflow:hidden;background:#ddd}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .etiquette{position:absolute;background:var(--noir);color:#fff;font-weight:800;text-transform:uppercase;letter-spacing:.06em;line-height:1;clip-path:polygon(0 0,calc(100% - .9em) 0,100% 50%,calc(100% - .9em) 100%,0 100%)}
+  .titre{background:var(--rouge);color:#fff;font-weight:900;text-transform:uppercase;line-height:.95;letter-spacing:-.01em;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+  .titre small{display:block;font-weight:600;letter-spacing:.08em;margin-top:.35em;font-size:.36em;line-height:1.1}
+  .liste{list-style:none;font-weight:500;line-height:1.18}
+  .liste li{position:relative;padding-left:1.1em}
+  .liste li::before{content:'';position:absolute;left:0;top:.42em;width:.5em;height:.5em;border-radius:50%;background:var(--rouge)}
+  .liste li b{font-weight:800}
+  .exclu{color:var(--rouge);font-weight:700}
+  .prix{color:var(--rouge);font-weight:900;letter-spacing:-.04em;line-height:.9;white-space:nowrap}
+  .prix small{font-size:.62em;margin-left:.06em;letter-spacing:0}
+  .prix-avant{display:block;color:var(--gris);font-weight:600;font-size:.3em;letter-spacing:0;text-decoration:line-through;margin-bottom:.15em}
+  .prix-note{display:block;color:var(--noir);font-weight:600;font-size:.2em;letter-spacing:0;margin-top:.35em;white-space:normal}
+  .service{display:inline-flex;align-items:center;gap:.5em;background:var(--noir);color:#fff;font-weight:700;border-radius:999px;line-height:1;white-space:nowrap}
+  .service svg{height:1.2em;width:auto;fill:none;stroke:var(--rouge);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .pied{position:absolute;left:0;right:0;bottom:0;background:var(--noir);display:flex;align-items:center;justify-content:space-between}
+  .pied img{display:block;height:100%}
+  .site{background:#fff;color:var(--noir);font-weight:800;border-radius:999px;line-height:1;display:flex;align-items:center;gap:.45em;white-space:nowrap}
+  .site i{display:inline-block;width:1.15em;height:1.15em;border-radius:50%;background:var(--rouge);position:relative}
+  .site i::after{content:'';position:absolute;inset:22%;border:2px solid #fff;border-radius:50%}
+
+  /* ---------- Paysage 1734 × 907 ---------- */
+  body.paysage{width:1734px;height:907px}
+  .paysage .photo{left:0;top:0;width:1010px;height:787px}
+  .paysage .etiquette{left:40px;top:40px;font-size:30px;padding:16px 44px 16px 24px}
+  .paysage .texte{position:absolute;left:1060px;top:44px;width:634px;height:700px;display:flex;flex-direction:column}
+  .paysage .titre{font-size:84px;padding:26px 30px 24px;border-radius:22px;margin-left:-110px}
+  .paysage .liste{font-size:31px;margin-top:30px}
+  .paysage .liste li+li{margin-top:10px}
+  .paysage .infos{font-size:25px;margin-top:16px;color:var(--gris);font-weight:500;line-height:1.3}
+  .paysage .basd{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+  .paysage .prix{font-size:150px}
+  .paysage .service{font-size:24px;padding:14px 22px;margin-bottom:14px}
+  .paysage .pied{height:120px;padding:0 40px 0 0}
+  .paysage .pied .logo{height:120px}
+  .paysage .site{font-size:30px;padding:14px 26px 14px 16px}
+  .paysage .tel{color:#fff;font-weight:600;font-size:28px;margin-left:auto;margin-right:28px}
+
+  /* ---------- Carré 1080 × 1080 ---------- */
+  body.carre{width:1080px;height:1080px}
+  .carre .photo{left:24px;top:24px;width:1032px;height:560px;border-radius:28px}
+  .carre .etiquette{left:52px;top:52px;font-size:26px;padding:14px 40px 14px 20px}
+  .carre .titre{position:absolute;left:50%;transform:translateX(-50%);top:540px;font-size:58px;padding:18px 36px 16px;border-radius:20px;text-align:center;white-space:nowrap}
+  .carre .texte{position:absolute;left:48px;right:48px;top:680px;height:260px;display:flex;justify-content:space-between;align-items:flex-start}
+  .carre .liste{font-size:28px;width:560px}
+  .carre .liste li+li{margin-top:6px}
+  .carre .infos{font-size:22px;margin-top:10px;color:var(--gris);font-weight:500}
+  .carre .droite{display:flex;flex-direction:column;align-items:flex-end;gap:14px;padding-top:6px}
+  .carre .prix{font-size:122px;text-align:right}
+  .carre .service{font-size:21px;padding:12px 18px}
+  .carre .pied{height:116px;padding:0 28px 0 0}
+  .carre .pied .logo{height:116px}
+  .carre .site{font-size:26px;padding:12px 22px 12px 14px}
+  .carre .tel{display:none}
+
+  /* ---------- Story 1080 × 1920 (zones hautes et basses laissées libres pour l'interface) ---------- */
+  body.story{width:1080px;height:1920px}
+  .story .photo{left:0;top:0;width:1080px;height:1060px}
+  .story .etiquette{left:60px;top:260px;font-size:34px;padding:18px 50px 18px 26px}
+  .story .titre{position:absolute;left:60px;right:60px;top:990px;font-size:84px;padding:28px 36px 24px;border-radius:24px}
+  .story .texte{position:absolute;left:70px;right:70px;top:1210px;height:420px;display:flex;flex-direction:column}
+  .story .liste{font-size:38px}
+  .story .liste li+li{margin-top:10px}
+  .story .infos{font-size:30px;margin-top:14px;color:var(--gris);font-weight:500}
+  .story .basd{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between}
+  .story .prix{font-size:170px}
+  .story .service{font-size:28px;padding:16px 24px;margin-bottom:18px}
+  .story .pied{height:150px;bottom:130px;left:40px;right:40px;padding:0 30px 0 0;border-radius:0}
+  .story .pied .logo{height:150px}
+  .story .site{font-size:30px;padding:14px 24px 14px 16px}
+  .story .tel{display:none}
+  .story::after{content:'';position:absolute;left:0;right:0;bottom:0;height:130px;background:var(--noir)}
+</style></head><body class="paysage">
+<div class="photo"><img id="photo" alt=""></div>
+<div class="etiquette" id="etiquette"></div>
+<div class="texte" id="texte"></div>
+<div class="pied">
+  <img class="logo" src="logo-meubles-deco.png" alt="Meubles & Déco">
+  <span class="tel" id="tel"></span>
+  <span class="site"><i></i>meublesetdeco.net</span>
+</div>
+<script>
+// DATA est injecté par rendu.js ; valeurs par défaut = chambre Sarah (catalogue du cerveau, 20/10/2026)
+const D = window.DATA || {format:'paysage',etiquette:'Nouveauté',titre:'Chambre Sarah',sous_titre:'Chambre complète',
+  inclus:['Lit 160 × 200 + sommier','Armoire 2 portes coulissantes','Commode'],non_inclus:'Chevets non inclus',
+  prix:'1 290',service:'Livraison et montage',photo:'photos/chambre-sarah.jpg'};
+const F = D.format || 'paysage';
+document.body.className = F;
+photo.src = D.photo;
+if (D.cadrage) photo.style.objectPosition = D.cadrage;
+if (D.etiquette) etiquette.textContent = D.etiquette; else etiquette.remove();
+tel.textContent = D.tel === undefined ? '0269 64 50 59' : D.tel;
+const camion = '<svg viewBox="0 0 32 22"><path d="M2 3h17v13H2zM19 8h6l5 5v3h-11"/><circle cx="8" cy="18" r="2.6"/><circle cx="24" cy="18" r="2.6"/></svg>';
+const titreH = `<div class="titre">${D.titre}${D.sous_titre ? `<small>${D.sous_titre}</small>` : ''}</div>`;
+const lignes = (D.inclus || []).map(l => `<li>${l}</li>`)
+  .concat(D.dimensions ? [`<li>${D.dimensions}</li>`] : [])
+  .concat(D.coloris ? [`<li>Coloris : ${D.coloris}</li>`] : [])
+  .concat(D.non_inclus ? [`<li class="exclu">${D.non_inclus}</li>`] : []);
+const listeH = `<ul class="liste">${lignes.join('')}</ul>` + (D.infos ? `<div class="infos">${D.infos}</div>` : '');
+const prixH = `<div class="prix">${D.prix_avant ? `<span class="prix-avant">${D.prix_avant} €</span>` : ''}${D.prix}<small>€</small>${D.prix_note ? `<span class="prix-note">${D.prix_note}</span>` : ''}</div>`;
+const serviceH = D.service ? `<div class="service">${camion}${D.service}</div>` : '';
+if (F === 'carre') {
+  document.body.insertAdjacentHTML('beforeend', titreH);
+  texte.innerHTML = `<div>${listeH}</div><div class="droite">${prixH}${serviceH}</div>`;
+} else if (F === 'story') {
+  document.body.insertAdjacentHTML('beforeend', titreH);
+  texte.innerHTML = listeH + `<div class="basd">${prixH}${serviceH}</div>`;
+} else {
+  texte.innerHTML = titreH + listeH + `<div class="basd">${prixH}${serviceH}</div>`;
+}
+</script>
+</body></html>
