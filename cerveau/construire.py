@@ -83,14 +83,14 @@ for f in sorted(glob.glob(P+"/references/*/00_*.md")):
 refs=[os.path.basename(x)[:-3] for x in glob.glob(V+"/Références/*.md") if "Style vidéo" not in x]
 w("Références/Style vidéo de référence.md","---\ntags: [références]\n---\n# Références (#enregistre)\nIndex complet : `references/INDEX.md`.\n\n"+"\n".join(f"- [[{r}]]" for r in sorted(refs)))
 
-# Agents : prénom et île de chaque agent (archipel Kalo)
-PRENOMS={"kalo-cerveau":("David","Centre"),"kalo-chef-com":("Chimène","Pilotage"),"kalo-calendrier":("Chanisse","Pilotage"),"kalo-operations-commerciales":("Zayeb","Pilotage"),
+# Agents : prénom et pôle de chaque agent (ville Kalo : David est le maire, les autres travaillent dans les bureaux)
+PRENOMS={"kalo-cerveau":("David","Mairie"),"kalo-chef-com":("Chimène","Pilotage"),"kalo-calendrier":("Chanisse","Pilotage"),"kalo-operations-commerciales":("Zayeb","Pilotage"),
 "kalo-marque":("Gamil","Marque"),"kalo-critique":("Ousséni","Marque"),"kalo-post-facebook":("Zaïna","Écriture"),"kalo-whatsapp-sms":("Anli","Écriture"),"kalo-fiches-produits":("Thomas","Écriture"),
 "kalo-visuel-produit":("Sahel","Création"),"kalo-video-courte":("Kamil","Création"),"kalo-community-manager":("Charza","Clients"),"kalo-avis-clients":("Nasser","Clients"),
 "kalo-statistiques":("Nahim","Analyse"),"kalo-veille-concurrence":("Chloé","Analyse"),
 "kalo-challenger-affiches":("Roukia","Arène"),"kalo-challenger-videos":("Bacar","Arène"),"kalo-challenger-posts":("Faïza","Arène"),
 "kalo-challenger-operations":("Fahardine","Arène"),"kalo-challenger-calendrier":("Mariama","Arène")}
-ag=["---\ntags: [agents]\n---\n# Équipe d'agents Kalo\n","Tous les agents sont branchés sur ce cerveau : **avant d'écrire une seule ligne, ils lisent [[00 Cerveau Kalo]] puis les notes liées à leur métier.** David ([[kalo-cerveau]]) tient le cerveau.\n","| Prénom | Île | Agent | Métier | Lit d'abord |","|---|---|---|---|---|"]
+ag=["---\ntags: [agents]\n---\n# Équipe d'agents Kalo\n","Tous les agents sont branchés sur ce cerveau : **avant d'écrire une seule ligne, ils lisent [[00 Cerveau Kalo]] puis les notes liées à leur métier.** David ([[kalo-cerveau]]), le maire, tient le cerveau à la mairie.\n","| Prénom | Pôle | Agent | Métier | Lit d'abord |","|---|---|---|---|---|"]
 lit={"kalo-marque":"[[Identité Kalo]]","kalo-calendrier":"[[Calendrier et temps forts]]","kalo-operations-commerciales":"[[Calendrier et temps forts]], [[Catalogue kalo.yt]]",
 "kalo-post-facebook":"[[Identité Kalo]], [[Index des contenus]], [[Catalogue kalo.yt]]","kalo-visuel-produit":"[[Packshots]], [[Style vidéo de référence]]","kalo-video-courte":"[[Style vidéo de référence]], [[Packshots]]",
 "kalo-whatsapp-sms":"[[Index des contenus]]","kalo-community-manager":"[[Questions et réponses clients]], [[Magasin Kalo]]","kalo-avis-clients":"[[Questions et réponses clients]]",
@@ -100,16 +100,16 @@ for ch,cr in {"kalo-challenger-affiches":"kalo-visuel-produit","kalo-challenger-
               "kalo-challenger-operations":"kalo-operations-commerciales","kalo-challenger-calendrier":"kalo-calendrier"}.items():
     lit[ch]=lit[cr]+f", [[{cr}]]"
 for d in sorted(glob.glob(SK+"/kalo-*")):
-    n=os.path.basename(d); desc=front(d+"/SKILL.md"); p,ile=PRENOMS.get(n,("?","?"))
+    n=os.path.basename(d); desc=front(d+"/SKILL.md"); p,pole=PRENOMS.get(n,("?","?"))
     if n=="kalo-cerveau": continue
-    ag.append(f"| {p} | {ile} | [[{n}]] | {desc[:110]}… | {lit.get(n,'[[Identité Kalo]]')} |")
-    w(f"Agents/{n}.md",f"---\ntags: [agents]\nprenom: {p}\nile: {ile}\n---\n# {p} ({n})\nÎle : {ile}\n\n{desc}\n\n**Avant chaque tâche, lire :** {lit.get(n,'[[Identité Kalo]]')} et [[Règles à ne jamais enfreindre]].\n\nRetour : [[Équipe d'agents]]")
+    ag.append(f"| {p} | {pole} | [[{n}]] | {desc[:110]}… | {lit.get(n,'[[Identité Kalo]]')} |")
+    w(f"Agents/{n}.md",f"---\ntags: [agents]\nprenom: {p}\npole: {pole}\n---\n# {p} ({n})\nPôle : {pole}\n\n{desc}\n\n**Avant chaque tâche, lire :** {lit.get(n,'[[Identité Kalo]]')} et [[Règles à ne jamais enfreindre]].\n\nRetour : [[Équipe d'agents]]")
 w("Agents/kalo-cerveau.md","""---
 tags: [agents]
 prenom: David
-ile: Centre
+pole: Mairie
 ---
-# David (kalo-cerveau), au centre
+# David (kalo-cerveau), le maire, à la mairie
 Tient ce coffre à jour. Après chaque livrable validé, chaque #enregistre, chaque nouveau fichier de yakesh : crée ou met à jour la note, la relie ([[...]]) aux notes voisines et met à jour [[00 Cerveau Kalo]].
 Retire ce qui est faux ou périmé (avec la date), et ne range jamais de stock, de vente ni de donnée client.
 Retour : [[Équipe d'agents]]""")
@@ -123,7 +123,7 @@ La mémoire commune de toute l'équipe com Kalo (coffre Obsidian : ouvrir le dos
 
 **Règle d'or : avant d'écrire une seule ligne, chaque agent lit cette note puis les notes de son métier.** David ([[kalo-cerveau]]) la tient à jour.
 
-## Les îles
+## Les rubriques
 - **Marque** : [[Identité Kalo]] · [[Règles à ne jamais enfreindre]]
 - **Entreprise** : [[Magasin Kalo]]
 - **Produits** : [[Catalogue kalo.yt]] · [[Packshots]]
