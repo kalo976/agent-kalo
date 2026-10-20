@@ -21,7 +21,7 @@ const TAILLES = { paysage: [1734, 907], carre: [1080, 1080], story: [1080, 1920]
     .filter(e => e.scrollWidth > e.clientWidth + 1 || e.getBoundingClientRect().right > innerWidth || e.getBoundingClientRect().bottom > innerHeight)
     .map(e => e.className));
   if (debords.length) console.warn('ATTENTION débordement :', debords.join(', '));
-  const police = await p.evaluate(() => document.fonts.check('800 40px Montserrat') ? 'Montserrat' : 'secours (Inter/Arial)');
+  const police = await p.evaluate(() => [...document.fonts].some(f => /Montserrat|Gotham/.test(f.family) && f.status === 'loaded') ? 'Montserrat/Gotham' : 'SECOURS (Inter) : Google Fonts injoignable');
   console.log('police :', police);
   fs.mkdirSync(path.dirname(path.resolve(out)), { recursive: true });
   await p.screenshot({ path: out });
