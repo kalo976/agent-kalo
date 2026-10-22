@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<style>
+  /* Kalo « Nouvel arrivage » format Story 1080 × 1920. Zones de sécurité : rien dans les 250 px du haut ni les 380 px du bas. Charte Kalo 2017. */
+  :root{--fond:#009BDE;--texte:#fff;--rouge:#E2231A}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1920px;background:#fff;font-family:'Open Sans',Arial,sans-serif;position:relative;overflow:hidden;-webkit-font-smoothing:antialiased}
+  .carte{position:absolute;left:36px;top:250px;width:1008px;height:1150px;background:var(--fond);border-radius:96px}
+  .gauche{position:absolute;left:76px;top:292px;width:540px;height:1070px;color:var(--texte);display:flex;flex-direction:column;justify-content:space-between}
+  .titre{font-weight:800;font-stretch:75%;font-size:108px;line-height:.86;letter-spacing:-1px;text-transform:uppercase}
+  .produit{font-weight:800;font-stretch:75%;font-size:58px;line-height:1.04;margin-top:26px;text-transform:uppercase}
+  .specs{font-size:36px;line-height:1.1;margin-top:12px}
+  .bas{display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+  .cartouche{background:#fff;border-radius:22px;height:132px;display:flex;align-items:center;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+  .prix{padding:0 36px;color:var(--rouge);font-weight:800;font-stretch:75%;font-size:120px;letter-spacing:-2px;line-height:1}
+  .prix small{font-size:.78em;margin-left:10px}
+  .energie{padding:0 26px 0 22px;gap:18px;height:160px}
+  .cl{display:flex;flex-direction:column;align-items:center;color:#000;font-weight:800;font-stretch:75%;line-height:1}
+  .cl .t{font-size:32px}
+  .cl .l{font-size:80px;margin:4px 0 2px}
+  .cl .g{font-size:26px;letter-spacing:1px}
+  .trait{width:2px;align-self:stretch;margin:16px 0;background:#222}
+  .echelle{display:flex;flex-direction:column;gap:2px;padding-right:26px}
+  .echelle div{position:relative;height:18px;color:#fff;font-weight:800;font-size:16px;line-height:18px}
+  .echelle div span{display:block;height:18px;padding-left:6px;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%)}
+  .echelle div.on::after{content:'';position:absolute;top:-3px;left:calc(100% + 5px);border-top:12px solid transparent;border-bottom:12px solid transparent;border-right:20px solid #000}
+  .visuel{position:absolute;left:580px;top:292px;width:440px;height:1070px;display:flex;align-items:flex-end;justify-content:center}
+  .visuel img{max-width:440px;filter:drop-shadow(0 22px 20px rgba(0,0,0,.28))}
+  .site{position:absolute;left:60px;top:1448px;color:#6B605B;font-weight:600;font-size:42px}
+  .logo{position:absolute;right:56px;top:1424px;height:112px}
+</style></head><body>
+<div class="carte"></div>
+<div class="gauche">
+  <div><div class="titre" id="titre"></div><div class="produit" id="produit"></div><div class="specs" id="specs"></div></div>
+  <div class="bas">
+    <div class="cartouche prix" id="prix"></div>
+    <div class="cartouche energie" id="energie"><div class="cl"><span class="t">CLASSE</span><span class="l" id="classe"></span><span class="g">A à G</span></div><div class="trait"></div><div class="echelle" id="echelle"></div></div>
+  </div>
+</div>
+<div class="visuel"><img id="photo" alt=""></div>
+<div class="site">kalo.yt</div>
+<img class="logo" src="logo-octobre-rose-rogne.png" alt="Kalo">
+<script>
+const D = window.DATA;
+const fond = D.fond;
+document.documentElement.style.setProperty('--fond', fond);
+document.documentElement.style.setProperty('--texte', fond.toUpperCase()==='#FFD700' ? '#0E0F0E' : '#fff');
+titre.innerHTML = 'Nouvel<br>arrivage';
+produit.innerHTML = D.produit;
+specs.innerHTML = D.specs.join('<br>');
+prix.innerHTML = D.prix + '<small>€</small>';
+photo.src = D.photo;
+photo.style.maxHeight = (D.h || 1000) + 'px';
+if (D.w) { const v=document.querySelector('.visuel'); v.style.left=(1022-D.w)+'px'; v.style.width=D.w+'px'; photo.style.maxWidth=D.w+'px'; }
+const C = {A:'#00A651',B:'#50B848',C:'#BFD730',D:'#FFF200',E:'#FDB913',F:'#F37021',G:'#ED1C24'};
+if(!D.classe){energie.style.display='none'}
+if(D.large){const v=document.querySelector('.visuel');v.style.left='90px';v.style.width='900px';v.style.top='770px';v.style.height='340px';photo.style.maxWidth='900px';photo.style.maxHeight='340px';}
+classe.textContent = D.classe;
+const w = {A:62,B:74,C:86,D:98,E:110,F:122,G:134};
+echelle.innerHTML = Object.keys(C).map(k => `<div class="${k===D.classe?'on':''}" style="width:${w[k]}px"><span style="background:${C[k]}">${k}</span></div>`).join('');
+</script></body></html>
