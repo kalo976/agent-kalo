@@ -1,0 +1,9 @@
+{
+  "name": "equipe-com-kalo",
+  "version": "0.5.0",
+  "description": "L'équipe com Kalo (Mayotte) : 40 skills (agents, 10 sous-agents d'atelier, challengers, critique, tribunal et ses 10 jurés, cerveau) sous la direction de Chimène. Chaîne qualité du 22/10/2026 : ateliers sans tours, superviseur qui corrige, un échange avec le challenger, Ousséni sans note, tribunal si nécessaire, Chimène valide à 8/10.",
+  "author": {
+    "name": "Kalo"
+  },
+  "repository": "https://github.com/yakesh14/agent-kalo"
+}
