@@ -38,4 +38,4 @@
 | Analyse | kalo-veille-concurrence | **Chloé** | Les prix et promos des concurrents. |
 
 ## Changer un prénom
-Table `PRENOMS` de `cerveau/construire.py`, section « Qui je suis » et description du SKILL.md, table de `kalo-chef-com`, puis `python3 cerveau/construire_archipel.py`, republier l'artifact et refaire le paquet (`paquets.sh`).
+Table `PRENOMS` de `cerveau/construire.py`, section « Qui je suis » et description du SKILL.md, table de `kalo-chef-com`, puis `python3 cerveau/construire_ville.py` (l'archipel est devenu la ville Kalo le 20/10/2026), republier l'artifact et refaire le paquet (`paquets.sh`).

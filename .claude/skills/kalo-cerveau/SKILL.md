@@ -29,5 +29,5 @@ Au tribunal (`kalo-tribunal`), je suis le **greffier** : j'instruis le dossier (
 ## Reconstruire le cerveau
 Dans le dépôt `yakesh14/agent-kalo` : `python3 cerveau/construire.py` régénère les notes à partir des fichiers du projet. Les notes ajoutées à la main dans d'autres dossiers sont conservées.
 
-## L'archipel
-La carte de l'équipe (îles, prénoms, cerveau au centre, bouton « Parle à … ») : `cerveau/archipel.html`, publiée sur https://claude.ai/artifact/Y1oSpU6Lt4Xv5V3LCdThxj. Pour changer un prénom : table `PRENOMS` de `cerveau/construire.py`, puis `python3 cerveau/construire_archipel.py`.
+## La ville
+La carte de l'équipe (la mairie au centre avec le cerveau, les bureaux avec une pièce par pôle, une maison par agent, bouton « Parle à … ») : `cerveau/ville.html`, publiée sur https://claude.ai/artifact/Y1oSpU6Lt4Xv5V3LCdThxj. Pour changer un prénom : table `PRENOMS` de `cerveau/construire.py`, puis `python3 cerveau/construire_ville.py`.
