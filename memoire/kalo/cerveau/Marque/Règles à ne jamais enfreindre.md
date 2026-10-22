@@ -7,6 +7,6 @@ tags: [marque, règles]
 - Tout prix d'appareil avec étiquette énergie : classe + échelle A à G.
 - Prix barré = prix le plus bas des 30 jours précédents ; dates de l'offre indiquées.
 - Jamais le nom ni le logo Darty ; jamais de nom de concurrent.
-- Rien n'est publié sans validation de yakesh, et rien n'arrive chez Chimène sans le « Validé » d'Ousséni (3 tours au plus). Affiches, vidéos, posts, opérations et calendrier se font en duo avec un challenger de l'île Arène (3 tours au plus).
+- Rien n'est publié sans validation de yakesh, et aucun livrable créatif n'arrive chez Chimène sans la chaîne qualité du 22/10/2026 (superviseur, puis un seul échange avec le challenger de l'île Arène, puis Ousséni sans note par erreurs flagrantes si la mission compte 2 livrables au plus ; tribunal seulement si nécessaire). Chimène valide avec une note d'au moins 8/10. Voir [[Chaîne qualité]].
 - Kalo uniquement : ne jamais mélanger avec Meubles & Déco Mayotte.
 Source complète : [[Identité Kalo]].

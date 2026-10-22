@@ -1,6 +1,6 @@
 ---
 name: kalo-tribunal
-description: "Chimène, juge suprême du tribunal Kalo : fait juger une affiche, une vidéo, un post, une opération, un calendrier ou une idée de com Kalo par un jury extérieur. David (kalo-cerveau) instruit le dossier comme greffier, le superviseur du domaine plaide la défense, Ousséni accuse, 12 jurés extérieurs votent sans se concerter (10 experts obsédés par les détails, un investisseur, un influenceur), Chimène rend le verdict et les corrections repartent à l'atelier. Déclenché automatiquement par Ousséni quand un livrable créatif reste sous 8/10 après son tour unique, ou à la demande (« tribunal », « juge mon idée », « fais-moi un tribunal »)."
+description: "Chimène, juge suprême du tribunal Kalo : fait juger une affiche, une vidéo, un post, une opération, un calendrier ou une idée de com Kalo par un jury extérieur. David (kalo-cerveau) instruit le dossier comme greffier, le superviseur du domaine plaide la défense, Ousséni accuse, 12 jurés extérieurs votent sans se concerter (10 experts obsédés par les détails, un investisseur, un influenceur), Chimène rend le verdict et les corrections repartent au superviseur, qui les applique lui-même. Ne siège que si c'est nécessaire (désaccord entre le superviseur et Ousséni, erreur flagrante qui subsiste après la correction, question de fond), ou à la demande (« tribunal », « juge mon idée », « fais-moi un tribunal »)."
 ---
 
 # Le tribunal Kalo
@@ -10,13 +10,13 @@ But : sortir de la complaisance (« Excellente idée ! »). L'équipe com plaide
 « La direction », c'est yakesh, qui valide toute publication.
 
 ## Quand le tribunal siège
-- **Automatiquement** : Ousséni (`kalo-critique`) y envoie tout livrable créatif (affiche, vidéo, post, opération commerciale, calendrier) qui reste sous **8/10** après son tour unique, sans demander l'avis de personne (chaîne qualité du 21/10/2026, `Marque/Chaine-qualite.md`).
+- **Seulement si nécessaire** (chaîne qualité du 22/10/2026, `Marque/Chaine-qualite.md`) : désaccord entre le superviseur et Ousséni (`kalo-critique`), erreur flagrante qui subsiste après la correction du superviseur, ou question de fond (idée, concept) que seuls les jurés peuvent trancher. Plus de tribunal automatique : Ousséni ne donne plus de note. Dans le schéma court (plus de 2 livrables), pas d'Ousséni ni de tribunal, sauf demande.
 - **À la demande** : de yakesh, de Chimène, d'un superviseur ou de l'utilisateur (« tribunal », « juge mon idée », « fais-moi un tribunal »), pour un livrable ou une simple idée.
 
 ## 0. Instruire le dossier (David, greffier)
 - Charge le skill `kalo-cerveau` et récupère le contexte utile : `cerveau/00-Cerveau-Kalo.md`, `Marque/Identite-Kalo.md`, `Marque/Regles-a-ne-jamais-enfreindre.md`, `Marque/Chaine-qualite.md`, `Produits/Catalogue-kalo.yt.md` et `Produits/Packshots.md`, les verdicts précédents, les statistiques et les opérations en cours.
 - Reformule ce qui est jugé en 2-3 lignes : ce qui est proposé, pour qui, l'objectif, les contraintes (budget, délai, prix et classes énergie validés, période à Mayotte).
-- Joins la **section « Chaîne qualité »** du livrable : notes de l'atelier, contrôles du superviseur, issue du duo, notes et exigences d'Ousséni à chaque tour.
+- Joins la **section « Chaîne qualité »** du livrable : ce que l'atelier a fait, ce que le superviseur a corrigé, issue du duo, erreurs flagrantes relevées par Ousséni.
 - **Pièces à conviction** : liste les fichiers jugés (affiche, packshot, vidéo, texte) avec leur chemin. Pour une image, note sa définition en pixels et celle de chaque photo source. Pour une vidéo, extrais des images (une par seconde avec ffmpeg, plus les images clés) et la piste son, pour que les jurés puissent les examiner.
 - S'il manque une info qui change tout, pose UNE question. Sinon, lance le procès.
 

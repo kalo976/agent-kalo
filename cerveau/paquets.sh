@@ -45,7 +45,7 @@ Les 20 agents de communication de Kalo, chacun avec son prénom et son île, aut
 | Clients | Charza (`kalo-community-manager`), Nasser (`kalo-avis-clients`) |
 | Analyse | Nahim (`kalo-statistiques`), Chloé (`kalo-veille-concurrence`) |
 
-Toute demande de com passe d'abord par Chimène, qui répartit. Chaque livrable passe par Ousséni (avocat du diable, 3 tours au plus) avant de revenir à Chimène ; affiches, vidéos, posts, opérations et calendrier se font en duo : le créatif et son challenger de l'île Arène se confrontent en 3 tours au plus. Rien n'est publié sans validation.
+Toute demande de com passe d'abord par Chimène, qui répartit. Chaîne qualité du 22/10/2026 : pour affiches, vidéos, posts, opérations et calendrier, les 2 sous-agents de l'atelier, puis le superviseur qui corrige lui-même, puis un seul échange avec le challenger de l'île Arène, puis Ousséni (sans note, par erreurs flagrantes) si la mission compte 2 livrables au plus, tribunal seulement si nécessaire, puis Chimène qui valide avec au moins 8/10 ; les autres livrables passent par Ousséni avant Chimène. Rien n'est publié sans validation.
 MD
 python3 -c "import json;d=json.load(open('$P/.claude-plugin/plugin.json'));assert d['name']=='equipe-kalo'"
 for a in $AGENTS; do test -f $P/skills/$a/SKILL.md; done

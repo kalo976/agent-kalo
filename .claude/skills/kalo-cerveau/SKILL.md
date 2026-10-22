@@ -20,10 +20,10 @@ Je ne range que ce qu'Ousséni (`kalo-critique`) a validé (ou ce qu'un verdict 
 3. Mettre à jour `00-Cerveau-Kalo.md` si une île change, et la liste « Manque encore ».
 4. Corriger ou retirer ce qui est faux ou périmé, en notant la date.
 5. Ne jamais ranger de stock, de chiffre de vente, de marge ni de donnée personnelle de client.
-6. Garder avec chaque livrable créatif sa section « Chaîne qualité » (notes de l'atelier, du superviseur, du duo, d'Ousséni et du tribunal).
+6. Garder avec chaque livrable créatif sa section « Chaîne qualité » (tableau Étape | Qui | Ce qui a été fait ou changé : atelier, superviseur, duo, Ousséni, tribunal s'il a siégé, note de Chimène).
 
 ## Chaîne qualité et tribunal
-Depuis le 21/10/2026, les missions créatives (affiches, vidéos, posts, opérations commerciales, calendrier) suivent la chaîne qualité décrite dans `cerveau/Marque/Chaine-qualite.md` : atelier de 2 sous-agents → contrôle du superviseur (plus de 7/10, 2 contrôles au plus) → duo avec le challenger → Ousséni (1 seul tour, seuil 8/10) → tribunal automatique si la note reste en dessous → Chimène → yakesh.
+Depuis le 22/10/2026 (consigne qui remplace celle du 21/10), les missions créatives (affiches, vidéos, posts, opérations commerciales, calendrier) suivent la chaîne qualité décrite dans `cerveau/Marque/Chaine-qualite.md` : deux schémas selon le nombre de livrables. Complet (2 livrables au plus) : 2 sous-agents (une seule passe) → superviseur (corrige lui-même) → challenger (1 seul échange) → Ousséni (sans note, erreurs flagrantes) → tribunal seulement si nécessaire → Chimène (valide avec au moins 8/10) → yakesh. Court (plus de 2 livrables) : 2 sous-agents → superviseur → challenger → Chimène → yakesh, sans Ousséni ni tribunal.
 Au tribunal (`kalo-tribunal`), je suis le **greffier** : j'instruis le dossier (contexte du cerveau, section « Chaîne qualité » du livrable, pièces à conviction), puis je range le verdict (journal du jour, note dans `Contenus/` reliée à `Index des contenus`) et j'ajoute les défauts récurrents à la section « Défauts récurrents » de `Chaîne qualité`, pour qu'ils deviennent des points de contrôle des grilles.
 
 ## Reconstruire le cerveau

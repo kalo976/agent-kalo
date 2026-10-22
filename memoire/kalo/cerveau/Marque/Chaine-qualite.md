@@ -3,49 +3,62 @@ tags: [marque, règles, qualité]
 ---
 # Chaîne qualité
 
-Consigne de la direction com du **21/10/2026** (règles révisées à midi), pour toute l'équipe Kalo. Elle s'ajoute aux [[Règles à ne jamais enfreindre]] : aucun livrable créatif n'arrive chez Chimène ([[kalo-chef-com]]) sans être passé par toute la chaîne. David ([[kalo-cerveau]]) tient cette note à jour.
+Consigne de la direction com du **22/10/2026**, qui remplace celle du 21/10, pour toute l'équipe Kalo. Elle s'ajoute aux [[Règles à ne jamais enfreindre]] : aucun livrable créatif n'arrive chez yakesh sans être passé par la chaîne. David ([[kalo-cerveau]]) tient cette note à jour.
 
 ## Les missions concernées
-Les 5 missions créatives : **affiches**, **vidéos**, **posts**, **opérations commerciales** et **calendrier**. Les autres livrables (WhatsApp et SMS, fiches produits, avis, réponses aux commentaires, statistiques, veille) n'ont ni atelier ni duo : un seul auteur, puis Ousséni, puis Chimène.
+Les 5 missions créatives : **affiches**, **vidéos**, **posts**, **opérations commerciales** et **calendrier**. Les autres livrables (WhatsApp et SMS, fiches produits, avis, réponses aux commentaires, statistiques, veille) n'ont ni atelier ni duo : un seul auteur, puis Ousséni (sans note, par erreurs flagrantes), puis Chimène.
+
+## Deux schémas, selon le nombre de livrables créatifs de la mission
+Pour les affiches : le nombre d'affiches à faire. Même règle pour les vidéos et les posts : le nombre de livrables. Le calendrier et les opérations commerciales sont un seul livrable, donc toujours le schéma complet.
+- **Schéma complet : 2 livrables au plus.** Sous-agents, superviseur, challenger, Ousséni, tribunal seulement si nécessaire, Chimène, yakesh.
+- **Schéma court : plus de 2 livrables.** Sous-agents, superviseur, challenger, Chimène, yakesh. Ni Ousséni, ni tribunal. Exemple pour Sahel : Soilihi et Anrifa, puis Sahel, puis Roukia, puis Chimène.
 
 ## La chaîne, dans l'ordre
-1. **Atelier** (île Atelier) : Chimène envoie le brief au superviseur, qui répartit le travail entre ses 2 sous-agents. Chacun fait sa part, relit et améliore la part de l'autre, **3 tours au plus**, puis ils livrent ensemble au superviseur avec une auto-évaluation sur la grille du domaine.
-2. **Contrôle du superviseur** sur sa grille sur 10, sur le rendu réel, **2 contrôles au plus** : **7/10 ou moins → renvoi à l'atelier**, avec l'emplacement, le défaut, le résultat attendu et le sous-agent qui corrige ; à chaque renvoi, **les 2 sous-agents corrigent en 1 seul tour**. **Plus de 7/10 → accepté.** Si la note reste à 7/10 ou moins au contrôle n° 2 (le dernier, pas de 3e renvoi), le superviseur reprend le travail lui-même et le corrige jusqu'à dépasser 7/10.
-3. **Retouche du superviseur** (facultative) : il peut retravailler lui-même le livrable pour le peaufiner et note ce qu'il a changé.
-4. **Duo** (île Arène), avant Ousséni : la version du superviseur affronte la piste du challenger, faite sur le même brief sans voir l'autre, en **3 tours au plus**. Le superviseur écrit la version finale avec le meilleur des deux. En cas de désaccord, Ousséni tranche.
-5. **Ousséni** ([[kalo-critique]]) : il ne reçoit qu'après le duo, applique la grille du domaine (inchangée), en **1 seul tour**, **seuil 8/10**. À 8/10 ou plus, il valide et envoie à Chimène.
-6. **Tribunal** ([[kalo-tribunal]]) : si la note est **sous 8/10 après son tour unique**, Ousséni y envoie automatiquement le livrable, sans le rendre à l'atelier et sans demander l'avis de personne. David instruit comme greffier, le superviseur plaide la défense, Ousséni accuse, 12 jurés extérieurs votent sans se concerter, Chimène rend le verdict. Les corrections repartent à l'atelier par le superviseur ; le superviseur contrôle que tout est appliqué (1 tour d'atelier) ; Ousséni vérifie seulement qu'elles sont toutes appliquées.
-7. **Chimène** ne reçoit que ce qui a **8/10 ou plus** chez Ousséni, ou un **verdict du tribunal**. Un livrable créatif qui lui arrive autrement repart chez Ousséni. Elle livre à yakesh : rien n'est publié sans sa validation.
+1. **Atelier** (île Atelier) : Chimène envoie le brief au superviseur, qui répartit le travail entre ses 2 sous-agents. Chacun fait sa part en **une seule passe**, avec ses propres vérifications, et l'envoie directement au superviseur avec la liste de ce qu'il a fait et ses points à vérifier. Plus de tours, plus de relecture croisée, plus d'auto-évaluation chiffrée.
+2. **Superviseur** : il assemble le travail des 2 sous-agents, le contrôle avec minutie sur le rendu réel (sa grille reste sa liste de points de contrôle) et **corrige lui-même, directement** tout ce qui ne va pas. Il ne renvoie plus à l'atelier : plus de contrôle numéroté, plus de seuil, plus de note de passage. Puis il envoie.
+3. **Duo** (île Arène) : le challenger a fait sa piste sur le même brief sans voir celle du superviseur. **Un seul échange** : chacun voit la piste de l'autre, le challenger critique (3 faiblesses, 1 idée à prendre), le superviseur écrit la version finale avec le meilleur des deux. En cas de désaccord, la personne suivante dans la chaîne tranche : Ousséni (schéma complet) ou Chimène (schéma court).
+4. **Ousséni** ([[kalo-critique]]), schéma complet seulement : il ne donne **pas de note**. Il relit sur le rendu réel et travaille par **erreurs flagrantes** (objet mal détouré, packshot qui flotte ou déformé, texte qui dépasse, prix, classe énergie, référence ou date faux ou absents, hors zone de sécurité, hors charte, faute d'orthographe, élément de Meubles & Déco ou de concurrent). Aucune erreur flagrante : il valide et envoie à Chimène. Une erreur flagrante : il la renvoie au superviseur avec l'emplacement, le défaut et le résultat attendu ; le superviseur corrige lui-même, Ousséni vérifie seulement que c'est corrigé.
+5. **Tribunal** ([[kalo-tribunal]]), **seulement si nécessaire** : désaccord entre le superviseur et Ousséni, erreur flagrante qui subsiste après la correction, ou question de fond (idée, concept) que seuls les jurés peuvent trancher. Plus de tribunal automatique (il n'y a plus de note chez Ousséni). David instruit comme greffier, le superviseur plaide la défense, Ousséni accuse (schéma complet), 12 jurés extérieurs votent sans se concerter, Chimène rend le verdict. Après le verdict, c'est le verdict qui fait foi.
+6. **Chimène** ([[kalo-chef-com]]) **valide avec une note d'au moins 8/10**, dans les 2 schémas, sur la grille du domaine (la grille reste la référence, avec ses défauts bloquants). 8/10 ou plus : elle valide et livre à yakesh. Moins de 8/10 : elle renvoie au superviseur avec les corrections précises ; le superviseur corrige lui-même ; Chimène revalide. Rien n'est publié sans la validation de yakesh.
 
-## Schéma de la chaîne
+## Schéma complet (2 livrables au plus)
 ```
 Chimène (brief)
    |
    v
-ATELIER : 2 sous-agents, chacun sa part puis relecture croisée (3 tours au plus)
-   |  livre avec auto-évaluation
+ATELIER : 2 sous-agents, chacun sa part en une seule passe
+   |  envoient au superviseur : ce qui a été fait + points à vérifier
    v
-SUPERVISEUR : contrôle n° 1 (note /10)
-   |-- plus de 7 ---------------------------> accepté
-   |-- 7 ou moins --> atelier corrige en 1 tour --> contrôle n° 2 (dernier)
-                          |-- plus de 7 ----> accepté
-                          |-- 7 ou moins --> le superviseur reprend et corrige lui-même
-   v
-Retouche facultative du superviseur
+SUPERVISEUR : assemble, contrôle sur le rendu réel, corrige lui-même
    |
    v
-DUO avec le challenger de l'île Arène (3 tours au plus, le superviseur écrit la version finale)
+DUO : challenger (1 seul échange), le superviseur écrit la version finale
    |
    v
-OUSSÉNI : 1 seul tour, grille du domaine
-   |-- 8/10 ou plus ------------------------> CHIMÈNE --> yakesh (validation avant toute publication)
-   |-- sous 8/10 --> TRIBUNAL automatique --> verdict de Chimène
-                          |
-                          v
-                 corrections à l'atelier via le superviseur (1 tour), le superviseur contrôle
-                          |
-                          v
-                       CHIMÈNE --> yakesh
+OUSSÉNI : pas de note, erreurs flagrantes
+   |-- aucune ------------------------> CHIMÈNE (note, 8/10 ou plus)
+   |-- une ou plus --> le superviseur corrige lui-même --> Ousséni vérifie
+   |-- désaccord, erreur qui subsiste, question de fond
+   |        --> TRIBUNAL (seulement si nécessaire) --> verdict --> CHIMÈNE
+   v
+CHIMÈNE : 8/10 ou plus --> yakesh (validation avant toute publication)
+          moins de 8/10 --> le superviseur corrige lui-même --> Chimène revalide
+```
+
+## Schéma court (plus de 2 livrables)
+```
+Chimène (brief)
+   |
+   v
+ATELIER : 2 sous-agents, chacun sa part en une seule passe
+   v
+SUPERVISEUR : assemble, contrôle sur le rendu réel, corrige lui-même
+   v
+DUO : challenger (1 seul échange), le superviseur écrit la version finale
+   v
+CHIMÈNE : 8/10 ou plus --> yakesh (validation avant toute publication)
+          moins de 8/10 --> le superviseur corrige lui-même --> Chimène revalide
+(ni Ousséni, ni tribunal ; désaccord du duo tranché par Chimène)
 ```
 
 ## Les 5 ateliers
@@ -57,18 +70,18 @@ OUSSÉNI : 1 seul tour, grille du domaine
 | Opérations commerciales | Zayeb ([[kalo-operations-commerciales]]) | Saïd ([[kalo-atelier-operations-mecanique]]) : offre, prix de référence des 30 jours, calculs, classe énergie, conditions, mentions, risques · Ambdi ([[kalo-atelier-operations-deploiement]]) : rétroplanning, contenus par canal, briefs aux créatifs, bilan | Fahardine ([[kalo-challenger-operations]]) | « Ma grille opérations » |
 | Calendrier | Chanisse ([[kalo-calendrier]]) | Hachimia ([[kalo-atelier-calendrier-planning]]) : rythme, jours et heures, temps forts, équilibre des réseaux et des magasins · Faouzia ([[kalo-atelier-calendrier-briefs]]) : produit, prix et classe énergie, format, brief et texte de base de chaque date | Mariama ([[kalo-challenger-calendrier]]) | « Ma grille calendrier » |
 
-Chaque grille est écrite dans le skill du superviseur, sur 10 et pondérée, avec ses **défauts bloquants** : un seul plafonne la note (renvoi à l'atelier au contrôle du superviseur ; sous 8/10 chez Ousséni, tribunal) (prix, classe énergie, référence ou dates faux ou absents, packshot mal détouré, qui flotte, déformé ou agrandi au-delà de la source, hors zone de sécurité, hors charte Kalo, faute d'orthographe).
+Chaque grille est écrite dans le skill du superviseur, sur 10 et pondérée, avec ses **défauts bloquants** : un seul plafonne la note de Chimène sous 8/10 ; pour le superviseur et pour Ousséni, la grille est une liste de points de contrôle, sans note de passage (prix, classe énergie, référence ou dates faux ou absents, packshot mal détouré, qui flotte, déformé ou agrandi au-delà de la source, hors zone de sécurité, hors charte Kalo, faute d'orthographe).
 
 ## Traçabilité obligatoire
 Chaque livrable créatif se termine par une section « Chaîne qualité », rangée dans le journal du jour :
-| Étape | Qui | Note | Ce qui a changé |
-| --- | --- | --- | --- |
-| Atelier (3 tours au plus) | les 2 sous-agents (qui a fait quoi, allers-retours) | auto-évaluation x/10 | … |
-| Contrôle n° 1, puis n° 2 (dernier) | le superviseur | x/10, renvoyé ou accepté (tour d'atelier de correction entre les deux) | corrections demandées |
-| Retouche du superviseur | le superviseur | | ce qu'il a changé lui-même |
-| Duo | superviseur et challenger | | piste gagnante, ce qui a été pris à l'autre |
-| Ousséni (tour unique) | Ousséni | x/10 | exigences |
-| Tribunal (si déclenché) | jury, verdict de Chimène | x/10 | corrections appliquées |
+| Étape | Qui | Ce qui a été fait ou changé |
+| --- | --- | --- |
+| Atelier | les 2 sous-agents | qui a fait quoi, points à vérifier |
+| Superviseur | le superviseur | ce qu'il a corrigé lui-même |
+| Duo | superviseur et challenger | piste gagnante, ce qui a été pris à l'autre |
+| Ousséni (schéma complet) | Ousséni | erreurs flagrantes trouvées, correction vérifiée |
+| Tribunal (si nécessaire) | jury, verdict de Chimène | verdict, corrections appliquées |
+| Chimène | Chimène | note (8/10 ou plus), corrections éventuelles |
 
 ## Défauts récurrents
 Rangés par David après chaque tribunal, pour qu'ils deviennent des points de contrôle des grilles.
