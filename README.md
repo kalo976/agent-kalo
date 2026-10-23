@@ -52,3 +52,25 @@ Elles viennent des deux dépôts de skills les plus étoilés de GitHub (anthrop
 | `canvas-design` | Affiches et visuels graphiques | anthropics/skills (Apache 2.0) |
 
 Versions : marketingskills @ 365b412, anthropics/skills @ dbd4588 (16/10/2026). Les agents `kalo-*` passent avant : charte, ton et règles Kalo s'appliquent toujours.
+
+## Studio motion design (sources GitHub)
+
+Huit boîtes à outils pour faire de Claude Code un studio de motion design, au service des agents créatifs (`kalo-video-courte`, `kalo-challenger-videos`, `kalo-visuel-produit`). Skills en anglais, copiées dans `.claude/skills/` avec leur licence. Les agents `kalo-*` passent avant.
+
+| Outil | Skills ajoutées | À quoi ça sert | Source |
+| --- | --- | --- | --- |
+| Product Launch Motion | `product-launch-motion` | Vidéos promo de lancement produit | AbubakrChan/product-launch-motion @ b25b163 (MIT) |
+| Motion Graphics Skills | `brand-intake`, `motion-brief-writer`, `motion-prompt-writer`, `motion-effects`, `reference-to-motion`, `launch-video`, `reel-export`, `loop-cover`, `animated-chart`, `milestone-reveal`, `newsletter-promo`, `title-sequence-3d`, `apple-launch-film`, `vox-explainer`, `model-showdown` | Reels, effets animés, brief et prompt de motion, export 1080 × 1920 | charlie947/motion-graphics-skills @ 229022e (MIT) |
+| HyperFrames | `hyperframes` (point d'entrée), `hyperframes-core`, `-animation`, `-creative`, `-audio`, `-keyframes`, `-cli`, `-studio`, `-registry`, `general-video`, `product-launch-video`, `talking-head-recut`, `embedded-captions`, `music-to-video`, `slideshow`, `faceless-explainer`, `motion-graphics`, `media-use`, `figma`, `pr-to-video` | Montage automatique des rushes, sous-titres, vidéos HTML rendues en MP4 | heygen-com/hyperframes @ cea0bad (Apache 2.0) |
+| Motion Graphics | `object-separation`, `motion-broll`, `sound-effects`, `explainer-default`, `explainer-engaging`, `explainer-high-energy` | Détourage vidéo (SAM 2), B-roll animé, bruitages, explainers | Barty-Bart/motion-graphics @ 3d83d98 (MIT) |
+| Animate | `animate` | Storyboards et petites vidéos explicatives dans tous les styles | cth9191/animate @ 7e5eb56 (MIT) |
+| Claude Motion | `claude-motion-design`, `claude-motion-sound`, `claude-motion-review-loop`, `claude-motion-web-sims` | Goût du motion sous Remotion, sound design, relecture image par image | whaleyxbt/claude-motion @ e627941 (MIT) |
+| Motion | aucune (voir ci-dessous) | Animations de sites web (bibliothèque `motion`, ex-Framer Motion) | motiondivision/motion @ ce1d082 (MIT) |
+| Motion Design Skill | `motion-design-principles` | Les 12 principes de l'animation | LottieFiles/motion-design-skill @ f9a8a04 (MIT) |
+
+Notes (19/10/2026) :
+- Renommages pour éviter deux skills `motion-design` : celle de LottieFiles devient `motion-design-principles`, celles de Claude Motion prennent le préfixe `claude-motion-`.
+- Claude Motion travaille sur un projet Remotion : il est copié dans `video/claude-motion/` (sans le dossier `media/` de 15 Mo). Lancer `npm install` dans ce dossier avant le premier rendu.
+- HyperFrames : `remotion-to-hyperframes` n'est pas copiée (elle sert seulement à convertir du Remotion et dépend du dépôt d'origine). Les skills utilisent l'outil `npx hyperframes`, téléchargé au premier usage.
+- Product Launch Motion : les dossiers `examples/` (21 Mo) et `legacy/` ne sont pas copiés ; le fichier NOTICE précise que les marques et visuels tiers cités ne sont pas sous licence MIT.
+- Motion (motiondivision) est une bibliothèque JavaScript, pas un pack de skills : ses deux skills internes servent à maintenir la bibliothèque elle-même. Pour animer kalo.yt, l'agent l'installe avec `npm install motion` (documentation : motion.dev).

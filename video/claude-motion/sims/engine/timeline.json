@@ -1,0 +1,15 @@
+{
+  "duration": 24,
+  "open": 2.4,
+  "feed": 3.0,
+  "spin": 5.6,
+  "burn": 7.8,
+  "flyIn": 9.0,
+  "flyOut": 11.6,
+  "blast": 12.0,
+  "throttle": 14.4,
+  "explode": 15.0,
+  "assemble": 19.0,
+  "relight": 20.5,
+  "close": 21.0
+}

@@ -1,0 +1,21 @@
+.e-ov { position: absolute; left: 0; top: 0; transform-origin: 0 0; pointer-events: none; z-index: 6; color: #fff; font-family: Inter, sans-serif; }
+.e-lines { position: absolute; left: 0; top: 0; }
+.e-top { position: absolute; left: 40px; top: 36px; display: flex; flex-direction: column; gap: 14px; }
+.e-title { font: 700 22px 'JetBrains Mono', monospace; letter-spacing: 0.14em; text-shadow: 0 2px 14px rgba(0,0,0,0.45); }
+.e-ch { display: flex; gap: 10px; }
+.e-ch span { font: 700 18px 'JetBrains Mono', monospace; letter-spacing: 0.14em; padding: 7px 14px; border-radius: 8px; background: rgba(10,10,16,0.42); border: 1px solid rgba(255,255,255,0.16); color: rgba(255,255,255,0.55); }
+.e-ch span.on { background: rgba(255,255,255,0.94); color: #111; border-color: #fff; }
+.e-clock { position: absolute; right: 40px; top: 30px; }
+.e-clock b { font: 700 52px 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; text-shadow: 0 2px 18px rgba(0,0,0,0.5); }
+.e-cap { position: absolute; left: 40px; right: 40px; bottom: 118px; display: flex; justify-content: center; opacity: 0; }
+.e-cap span { font: 600 31px/1.32 Inter, sans-serif; text-align: center; padding: 16px 24px; border-radius: 16px; background: rgba(10,10,16,0.62); border: 1px solid rgba(255,255,255,0.12); max-width: 940px; }
+.e-bar { position: absolute; left: 40px; right: 40px; bottom: 70px; height: 5px; border-radius: 3px; background: rgba(255,255,255,0.22); }
+.e-bar i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: #fff; }
+.e-bar em { position: absolute; top: -5px; width: 3px; height: 15px; margin-left: -1px; border-radius: 2px; background: rgba(255,255,255,0.75); }
+.e-wm { position: absolute; right: 40px; bottom: 26px; font: 400 19px 'JetBrains Mono', monospace; color: rgba(255,255,255,0.6); }
+.e-lab { position: absolute; display: flex; flex-direction: column; gap: 3px; padding: 9px 14px; border-radius: 10px; background: rgba(10,10,16,0.66); border: 1px solid rgba(255,255,255,0.18); white-space: nowrap; opacity: 0; }
+.e-lab.l { left: 40px; } .e-lab.r { right: 40px; align-items: flex-end; }
+.e-lab b { display: flex; align-items: center; gap: 9px; font: 700 20px 'JetBrains Mono', monospace; letter-spacing: 0.06em; }
+.e-lab b i { width: 10px; height: 10px; border-radius: 50%; }
+.e-lab span { font: 500 18px Inter, sans-serif; color: rgba(255,255,255,0.72); }
+.e-time { position: absolute; left: 40px; bottom: 26px; font: 600 19px 'JetBrains Mono', monospace; color: rgba(255,255,255,0.6); font-variant-numeric: tabular-nums; }
