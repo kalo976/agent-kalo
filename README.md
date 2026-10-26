@@ -49,6 +49,7 @@ Elles viennent des deux dépôts de skills les plus étoilés de GitHub (anthrop
 | `video` | Vidéos courtes (Reels) | idem |
 | `image` | Visuels marketing | idem |
 | `marketing-plan` | Plan marketing complet | idem |
+| `conversion-tracking` | Suivi des ventes et contacts venus des pubs Facebook et Google sur kalo.yt (pixel Meta, API Conversions) | coreyhaines31/marketingskills (MIT), v1.0.0, ajoutée le 26/10/2026 |
 | `canvas-design` | Affiches et visuels graphiques | anthropics/skills (Apache 2.0) |
 
-Versions : marketingskills @ 365b412, anthropics/skills @ dbd4588 (16/10/2026). Les agents `kalo-*` passent avant : charte, ton et règles Kalo s'appliquent toujours.
+Versions : marketingskills @ e85f3cb (26/10/2026 : `ads` 2.6.2, `content-strategy` 2.1.4, `public-relations` 1.2.1, `conversion-tracking` 1.0.0 ajoutée), anthropics/skills @ dbd4588 (16/10/2026), remotion-dev/skills @ 6c67adc (26/10/2026, Remotion 4.0.538). Les agents `kalo-*` passent avant : charte, ton et règles Kalo s'appliquent toujours.
